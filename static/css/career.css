@@ -530,3 +530,34 @@ width: 50%;
   width: 62%;
   margin-right: -6em;
 }
+
+
+
+
+.h-upd {
+  text-align: center;
+}
+
+.update2 {
+  padding-bottom: 50px;
+}
+
+.upd {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+}
+.upa {
+  background: #fff;
+  width: 75%;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 80px;
+  margin-left: 10%;
+}
+
+.upa img {
+  width: 100%;
+  border-radius: 50%;
+}

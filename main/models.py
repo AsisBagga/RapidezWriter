@@ -1,6 +1,14 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
+from resumeAnalysis.validators import validate_resume_ext_job
+ 
+FAQ_CHOICES = (('TopSeven', 'TopSeven'),
+                ('CategoryOne', 'CategoryOne'),
+                ('CategoryTwo', 'CategoryTwo'),
+                ('CategoryThree', 'CategoryThree')
+              )
+
 # Create your models here.
 class Category(models.Model):
     category = models.CharField(max_length=30)
@@ -34,3 +42,28 @@ class Quiz(models.Model):
 
     def __str__(self):
         return self.heading
+
+class FAQ(models.Model):
+    category = models.CharField(max_length=300, choices=FAQ_CHOICES)
+    heading = models.CharField(max_length=300)
+    description = RichTextUploadingField(blank=True, null=True)
+
+    def __str__(self):
+        return self.heading
+
+class Job(models.Model):
+    heading = models.CharField(max_length=300)
+    description = RichTextUploadingField(blank=True, null=True)
+
+    def __str__(self):
+        return self.heading
+
+class SubmitJob(models.Model):
+    job = models.CharField(max_length=300)
+    name = models.CharField(max_length=300)
+    email = models.CharField(max_length=300)
+    phone = models.CharField(max_length=300)
+    resume = models.FileField(upload_to='JobResume/%Y/%m/%d/', validators=[validate_resume_ext_job])
+    
+    def __str__(self):
+        return self.name

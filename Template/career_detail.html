@@ -185,13 +185,12 @@
         <div class="ser">
           <div class="mov-r">
             <div class="row">
-              <form class="col s12">
+              <form class="col s12" action="{% url 'search' %}">
+                {% csrf_token %}
                 <div class="row">
-                  <!-- <a href="#"> search </a> -->
-                  <!-- <i class="material-icons"></i> -->
                   <div class="input-field col s3">
-                    <input id="input_text" type="text" data-length="10" />
-                    <label for="input_text">Search </label>
+                    <input id="input_text" name="query"  type="search" />
+                    <label for="input_text">Search</label>
                   </div>
                 </div>
               </form>
@@ -220,7 +219,6 @@
             >{{i}}</a
           >
           {% endfor %}
-          <a class="waves-effect waves-light btn">AMANDAS</a>
           <h4><span> {{blog_details.heading}} </span></h4>
         </div>
 
@@ -235,109 +233,24 @@
     <div class="t-head">
       <div class="text1">
         <h5>{{blog_details.description | safe}}</h5>
-        <p>
-          With every new year comes a new playing field for job seekers to
-          advance their careers. It's time to dust off your resume and prepare
-          for one of the top 10 jobs of 2020. According to the U.S. Bureau of
-          Labor Statistics Occupational Outlook Handbook, these top growing
-          career paths are on the rise and will out-hire — and possibly out-pay
-          — its competitors in 2020 and beyond. We will also take a look at how
-          the coronavirus pandemic has affected the job market for this year.
-        </p>
-        <h5>Solar photovoltaic installers</h5>
-        <p>
-          Solar technology is booming right now. As prices for solar equipment
-          fall, people are jumping on this initial investment to cultivate
-          long-term gains. In fact, solar is taking off so fast that the
-          industry is struggling to meet the demand; there simply aren't enough
-          solar photovoltaic installers available. While the coronavirus
-          pandemic is creating a bit of a hiccup on solar's upward trajectory,
-          there's no reason to believe it won't bounce back and keep growing for
-          years to come. With the median pay at $42,680 annually, it is a job
-          that has little-to-no educational requirements needed to break in.
-          Instead, on-the-job training provides most of what a solar PV
-          installer needs to succeed.
-        </p>
-        <br />
-        <p><span>Outlook:</span> 63% increase by 2028</p>
-        <br />
-        <p><span>Education & Training:</span> On-the-job training</p>
-        <br />
-        <p><span>Median Salary:</span>$42,680</p>
-        <br />
-        <h5>Home health and personal care aides</h5>
-        <p>
-          Home health aides care for patients who are elderly or who have
-          chronic diseases, cognitive impairment, and other medical issues that
-          require extra attention. Frequently, this means working with the
-          patient in their home. While the pay is typically around $24,200 a
-          year, job satisfaction is quite high. The baby-boom population is
-          aging, leading to an increased need for home health aides. US News and
-          World Report ranked home health aides number one on their Best Jobs
-          Without a College Degree list.
-        </p>
-        <br />
-        <p><span>Outlook:</span> 37% increase by 2028</p>
-        <br />
-        <p>
-          <span>Education & Training:</span> High school diploma or equivalent
-        </p>
-        <br />
-        <p><span>Median Salary:</span>$24,200</p>
-        <br />
-
-        <h5>Occupational therapy assistants</h5>
-        <p>
-          Occupational therapy assistants help patients with therapeutic
-          exercises, as well as learning and maintaining the ability to do daily
-          life activities. The goal of an occupational therapy assistant is to
-          assist people who have been sick or injured as they regain their
-          independence. While it does typically require a degree, a two-year
-          program usually suffices for this requirement, and the median salary
-          is just north of $60,000.
-        </p>
-        <br />
-        <p><span>Outlook:</span> 33% increase by 2028</p>
-        <br />
-        <p>
-          <span>Education & Training:</span> Associate degree from an accredited
-          program
-        </p>
-        <br />
-        <p><span>Median Salary:</span>$60,220</p>
-        <br />
-
-        <br />
-
+        
         <div class="related">
-          <h5>Related Articles:</h5>
+          <h5>Related Articles: </h5>
           <div class="g-img1">
-            <div class="part11 ptt">
-              <a href="#">
-                <img
-                  src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                  alt=""
-                />
-                <p>4 Ways to Support Diversity and Inclusion at Work</p>
-              </a>
-            </div>
-
-            <div class="part12 ptt">
-              <a href="#">
-                <img src="{% static '/image/meeting.jpg' %}" alt="" />
-                <p>Why Women Need to Start Supporting Other Women at Work</p>
-              </a>
-            </div>
-
-            <div class="part13 ptt">
-              <a href="#">
-                <img
-                  src="{% static '/image/scott-graham-5fNmWej4tAA-unsplash.jpg' %}"
-                  alt=""
-                />
-                <p>Productivity Tips That Really Work</p>
-              </a>
-            </div>
+            {% for ra in related_article %}
+              {% for ra_inside in ra %}
+               {% if forloop.counter < 4  %}
+                <div class="part11 ptt">
+                  <a href="{% url 'career_detail_page' ra_inside.pk %}"">
+                    {% if ra_inside.banner %}
+                    <img src="{{ ra_inside.banner.url }}" alt="" />
+                    {% endif %}
+                    <p> {{ ra_inside.heading }} </p>
+                  </a>
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -345,6 +258,7 @@
         <a href="#NeedToGoToCareerAnalysisPage"><img src="{% static '/image/sidebar.JPG' %}" alt="" /></a>
       </div>
     </div>
+    
     
     <!-- --------------------------------------------------footer----------------------------- -->
     <footer class="footer">

@@ -179,73 +179,18 @@
           </div>
         </div>
         <div class="topread">
-          {% for i in objects %}
+          {% for i in all_objects %}
+          
           <div class="part1 ptt">
             <a href="{% url 'career_detail_page' i.pk %}">
               {% if i.banner %}
               <img src="{{ i.banner.url }}" alt="" />
               {% endif %}
-              <p>{{i.heading}}</p>
+              <p>{{i.heading}} 
+              </p>
             </a>
           </div>
           {% endfor %}
-
-          <div class="part2 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/scott-graham-5fNmWej4tAA-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                A Qualified Candidate Finally Gets the Resume That Shows Her Off
-              </p>
-            </a>
-          </div>
-
-          <div class="part3 ptt">
-            <a href="#">
-              <img src="{% static '/image/meeting.jpg' %}" alt="" />
-              <p>4 Ways to Support Diversity and Inclusion at Work</p>
-            </a>
-          </div>
-          <div class="part3 ptt">
-            <a href="#">
-              <img src="{% static '/image/meeting.jpg' %}" alt="" />
-              <p>4 Ways to Support Diversity and Inclusion at Work</p>
-            </a>
-          </div>
-          <div class="part3 ptt">
-            <a href="#">
-              <img src="{% static '/image/meeting.jpg' %}" alt="" />
-              <p>4 Ways to Support Diversity and Inclusion at Work</p>
-            </a>
-          </div>
-          <div class="part4 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/scott-graham-5fNmWej4tAA-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>TopResume & Amazon Career Day 2020</p>
-            </a>
-          </div>
-
-          <div class="part5 ptt">
-            <a href="#">
-              <img src="{% static '/image/rw2.jpg' %}" alt="" />
-              <p>
-                Why Do Entry-Level Positions Require Experience? Plus How To Get
-                Around It
-              </p>
-            </a>
-          </div>
-
-          <div class="part6 ptt">
-            <a href="#">
-              <img src="{% static '/image/video-r.jpg' %}" alt="" />
-              <p>It's OK to Quit (Your Job)</p>
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -267,48 +212,18 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/christian-wiediger-rymh7EZPqRs-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>TopResume & Amazon Career Day 2020</p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img src="{% static '/image//video-r.jpg' %}" alt="" />
-              <p>It's OK to Quit (Your Job)</p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Ready to Quit After COVID-19? Use These 3 Strategies to Find a
-                Better Job
-              </p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/cytonn-photography-n95VMLxqM2I-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Who's Hiring? Resources to Find Work During the Coronavirus
-                Crisis
-              </p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -331,51 +246,20 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>What Is an ATS? How to Write a Resume to Beat the Bots</p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                A Qualified Candidate Finally Gets the Resume That Shows Her Off
-              </p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Ask Amanda: How Do I Add Volunteer Experience to My Resume?
-                (Examples)
-              </p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>How To Write a Cover Letter (With Example)</p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
+
       </div>
     </div>
 
@@ -397,57 +281,18 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                How Making This Interview Question Illegal Can Help Eliminate
-                the Gender Wage Gap
-              </p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                A Guide to Answering the "Current Salary" Question in an
-                Interview
-              </p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                How to Sell Yourself in a Video Interview, According to a Remote
-                Worker
-              </p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                How to Talk About COVID-19 During a Job Interview (Without
-                Getting Political)
-              </p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -469,48 +314,18 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>How to Maximize Your LinkedIn Endorsements</p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>How to Get Free LinkedIn Premium If You're a Veteran</p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>How to Create a Custom LinkedIn URL in 3 Easy Steps</p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Why LinkedIn is Important: 7 Reasons to Polish Your Profile
-                Today
-              </p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -532,54 +347,18 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>Virtual Networking: Making Connections Online</p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                LinkedIn Networking: How to Cultivate Meaningful Connections
-                Online
-              </p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Why Every Professional Should Recruit a Personal Board of
-                Advisors
-              </p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Surefire Professional Networking Tips to Rock Your Next Holiday
-                Party
-              </p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -599,53 +378,19 @@
             </h5></a
           >
         </div>
-
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-                Want and Need
-              </p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>
-                “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take
-                From You
-              </p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>10 Ways to Push Yourself to Think Outside the Box</p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>How to Cope When a Co-Worker Quits</p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -668,45 +413,18 @@
         </div>
 
         <div class="g-img1">
-          <div class="part11 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>4 Ways to Support Diversity and Inclusion at Work</p>
-            </a>
-          </div>
-
-          <div class="part12 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>Why Women Need to Start Supporting Other Women at Work</p>
-            </a>
-          </div>
-
-          <div class="part13 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>Productivity Tips That Really Work</p>
-            </a>
-          </div>
-
-          <div class="part14 ptt">
-            <a href="#">
-              <img
-                src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-                alt=""
-              />
-              <p>7 Negotiation Tips for Women</p>
-            </a>
-          </div>
+          {% for i in all_objects %}
+                {% if 'test_category_two' == 'test_category_two' %}
+                  <div class="part11 ptt">
+                    {% if i.banner %}
+                    <a href="{% url 'career_detail_page' i.pk %}">
+                      <img src="{{ i.banner.url }}" alt="" />
+                    {% endif %}
+                    <p>{{i.heading}}</p>
+                    </a>
+                  </div>
+                  {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>

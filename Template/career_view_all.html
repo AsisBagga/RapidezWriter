@@ -166,13 +166,12 @@
         <div class="ser">
           <div class="mov-r">
             <div class="row">
-              <form class="col s12">
+              <form class="col s12" action="{% url 'search' %}">
+                {% csrf_token %}
                 <div class="row">
-                  <!-- <a href="#"> search </a> -->
-                  <!-- <i class="material-icons"></i> -->
                   <div class="input-field col s3">
-                    <input id="input_text" type="text" data-length="10" />
-                    <label for="input_text">Search </label>
+                    <input id="input_text" name="query"  type="search" />
+                    <label for="input_text">Search</label>
                   </div>
                 </div>
               </form>
@@ -209,172 +208,6 @@
           </a>
         </div>
 
-        <div class="part13 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="g-img1">
-        <div class="part11 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw2.jpg' %}" alt="" />
-            <p>
-              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-              Want and Need
-            </p>
-          </a>
-        </div>
-
-        <div class="part12 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>
-              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
-              You
-            </p>
-          </a>
-        </div>
-
-        <div class="part13 ptt">
-          <a href="#">
-            <img
-              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-              alt=""
-            />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="g-img1">
-        <div class="part11 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>
-              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-              Want and Need
-            </p>
-          </a>
-        </div>
-
-        <div class="part12 ptt">
-          <a href="#">
-            <img
-              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-              alt=""
-            />
-            <p>
-              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
-              You
-            </p>
-          </a>
-        </div>
-
-        <div class="part13 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw2.jpg' %}" alt="" />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="g-img1">
-        <div class="part11 ptt">
-          <a href="#">
-            <img
-              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-              alt=""
-            />
-            <p>
-              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-              Want and Need
-            </p>
-          </a>
-        </div>
-
-        <div class="part12 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw2.jpg' %}" alt="" />
-            <p>
-              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
-              You
-            </p>
-          </a>
-        </div>
-
-        <div class="part13 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="g-img1">
-        <div class="part11 ptt">
-          <a href="#">
-            <img
-              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-              alt=""
-            />
-            <p>
-              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-              Want and Need
-            </p>
-          </a>
-        </div>
-
-        <div class="part12 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>
-              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
-              You
-            </p>
-          </a>
-        </div>
-
-        <div class="part13 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw2.jpg' %}" alt="" />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
-      </div>
-
-      <div class="g-img1">
-        <div class="part11 ptt">
-          <a href="#">
-            <img
-              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
-              alt=""
-            />
-            <p>
-              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
-              Want and Need
-            </p>
-          </a>
-        </div>
-
-        <div class="part12 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw2.jpg' %}" alt="" />
-            <p>
-              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
-              You
-            </p>
-          </a>
-        </div>
-
-        <div class="part13 ptt">
-          <a href="#">
-            <img src="{% static '/image/rw1.jpg' %}" alt="" />
-            <p>10 Ways to Push Yourself to Think Outside the Box</p>
-          </a>
-        </div>
       </div>
     </div>
 

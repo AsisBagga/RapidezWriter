@@ -3,14 +3,19 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import get_object_or_404
 
-from .models import Database, Category, Testimonials, Quiz
-from .forms import Databaseform, Categoryform, SignUpForm, Testimonialform
+from .models import Database, Category, Testimonials, Quiz, FAQ, Job
+from .forms import Databaseform, Categoryform, SignUpForm, Testimonialform, FAQForm, JobForm, SubmitJobForm
 from django.db.models import Q
 
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+
+from django.core.mail import send_mail
+
+from rapidez import settings
+from django.db.models import Q
 
 import razorpay
 
@@ -29,8 +34,6 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
-
-
 # General Page
 def home(request):
     all_objects = Database.objects.all()
@@ -38,9 +41,59 @@ def home(request):
 def about(request):
     return render(request,"about.html")
 def contact_us(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        services = request.POST.getlist('services')
+        query = request.POST.get('query')
+        email = request.POST.get('email')
+        print("Details: ", name, query, email, services)
+        email_from = settings.EMAIL_HOST_USER
+        email_to = 'bharath.nr1@gmail.com'
+        email_admin = settings.EMAIL_ADMIN
+        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query
+        isSuccess = send_mail(
+            'Customer Contact',
+            text_content,
+            email_admin,
+            [email_to],
+            fail_silently=False,
+        )
+        isSuccess.send()
+        print("Email sent : ", isSuccess)
     return render(request,"contact.html")
+
+#FAQ
 def faq(request):
-    return render(request, "faq.html")
+    all_objects = FAQ.objects.all()
+    return render(request, "faq.html", {'objects':all_objects})
+
+def addFAQ(request):
+    if request.method == 'POST':
+        form = FAQForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = FAQForm()
+    return render(request, 'createBlog.html', {'form':form})
+
+def updateFAQ(request, pk):
+    faq = get_object_or_404(FAQ, pk=pk)
+    forms = FAQForm(request.POST or None, instance = faq)
+    if request.method == "POST":
+        if forms.is_valid():
+            forms.save()
+            return HttpResponseRedirect(reverse('faq'))
+        else:
+            print(forms.errors.as_data())
+    return render(request, "blogUpdate.html", {"forms":forms})  
+
+def deleteFAQ(request, pk):
+    obj = get_object_or_404(FAQ, pk=pk)
+    if request.method == "POST":
+        obj.delete()
+        return HttpResponseRedirect(reverse('faq'))
+    return render(request, 'blogDelete.html')
 
 # Service Pages
 def resume_consulting(request):
@@ -78,12 +131,15 @@ def create_blog(request):
 # Blog Listings
 def career_list_page(request):
     all_objects = Database.objects.all()
-    return render(request, 'career_list.html', {"objects": all_objects})
+    return render(request, 'career_list.html', {"all_objects": all_objects})
 # Blog Page details
 def career_detail_page(request, pk):
     category = Category.objects.all()
     blog = get_object_or_404(Database, pk=pk)
-    return render(request, "career_detail.html",  {"blog_details":blog, "category":category})
+    related_article=[]
+    for i in category:
+        related_article.append( Database.objects.filter( category=i ))
+    return render(request, "career_detail.html",  {"blog_details":blog, "category":category, "related_article":related_article})
 # Update Blog
 def blog_update(request, pk):
     blog = get_object_or_404(Database, pk=pk)
@@ -248,5 +304,82 @@ def payment_status(request):
 def payment_success(request):
     return render(request, "payment_success.html")
 
-def career_page(request):
-    return render(request, "career_page.html")
+#Jobs
+def job_page(request):
+    all_objects = Job.objects.all()
+    return render(request, "job_page.html", {'objects':all_objects})
+
+def addJob(request):
+    if request.method == 'POST':
+        form = JobForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = JobForm()
+    return render(request, 'createBlog.html', {'form':form})
+
+def updateJob(request, pk):
+    job = get_object_or_404(Job, pk=pk)
+    forms = JobForm(request.POST or None, instance = job)
+    if request.method == "POST":
+        if forms.is_valid():
+            forms.save()
+            return HttpResponseRedirect(reverse('job_page'))
+        else:
+            print(forms.errors.as_data())
+    return render(request, "blogUpdate.html", {"forms":forms})  
+
+def deleteJob(request, pk):
+    obj = get_object_or_404(Job, pk=pk)
+    if request.method == "POST":
+        obj.delete()
+        return HttpResponseRedirect(reverse('job_page'))
+    return render(request, 'blogDelete.html')
+
+def submitJob(request, pk):
+    obj = get_object_or_404(Job, pk=pk)
+    if request.method == "POST":
+        form = SubmitJobForm(request.POST, request.FILES)
+        if form.is_valid():
+            saved = form.save(commit=False)
+            saved.job = str(obj.heading)
+            print("name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job )
+            saved.save()
+            email_from = settings.EMAIL_HOST_USER
+            email_to = 'bharath.nr1@gmail.com'
+            email_admin = settings.EMAIL_ADMIN
+            text_content = "name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job 
+            isSuccess = send_mail(
+                'New Job Profile Application',
+                text_content,
+                email_admin,
+                [email_to],
+                fail_silently=False,
+            )
+            isSuccess.attach(saved.resume)
+            isSuccess.send()
+            # You might be confusted to see that I dont save the field, its because i dont care, I just worked too much on getting 
+            # this content here and now i have realized i could have done this without models. But, now i dont have time to change it
+            # SO chuck it.
+            return HttpResponseRedirect(reverse('job_page'))
+        else:
+            print(form.errors.as_data())
+    else:
+        form = SubmitJobForm()
+    return render(request, 'submitJob.html', {'form': form})
+
+def search(request):
+    category = Category.objects.all()
+    try:
+        query = request.GET.get('query')
+        objects = Database.objects.filter( Q(heading__icontains=query) | Q(description__icontains=query))
+    except:
+        query = None
+    if query:
+        context={"objects":objects, "category":category}
+        template="search.html"
+    else:
+        template="search.html"
+        context={"category":category}
+    return render(request, template, context)
