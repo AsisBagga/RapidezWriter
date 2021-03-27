@@ -1,0 +1,669 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- -----------------fontawesome------------------------------ -->
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}"
+    />
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static '/materialize/css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static '/css/linkedin.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}"
+    />
+
+    <!-- ----------------slick--------------------------- -->
+    <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/slick-1.8.1/slick/slick-theme.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+     <!-- Navbar -->
+     <header class="drop">
+
+      <a href="{% url 'home' %}"><img class="desk_logo" src="{% static '/image/homepage_logo_new.png' %}" alt="Rapidez Writer Logo" /></a>
+      <a href="{% url 'home' %}"><img class="mobile_logo" src="{% static '/image/logo-removebg.png' %}" alt="Rapidez Writer Logo" /></a>
+      
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+      <ul class="menu">
+        <li>
+          <a class="services">Services
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 serv" style="left: 38%">
+            <div class="box111"></div>
+            <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
+            <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
+            <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+            <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
+            <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
+            <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
+          </ul>
+        </li>
+
+        <li>
+          <a class="resources">Resources
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 rscs" style="left: 38%">
+            <a href="{% url 'quizes_list' %}"><li>Career Assessment</li></a>            
+            <a href="{% url 'career_list_page' %}"><li>Career Advice</li></a>
+            <a href="{% url 'faq' %}"><li>FAQ</li></a>
+            
+          </ul>
+        </li>
+
+        <li>
+          <a class="comp">Company
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 cmpy" style="left: 38%">
+            <a href="{% url 'about' %}"><li>Overview</li></a>
+            <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
+            <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
+            <a href="#"><li>Careers</li></a>          
+          </ul>
+        </li>
+
+        <li><a href="{% url 'testimonials' %}" class="testimonials">Testimonials</a></li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="#">Accounts
+            <i
+              class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12" style="left: 38%">
+            <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+            <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+          {% if request.user.is_staff %}
+            <a href="{% url 'signup' %}"> <li> Register User </li></a>
+          {% endif %}
+            <a href="{% url 'logout' %}"> <li> Logout </li></a>
+        {% endif %}
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- navbar-end -->
+
+    <!-- ---------------------------------------------------main head--------------------------------------- -->
+    <div class="m-head">
+      <div class="m-back">
+        <div class="content">
+          <div class="move"></div>
+          <p></p>
+          <h1>
+            Optimize your LinkedIn. <br />
+            Maximize your visibility.
+          </h1>
+          <h5>
+            Escalate your professional journey with an enhanced LinkedIn profile.
+          </h5>
+          <a class="waves-effect waves-light btn order-now-btn">Order Now</a>
+        </div>
+        <div class="image11">
+          <div class="img1">
+            <img src="{% static '/image/dotted(1).png' %}" alt="" />
+          </div>
+          <div class="img2">
+            <img src="{% static '/image/Linkedin.png' %}" alt="" />
+          </div>
+          <div class="img3">
+            <img src="{% static '/image/dotted(1).png' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------%%%%%persentage%%%%%--------------------------------------- -->
+    <div class="m-size">
+      <div class="p1" data-aos="fade-left">
+        <h4>23 million</h4>
+        <h5><span>job openings </span> the LinkedIn platform in 2020</h5>
+      </div>
+      <div class="p1" data-aos="fade-left">
+        <h4>87%</h4>
+        <h5>
+          <span>of recruiters </span> use LinkedIn to evaluate and screen
+          candidates
+        </h5>
+      </div>
+      <div class="p1" data-aos="fade-left">
+        <h4>122 million</h4>
+        <h5><span>people got an interview </span>through LinkedIn in 2019</h5>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------mobile-type-------------------------------------- -->
+    <div class="m-mobile">
+      <div class="mob-img">
+        <img style="width: 481px;" src="{% static '/image/linkedin_prashanth.png' %}"/>
+        <!-- <img src="{% static '/image/linkedin-profile-e1cd7661b7.png' %}"/> -->
+      </div>
+      <br /><br />
+      <br /><br />
+      <div class="text-1">
+        <p class="light">LINKEDIN PROFILE MAKEOVER SERVICE</p>
+        <h3>Idealize your professional brand</h3>
+        <p class="light1">
+          With more than 760 million LinkedIn members worldwide, having a
+          profile that stands out is essential to your job-search success.
+        </p>
+        <br />
+        <div class="pul-grid">
+          <div class="cir pulse" style="background: #47b8f18c">
+            <div class="cir1 pulse" style="background: #47b7f1"></div>
+          </div>
+          <div class="line"></div>
+          <i class="fas fa-search fa-1x" style="color: #47b7f1"></i>
+          <div class="cont" data-aos="zoom-in-left">
+            <p class="light2">
+              <span style="font-weight: 500"> Keyword Optimized</span>, so you
+              show up in more recruiters' searches.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <!-- ---------------------------------------------------------- -->
+        <div class="pul-grid">
+          <div class="cir pulse" style="background: #47b8f18c">
+            <div class="cir1 pulse" style="background: #47b7f1"></div>
+          </div>
+          <div class="line"></div>
+          <i class="fas fa-file-word fa-1x" style="color: #47b7f1"></i>
+          <div class="cont" data-aos="zoom-in-left">
+            <p class="light2">
+              <span style="font-weight: 500"> Aligned with your resume</span>,
+              presenting an engaging narrative.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <!-- ------------------------------------------------------------- -->
+
+        <div class="pul-grid">
+          <div class="cir pulse" style="background: #47b8f18c">
+            <div class="cir1 pulse" style="background: #47b7f1"></div>
+          </div>
+          <div class="line"></div>
+          <i class="fas fa-star fa-1x" style="color: #47b7f1; float: right"></i>
+          <div class="cont" data-aos="zoom-in-left">
+            <p class="light2">
+              <span style="font-weight: 500">
+                Achievements and skills-based
+              </span>
+              so your profile is top-ranked for job opportunities.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <a
+          class="waves-effect waves-light btn order-now-btn"
+
+          >Order Now</a
+        >
+      </div>
+    </div>    
+    
+    <!-- -----------------------------------how it work------------------------------------- -->
+
+    <div class="main-b">
+      <div class="b1">
+        <br /><br />
+        <div class="text-2">
+          <p class="light2">HOW IT WORKS</p>
+          <br />
+          <h3>Get real results</h3>
+          <br />
+          <p style="font-size: 18px; text-align: center">
+            Working with a professional writer to revamp your <br />
+            LinkedIn profile will give you a competitive advantage.
+          </p>
+          <br /><br />
+          <img
+            style="width: 100%; padding: 0 6%"
+            src="{% static '/image/how it work.PNG' %}"
+            alt=""
+          />
+          <div class="main-hiw">
+            <div class="main-h1">
+              <h4 style="font-size: 22.4px; font-weight: 600">
+                Connect with a writer
+              </h4>
+              <p style="font-size: 17px">
+                We’ll pair you with a writer who has experience writing for your industry.
+              </p>
+            </div>
+
+            <div class="main-h1">
+              <h4 style="font-size: 22.4px; font-weight: 600">
+                Share your goals
+              </h4>
+              <p style="font-size: 17px">
+                Work one-on-one to create a LinkedIn profile tailored to your
+                career goals.
+              </p>
+            </div>
+
+            <div class="main-h1">
+              <h4 style="font-size: 22.4px; font-weight: 600">
+                Have pride in your profile
+              </h4>
+              <p style="font-size: 17px">
+                Post your revamped LinkedIn profile and elevate your
+                professional brand online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ------------------ Quote ----------------- -->
+    <div class="rw-quote">
+      <h4><span style="font-size: 3rem;">&#8220;</span>Today 48% of all recruiters advertise their job openings ONLY on LinkedIn<span style="font-size: 3rem;">&#8221;</span></h4>
+    </div>    
+
+    <!-- -----------------------------------------------------------linkedin-expert---------------------------- -->
+    <!-- <div class="main-pp">
+      <div class="main-c">
+        <div class="b2">
+          <br /><br /><br /><br /><br />
+          <img src="{% static '/image/dot-bgs-055cb3788c.png' %}" alt="" />
+        </div>
+
+        <div class="b3">
+          <img src="{% static '/image/link-face.jpg' %}" alt="" />
+        </div>
+        <div class="box22 z-depth-3">
+          <div class="text22">
+            <h4 class="light2">MEET OUR EXPERT WRITERS</h4>
+            <h3>Lauren H., Editorial Manager</h3>
+            <div class="inline">
+              <span class="a1"> “ </span>
+              <p class="a3">
+                It's really a delight to work with so many great writers and be
+                a calming voice for clients.
+                <span class="a2"> “ </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="box33 z-depth-3" style="visibility: hidden !important">
+          <div class="text33">
+            <h3>Get started today</h3>
+            <p class="a3">
+              Order now to get your LinkedIn profile rewritten by one of our
+              experts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- --------------------------------------------c-write----------------------------------- -->
+    <div class="main-cc">
+      <br /><br /><br />
+      <h4>Customer Reviews</h4>
+      <div class="main-d">
+        <div class="page-wrapper">
+          <div class="post-slider">
+            <i class="fas fa-chevron-left fa-3x prev pat0"></i>
+            <i class="fas fa-chevron-right fa-3x next pat00"></i>
+            <div class="post-wrapper part1">
+              <div class="post">
+                <p>
+                  " Rapidez Writer has exceeded my expectations. They were
+                  professionals and helpful. I got all 3 packages (Resume, cover
+                  letter, LinkedIn) My LinkedIn has been getting lots of views
+                  and had a couple screening interviews. Bravo! Worth the
+                  investment. Thank you!"
+                </p>
+              </div>
+              <div class="post">
+                <p>
+                  " Rapidez Writer did a marvellous job on writing my resume and
+                  LinkedIn profile. I've got lots of interview as a result"
+                </p>
+              </div>
+
+              <div class="post">
+                <p>
+                  "Had my LinkedIn profile reviewed. Pretty fast turnaround and
+                  really helped to refine and make the overall summary of my
+                  experience clearer and more concise. Very easy to work with
+                  the platform and input the required data."
+                </p>
+              </div>
+
+              <div class="post">
+                <p>
+                  " Had a great match with my writer, great communication both
+                  via email and phone. Resume, Cover Letter and LinkedIn
+                  makeover went way above my expectations. LinkedIn profile view
+                  increased by 30% constantly, I receive more feedback on my
+                  applications and that builds a lot of confidence to rock an
+                  interview!"
+                </p>
+              </div>
+
+              <div class="post">
+                <p>
+                  "I put off trying Rapidez Writer and wish that I hadn't. I was
+                  very impressed with the writer and how she was able to
+                  communicate more clearly and effectively what I had been
+                  trying to say. I also had a cover letter and LinkedIn profile
+                  updated which I would also recommend. Very pleased with the
+                  service."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------last-------------------- -->
+    <div class="content121">
+      <br /><br /><br />
+      <p>
+        <i
+          class="fab fa-linkedin"
+          style="
+            background: #0274b3;
+            color: #fff;
+
+            padding: 3px;
+            padding-left: 4px;
+          "
+        ></i>
+        LINKEDIN PROFILE MAKEOVER
+      </p>
+      <h2>Set yourself up for job search success</h2>
+      <a
+        data-aos="zoom-in"
+        class="waves-effect waves-light btn order-now-btn"
+        >Order Now - &#8377;2500</a
+      >
+    </div>
+
+  <!-- --------------------------------------------------footer----------------------------- -->
+  <footer class="footer">
+    <div class="product">
+      <h5>PRODUCTS</h5>
+      <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+      <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+      <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+      <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+      <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+      <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+    </div>
+
+    <div class="learn">
+      <h5>LEARN MORE</h5>
+      <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+      <a href="#"><p>Career Advice</p></a>
+      <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+      <a href="#"><p>FAQs</p></a>
+    </div>
+
+    <div class="company">
+      <h5>COMPANY</h5>
+      <a href="{% url 'about' %}"><p>Overview</p></a>
+      <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+      <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+      <a href="#"><p>Careers</p></a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"> <p> Logout </p></a>
+      {% else %}
+      <a href="{% url 'login' %}"> <p> Login </p></a>
+      {% endif %}
+
+    </div>
+
+    <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+    <div class="branded">
+      <a href="{% url 'home' %}">
+      <img 
+      class="desk_logo" 
+      src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+      alt="Rapidez Writer Logo" 
+      style="margin-bottom: 1.5em" />
+     
+      <!-- Google -->
+      <a 
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-google fa-2x"
+        style="margin-left: 20px; margin-right: 7px"
+        aria-hidden="true"
+      ></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a 
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-linkedin fa-2x"
+        style="margin-left: 20px; margin-right: 7px"
+        aria-hidden="true">
+      </i>
+      </a>
+
+    <!-- Facebook -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-facebook fa-2x" 
+          style="margin-left: 20px; margin-right: 7px"
+          aria-hidden="true">
+        </i>
+        </a>
+
+      <!-- Instagram -->
+      <a 
+        href="https://www.facebook.com/RapidezWriter/" 
+        style="color: #dbe0f2"
+        target="blank">
+        <i 
+        class="fab fa-instagram fa-2x"
+        aria-hidden="true"
+        style="margin-left: 20px; margin-right: 7px">
+      </i>
+      </a>
+
+
+      <!-- Youtube -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-youtube fa-2x" 
+          aria-hidden="true"
+          style="margin-left: 20px; margin-right: 7px">
+        </i>
+        </a>          
+      
+    </div>
+  </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script
+      type="text/javascript"
+      src="{% static '/materialize/js/materialize.min.js' %}"
+    ></script>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script>
+      $(".part1").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat00"),
+        prevArrow: $(".pat0"),
+      });
+    </script>
+    <script>
+      $(".part2").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat2"),
+        prevArrow: $(".pat1"),
+      });
+    </script>
+
+    <script>
+      $(".part3").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat4"),
+        prevArrow: $(".pat3"),
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+
+<script>
+  if($(window).width() <= 480){
+
+// For the sub-menu
+//Services
+$(".services").click(function(){
+$('.rscs').hide();
+$('.cmpy').hide();
+$('.serv').slideToggle('normal');
+$('.serv').css("position", "relative");
+});
+
+//Resources
+$(".resources").click(function(){
+$('.serv').hide();
+$('.cmpy').hide();
+$('.rscs').slideToggle('normal');
+$('.rscs').css("position", "relative");
+});
+
+//Company
+$(".comp").click(function(){
+$('.serv').hide();
+$('.rscs').hide();
+$('.cmpy').slideToggle('normal');
+$('.cmpy').css("position", "relative");
+});
+
+}
+</script>
+
+    <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
+  </body>
+</html>

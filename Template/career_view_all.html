@@ -1,0 +1,486 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- -----------------fontawesome------------------------------ -->
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static '/materialize/css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static '/css/view_all_carrer.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}"
+    />
+
+    <!-- ----------------slick--------------------------- -->
+    <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/slick-1.8.1/slick/slick-theme.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="all-one">
+      <header class="drop">
+        <a href="{% url 'home' %}" class="logo">
+          <!-- <img src="./FINAL-LOGO12.png" alt="" /> -->
+          <h5><span style="color: #0da1ec">Rapidez</span>Writer</h5>
+        </a>
+        <ul>
+          <li><a href="#">Resume Analysis</a></li>
+          <li>
+            <a href="#"
+              >Resume Services
+              <i
+                class="fa fa-chevron-down"
+                style="
+                  font-size: 10px;
+                  position: relative;
+                  bottom: 1px;
+                  opacity: 0.3;
+                "
+                aria-hidden="true"
+              ></i
+            ></a>
+            <ul class="ser1 ser12" style="left: 38%">
+              <div class="box111"></div>
+              <a href="{% url 'resumeWriting' %}"><li>Resume Writing</li></a>
+              <a href="{% url 'resumeMakeover' %}"
+                ><li>Resume template makeover</li></a
+              >
+              <a href="{% url 'linkedIn' %}"
+                ><li>Linkedin profile branding</li></a
+              >
+              <a href="{% url 'resumeVideo' %}"><li>Video Resume Building</li></a>
+              <a href="{% url 'resumeConsulting' %}"><li>Consulting</li></a>
+            </ul>
+          </li>
+          <li class="ser">
+            <a href="#"
+              >About
+              <i
+                class="fa fa-chevron-down"
+                style="
+                  font-size: 10px;
+                  position: relative;
+                  bottom: 1px;
+                  opacity: 0.3;
+                "
+                aria-hidden="true"
+              ></i
+            ></a>
+            <ul class="ser1 ser11" style="left: -30%">
+              <div class="box111"></div>
+              <a href="{% url 'about' %}"><li>About Us</li></a>
+              <a href="#"><li>FAQ</li></a>
+            </ul>
+          </li>
+          <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+          <li><a href="#">Quiz</a></li>
+  
+          <li><a href="{% url 'career_list_page' %}">Career Advice</a></li>    
+  
+          <li><a href="{% url 'contactUs' %}">Contact Us</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="#"
+              >Accounts
+              <i
+                class="fa fa-chevron-down"
+                style="
+                  font-size: 10px;
+                  position: relative;
+                  bottom: 1px;
+                  opacity: 0.3;
+                "
+                aria-hidden="true"
+              ></i
+            ></a>
+            <ul class="ser1 ser12" style="left: 38%">
+              <div class="box111"></div>
+              <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+              <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+              <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+          {% endif %}
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
+
+      <!-- navbar-end -->
+      <div class="m-opt">
+        <div class="opt">
+          <ul>
+            <li class="no-lin">
+              <a href="#"
+                >Topics
+                <i
+                  class="fa fa-chevron-down"
+                  style="
+                    font-size: 10px;
+                    position: relative;
+                    bottom: 1px;
+                    opacity: 0.3;
+                  "
+                  aria-hidden="true"
+                ></i
+              ></a>
+              <ul class="ser1 ser12" style="left: 38%">
+                {% for i in category %}
+                <a href="{% url 'view_category_wise' i.category %}"
+                  ><li>{{i}}</li></a
+                >
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="ser">
+          <div class="mov-r">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <!-- <a href="#"> search </a> -->
+                  <!-- <i class="material-icons"></i> -->
+                  <div class="input-field col s3">
+                    <input id="input_text" type="text" data-length="10" />
+                    <label for="input_text">Search </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="headline">
+        <h3><span>Career Advice: {{filter}} </span></h3>
+      </div>
+    </div>
+    <!-- -------------------------------------------------view all---------------------------------------------- -->
+    <div class="m-head11">
+      <div class="g-img1">
+        {% for i in filter_op %}
+        <div class="part11 ptt">
+          <a href="{% url 'career_detail_page' i.pk %}">
+            {% if i.banner %}
+            <img src="{{ i.banner.url }}" alt="" />
+            {% endif %}
+            <p>{{i.heading}}</p>
+          </a>
+        </div>
+        {% endfor %}
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="g-img1">
+        <div class="part11 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>
+              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
+              Want and Need
+            </p>
+          </a>
+        </div>
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img
+              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
+              alt=""
+            />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="g-img1">
+        <div class="part11 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>
+              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
+              Want and Need
+            </p>
+          </a>
+        </div>
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img
+              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
+              alt=""
+            />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="g-img1">
+        <div class="part11 ptt">
+          <a href="#">
+            <img
+              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
+              alt=""
+            />
+            <p>
+              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
+              Want and Need
+            </p>
+          </a>
+        </div>
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="g-img1">
+        <div class="part11 ptt">
+          <a href="#">
+            <img
+              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
+              alt=""
+            />
+            <p>
+              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
+              Want and Need
+            </p>
+          </a>
+        </div>
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="g-img1">
+        <div class="part11 ptt">
+          <a href="#">
+            <img
+              src="{% static '/image/marvin-meyer-SYTO3xs06fU-unsplash.jpg' %}"
+              alt=""
+            />
+            <p>
+              Stay at Home Mom Returning to Work? 10 Ways to Land the Job You
+              Want and Need
+            </p>
+          </a>
+        </div>
+
+        <div class="part12 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw2.jpg' %}" alt="" />
+            <p>
+              “Will Robots Take My Job?” 4 Marketable Skills AI Can't Take From
+              You
+            </p>
+          </a>
+        </div>
+
+        <div class="part13 ptt">
+          <a href="#">
+            <img src="{% static '/image/rw1.jpg' %}" alt="" />
+            <p>10 Ways to Push Yourself to Think Outside the Box</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------footer----------------------------- -->
+    <!-- -----------------------------------------------------------------footer--------------------------- -->
+
+    <footer class="footer">
+      <div class="product">
+        <h5>PRODUCTS</h5>
+        <a href="#"><p>Resume Analysis</p></a>
+        <a href="{% url 'resumeWriting' %}"><p>Resume Writing</p></a>
+        <a href="{% url 'resumeMakeover' %}"><p>Resume Template Makeover</p></a>
+        <a href="{% url 'linkedIn' %}"><p>Linkedin Profile Branding</p></a>
+        <a href="{% url 'resumeVideo' %}"><p>Video Resume Building</p></a>
+        <a href="{% url 'resumeConsulting' %}"><p>Consulting</p></a>
+      </div>
+
+      <div class="learn">
+        <h5>LEARN MORE</h5>
+        <a href="#"><p>FAQs</p></a>
+        <a href="#"><p>Quiz</p></a>
+        <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+        <a href="#"><p>Carrer Advice</p></a>
+      </div>
+
+      <div class="company">
+        <h5>COMPANY</h5>
+        <a href="#"><p>Careers</p></a>
+        <a href="{% url 'about' %}"><p>About Us</p></a>
+        <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+      </div>
+
+      <div class="branded">
+        <a href="#">
+          <h5 style="color: #fff">
+            <span style="color: #0da1ec">Rapidez</span>Writer
+          </h5>
+
+          <a href="#" style="color: #a7b2d8"
+            ><i class="fa fa-facebook fa-2x" aria-hidden="true"></i
+          ></a>
+          <a href="#" style="color: #a7b2d8">
+            <i
+              class="fa fa-twitter fa-2x"
+              style="margin-left: 20px"
+              aria-hidden="true"
+            ></i
+          ></a>
+          <a href="#" style="color: #a7b2d8">
+            <i
+              class="fa fa-linkedin fa-2x"
+              style="margin-left: 20px; margin-right: 7px"
+              aria-hidden="true"
+            ></i
+          ></a>
+        </a>
+      </div>
+    </footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="{% static '/lightbox2-dev/dist/js/lightbox.js' %}"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static '/materialize/js/materialize.min.js' %}"
+    ></script>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".carousel").carousel();
+      });
+    </script>
+
+    <script>
+      $(".post-wrapper").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".next"),
+        prevArrow: $(".prev"),
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+    </script>
+  </body>
+</html>

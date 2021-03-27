@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: asisbagga@gmail.com
+Date: Sat, 26 Dec 2020 17:13:59 -0000
+Message-ID: 
+ <160900283957.1036.8121199752163783714@JAD0VGBK4W.asiapacific.hpqcorp.net>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/afif5b-1e11ad40cf8b246ec17f90e77f8be97b/
+
+Your username, in case you’ve forgotten: baggaa
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

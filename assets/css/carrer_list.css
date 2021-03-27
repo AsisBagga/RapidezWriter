@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-style: normal;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 40px;
+  z-index: 999;
+  height: 80px;
+  /* overflow: hidden; */
+  /* z-index: 888; */
+}
+header h5 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-weight: 600 !important;
+  font-size: 26px;
+  padding-top: 8px;
+  color: black;
+}
+
+header.sticky h5 {
+  padding-top: 0px;
+  padding-bottom: 4px;
+}
+
+header a {
+  width: 183px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+header.sticky {
+  padding: 5px 40px;
+  background: #fff;
+  height: 50px;
+  align-items: center;
+  z-index: 999;
+  /* color: #333; */
+}
+
+header.sticky a {
+  padding-bottom: 0px;
+}
+
+header.sticky ul li:hover > ul {
+  display: block;
+  /* bottom: -70px; */
+  /* padding: 0px 100px; */
+  /* margin-top: 80px; */
+  background: #fff;
+  /* height: 50px; */
+  align-items: center;
+  z-index: 999;
+  color: #333;
+}
+
+header.sticky ul li:hover > ul a {
+  color: black;
+}
+header.sticky .ser:hover {
+  padding-top: 0px;
+}
+
+header .logo {
+  display: flex;
+  position: relative;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 2px; */
+  transition: 0.6s;
+  width: 290px;
+  /* align-items: center; */
+}
+header .logo img {
+  /* width: 100px; */
+  height: 40px;
+  align-items: center;
+  margin-top: 8px;
+  margin-right: 15px;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+  font-size: 16px;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  /* letter-spacing: 2px; */
+  /* font-weight: 500px; */
+  transition: 0.6s;
+  font-size: 17.5px;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+  color: #333;
+}
+
+/* -----------------------------------------------------Drop-down---------------------------------------- */
+
+.drop ul li {
+  position: relative;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.drop ul ul {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  position: absolute;
+  padding: 0;
+  /* min-width: 300px; */
+  display: none;
+  top: 100%;
+  left: 0%;
+  /* margin-left: -80px; */
+}
+
+.drop ul li:hover > ul {
+  display: block;
+  /* text-align: center; */
+  /* padding: 0 10px; */
+  border-radius: 5px;
+}
+.drop ul li:hover > ul li:hover {
+  background: #d4effc;
+  /* padding: 10px 0; */
+  width: 100%;
+}
+
+.drop ul ul li,
+.drop ul ul a {
+  padding: 5px 0;
+  margin: 0;
+  width: 100%;
+}
+
+.drop ul ul li {
+  padding-left: 25px;
+}
+
+.drop ul ul li:first-child {
+  padding-top: 10px;
+}
+
+.drop ul ul {
+  margin-top: 12px;
+  background: #fff;
+}
+
+.ser1 a li {
+  color: #000;
+}
+
+.drop ul .ser11 {
+  width: 150px;
+}
+
+.drop ul .ser12 {
+  width: 240px;
+  margin-left: -80px;
+}
+.box111 {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  margin-top: -5px;
+  transform: rotate(45deg);
+  margin-left: 45%;
+}
+
+/* ------------------------------------------------------navbar end----------------------------------------- */
+
+/* -----------------------------------------------------after nav bar-------------------------------------- */
+.headline h3 span {
+  color: #0da1ec;
+  font-weight: 600;
+}
+
+.headline {
+  margin-top: 130px;
+  margin-left: 40px;
+}
+
+/* --------------------------------------------------top-read-------------------------------- */
+
+.m-owner {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.owner img {
+  width: 300px;
+}
+
+.owner p {
+  padding: 0 10px;
+  /* padding-right: 70px; */
+  line-height: 30px;
+}
+
+.owner {
+  margin-left: 40px;
+  margin-top: 50px;
+}
+
+.o-p {
+  background: #f8f8f8;
+  width: 300px;
+  height: 250px;
+}
+
+.topread img {
+  width: 233px;
+  height: 155px;
+
+}
+
+.topread {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.topread .ptt {
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.topread p {
+  font-weight: 550;
+  color: #333;
+  padding: 0 20px;
+  margin-top: 5px;
+  margin-left: 15px;
+  /* padding-right: 20px; */
+  text-align: left;
+}
+
+/* -------------------------------------------------------covid-19---------------------------------------------- */
+.m-head11 {
+  background: #f8f8f8;
+  height: 450px;
+}
+
+.head11 {
+  margin-left: 40px;
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.head11 h5 {
+  color: #333;
+  font-weight: 550;
+  font-size: 40px;
+}
+
+.head11 a {
+  color: #333;
+}
+
+.head11 .btn {
+  background: none;
+  border-radius: 10%;
+  /* width: 80px; */
+  /* margin-bottom: 10px; */
+  height: 25px;
+  font-size: 10px;
+  line-height: 25px;
+  border: 1px solid #333;
+  padding: 0 10px;
+  margin-left: 15px;
+}
+
+.head11 .btn:hover {
+  background: #b4b0b0;
+}
+
+.g-img1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.g-img1 img {
+  width: 250px;
+  height: 166px;
+}
+
+.g-img1 .ptt {
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.g-img1 p {
+  font-weight: 550;
+  color: #333;
+  padding: 0 10px;
+  margin-top: 5px;
+  padding: 0 44px;
+  text-align: left;
+}
+
+.pttt1 {
+  background: #fff;
+}
+
+.pttt1 .head11 {
+  margin-left: 40px;
+  padding-top: 50px;
+  margin-top: 0px;
+}
+
+/* .ptt a {
+  text-decoration-thickness: 50px !important;
+}
+
+.ptt p:hover {
+  /* font-size: 20px; */
+  text-decoration-line: underline;
+  text-decoration-color: #0da1ec;
+} */
+
+/* ---------------------------------------------------------------footer---------------------------- */
+/* -------------------------------------------------------footer--------------------------------- */
+
+.footer {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 250px) 1fr;
+  height: 273px;
+  /* margin-top: 80px; */
+  /* border-top: 2px solid #a7b2d8; */
+  padding: 9px 60px;
+  background: #09143b;
+  color: #6275b975;
+  /* margin-top: 40px; */
+  background-image: linear-gradient(
+    174deg,
+    rgba(59, 11, 72, 0) 32%,
+    rgba(59, 11, 72, 0.5)
+  );
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.product,
+.learn,
+.company {
+  margin-left: 50px;
+}
+
+.footer h5 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #a7b2d8;
+}
+
+.footer p {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #a7b2d8;
+}
+
+.footer p:hover {
+  color: #bdc0cc;
+}
+
+.branded h5 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  /* margin-top: 15px; */
+  font-weight: 600;
+  font-size: 34px;
+  /* font-size: 2.1rem; */
+}
+
+.branded {
+  text-align: right;
+  margin-right: 50px;
+}
+.fa-2x {
+  font-size: 1.5rem;
+}
+
+.btn-large {
+  text-transform: none;
+  font-size: 20px;
+  font-weight: 600;
+}

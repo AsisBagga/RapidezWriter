@@ -1,0 +1,19 @@
+
+pip install Pillow, django-ckeditor, django-bootstrap3
+
+turtoise git
+
+category add/delete -Asis done
+
+margins and drop down need to fix, (in all 3 pages.) -Ishnit done
+
+View all fetch per the category and show in view all page. (Tags are categories) -Asis Done
+
+While creating need to provide mutiple select for categories. - done
+CKEditor  -Asis Done 
+Add a Search system(check in contract before starting) -Asis Pending
+Create/Update/delete should be available only for admin logins -Asis available temprorily need to create seprate logins and registrations- Pending
+Career Advise Footer. -Ishnit
+Chat Button on all pages. -Asis done
+Career Advice a-tags on all navbars. -Asis done
+home page 3 px down for What's Preventing You From Your Dream Job? Ishnit Pending

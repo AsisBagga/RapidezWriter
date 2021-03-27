@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you!</title>
+</head>
+<body>
+    <h3>Thank you for uploading your resume. Our experts shall analyse your resume and get in touch with you within 24 hours.</h3>
+    <br>
+    <p><a href="{% url 'resumeAnalysis:resumeAnalysis' %}">Return to Home</a></p>
+    <br><br>
+    
+    {% for data in pretty_data %}
+        {{ data }}
+    {% endfor%}
+</body>
+</html>

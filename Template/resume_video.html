@@ -1,0 +1,430 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- -----------------fontawesome------------------------------ -->
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}"
+    />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static '/materialize/css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static '/css/video-r.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}"
+    />
+
+    <!-- ----------------slick--------------------------- -->
+    <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/slick-1.8.1/slick/slick-theme.css' %}"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="drop">
+
+      <a href="{% url 'home' %}"><img class="desk_logo" src="{% static '/image/homepage_logo_new.png' %}" alt="Rapidez Writer Logo" /></a>
+      <a href="{% url 'home' %}"><img class="mobile_logo" src="{% static '/image/logo-removebg.png' %}" alt="Rapidez Writer Logo" /></a>
+      
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+      <ul class="menu">
+        <li>
+          <a class="services">Services
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 serv" style="left: 38%">
+            <div class="box111"></div>
+            <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
+            <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
+            <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+            <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
+            <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
+            <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
+          </ul>
+        </li>
+
+        <li>
+          <a class="resources">Resources
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 rscs" style="left: 38%">
+            <a href="{% url 'quizes_list' %}"><li>Career Assessment</li></a>            
+            <a href="{% url 'career_list_page' %}"><li>Career Advice</li></a>
+            <a href="{% url 'faq' %}"><li>FAQ</li></a>
+            
+          </ul>
+        </li>
+
+        <li>
+          <a class="comp">Company
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 cmpy" style="left: 38%">
+            <a href="{% url 'about' %}"><li>Overview</li></a>
+            <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
+            <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
+            <a href="#"><li>Careers</li></a>          
+          </ul>
+        </li>
+
+        <li><a href="{% url 'testimonials' %}" class="testimonials">Testimonials</a></li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="#">Accounts
+            <i
+              class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12" style="left: 38%">
+            <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+            <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+          {% if request.user.is_staff %}
+            <a href="{% url 'signup' %}"> <li> Register User </li></a>
+          {% endif %}
+            <a href="{% url 'logout' %}"> <li> Logout </li></a>
+        {% endif %}
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- navbar-end -->
+
+
+<!-- Banner -->
+<div class="update"></div>
+
+<div class="update0">
+  <div class="update1">
+    <!-- <img src="{% static '/image/video_banner.png' %}" alt="" /> -->
+    <video height="540" width="700" autoplay loop muted>
+      <source src="{% static '/video/video_banner.mp4' %}" type="video/mp4">
+    </video>
+  </div>
+  <div class="update1">
+    <h3> <b> Create a rejection-proof video resume </b> to give you the edge over other candidates</h3>
+  </div>
+</div>
+
+    <!-- Tips for video resume -->
+
+    <h3 class="tips-h3">
+      Give yourself an edge with a video resume
+    </h3>
+    <section class="tips">
+      <div class="content">
+        <h5>
+          A video resume can show employers your ability to enhance their company and fit their business culture before they even pick up your paper resume. It also sets you apart from the other candidates who have no video to support their application.
+        </h5>
+        <h5>
+          The best part? <b> 89% of employers </b> say they would watch a video resume. On the other hand, <b> 95% of paper resumes </b> never get read.
+        </h5>
+        <br />
+        <h5>
+          Contact us now to make a stunning video resume for your next job!
+        </h5>
+      </div>
+      <div class="video">
+        <iframe
+          class="card-img-bottom"
+          src="{% static '/video/video-resume.mp4' %}"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+
+    <section class="why-video-resume">
+      <br />
+      <h2>Step off the page with a video resume</h2>
+      <h5>
+        A video resume commands far more attention than a paper resume. Every job candidate sends a paper resume, but you’ll be the only one with a video too. That’ll instantly separate your application from the slush pile and get your foot in the door.
+       <br /> <br>
+        Just like a paper resume, you need to cover the essentials:
+      <span style="font-weight: bold">Education, Experience & Interests </span> </h5>
+    
+      <h4>Build your personal brand with thematic color and motion graphics</h4>
+      <h5>
+        Choose a color scheme and style to create a motion graphic resume that visually represents who you are and builds professional rapport. You can even use a color scheme that matches the colors of the company you’re applying to.
+      </h5>
+      <h5>
+        Rapidez offers built-in color schemes and visuals that polish your video till it shines. It’s like adding your personal logo to your animation resume (we also have animated logos if you want to add one for real).
+      </h5>
+    
+      <h4>Go beyond the selfie video</h4>
+      <h5>
+        Even if all you’ve got is your phone camera, your video resume can be more than a simple selfie video. Add stock footage and background music to create a memorable video resume that’s way cooler than plainly answering questions on camera and gets rapt attention from beginning to end.
+      </h5>
+    </section>
+
+    <!-- Open doors -->
+    <section class="open-doors">
+      <h2>Create a video resume that open doors</h2>
+      <div class="break"></div>
+      <a class="waves-effect waves-light btn btn-large" href="{% url 'contactUs' %}">Make a video resume</a>
+    </section>
+
+ <!-- --------------------------------------------------footer----------------------------- -->
+ <footer class="footer">
+  <div class="product">
+    <h5>PRODUCTS</h5>
+    <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+    <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+    <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+    <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+    <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+    <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+  </div>
+
+  <div class="learn">
+    <h5>LEARN MORE</h5>
+    <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+    <a href="#"><p>Career Advice</p></a>
+    <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+    <a href="#"><p>FAQs</p></a>
+  </div>
+
+  <div class="company">
+    <h5>COMPANY</h5>
+    <a href="{% url 'about' %}"><p>Overview</p></a>
+    <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+    <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+    <a href="#"><p>Careers</p></a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}"> <p> Logout </p></a>
+    {% else %}
+    <a href="{% url 'login' %}"> <p> Login </p></a>
+    {% endif %}
+
+  </div>
+
+  <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+  <div class="branded">
+    <a href="{% url 'home' %}">
+    <img 
+    class="desk_logo" 
+    src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+    alt="Rapidez Writer Logo" 
+    style="margin-bottom: 1.5em" />
+   
+    <!-- Google -->
+    <a 
+    href="https://www.linkedin.com/company/rapidezwriters/" 
+    style="color: #dbe0f2"
+    target="blank">
+    <i
+      class="fab fa-google fa-2x"
+      style="margin-left: 20px; margin-right: 7px"
+      aria-hidden="true"
+    ></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a 
+    href="https://www.linkedin.com/company/rapidezwriters/" 
+    style="color: #dbe0f2"
+    target="blank">
+    <i
+      class="fab fa-linkedin fa-2x"
+      style="margin-left: 20px; margin-right: 7px"
+      aria-hidden="true">
+    </i>
+    </a>
+
+  <!-- Facebook -->
+      <a 
+        href="https://www.facebook.com/RapidezWriter/" 
+        style="color: #dbe0f2"
+        target="blank">
+        <i 
+        class="fab fa-facebook fa-2x" 
+        style="margin-left: 20px; margin-right: 7px"
+        aria-hidden="true">
+      </i>
+      </a>
+
+    <!-- Instagram -->
+    <a 
+      href="https://www.facebook.com/RapidezWriter/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i 
+      class="fab fa-instagram fa-2x"
+      aria-hidden="true"
+      style="margin-left: 20px; margin-right: 7px">
+    </i>
+    </a>
+
+
+    <!-- Youtube -->
+      <a 
+        href="https://www.facebook.com/RapidezWriter/" 
+        style="color: #dbe0f2"
+        target="blank">
+        <i 
+        class="fab fa-youtube fa-2x" 
+        aria-hidden="true"
+        style="margin-left: 20px; margin-right: 7px">
+      </i>
+      </a>          
+    
+  </div>
+</footer>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script
+      type="text/javascript"
+      src="{% static '/materialize/js/materialize.min.js' %}"
+    ></script>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script>
+      $(".part1").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat00"),
+        prevArrow: $(".pat0"),
+      });
+    </script>
+    <script>
+      $(".part2").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat2"),
+        prevArrow: $(".pat1"),
+      });
+    </script>
+
+    <script>
+      $(".part3").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".pat4"),
+        prevArrow: $(".pat3"),
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+    </script>
+
+<script>
+  if($(window).width() <= 480){
+
+// For the sub-menu
+//Services
+$(".services").click(function(){
+$('.rscs').hide();
+$('.cmpy').hide();
+$('.serv').slideToggle('normal');
+$('.serv').css("position", "relative");
+});
+
+//Resources
+$(".resources").click(function(){
+$('.serv').hide();
+$('.cmpy').hide();
+$('.rscs').slideToggle('normal');
+$('.rscs').css("position", "relative");
+});
+
+//Company
+$(".comp").click(function(){
+$('.serv').hide();
+$('.rscs').hide();
+$('.cmpy').slideToggle('normal');
+$('.cmpy').css("position", "relative");
+});
+
+}
+</script>
+<script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
+
+  </body>
+</html>

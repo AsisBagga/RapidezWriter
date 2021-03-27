@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Upload</title>
+
+  <!-- -----------------fontawesome------------------------------ -->
+  <link rel="stylesheet" href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}" />
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href= "{% static '/materialize/css/materialize.min.css' %}" media="screen,projection"/>
+  <link rel="stylesheet" href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}" />
+
+  <!-- ----------------slick--------------------------- -->
+  <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+  <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick-theme.css' %}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <link rel="stylesheet" href="{% static '/css/resume_upload.css' %}">
+</head>
+<body>
+
+  <header class="drop">
+    <a href="Rapidez_Writer_home.html" class="logo">
+      <!-- <img src="./FINAL-LOGO12.png" alt="" /> -->
+      <h5><span style="color: #0da1ec;">Rapidez</span>Writer</h5>
+    </a>
+    <ul>
+      <li><a href="#">Resume Analysis</a></li>
+      <li>
+        <a href="#"
+          >Resume Services
+          <i
+            class="fa fa-chevron-down"
+            style="
+              font-size: 10px;
+              position: relative;
+              bottom: 1px;
+              opacity: 0.3;
+            "
+            aria-hidden="true"
+          ></i
+        ></a>
+        <ul class="ser1 ser12 z-depth-3" style="left: 38%;">
+          <div class="box111"></div>
+          <a href=".\service--resumewrite.html"><li>Resume Writing</li></a>
+          <a href=".\resume-makeover.html"><li>Resume template makeover</li></a>
+          <a href=".\linkedin.html"><li>Linkedin profile branding</li></a>
+          <a href=".\video-resume.html"><li>Video Resume Building</li></a>
+          <a href=".\CONSULTING-resume.html"><li>Consulting</li></a>
+        </ul>
+      </li>
+
+      <li class="ser">
+        <a href="#"
+          >About
+          <i
+            class="fa fa-chevron-down"
+            style="
+              font-size: 10px;
+              position: relative;
+              bottom: 1px;
+              opacity: 0.3;
+            "
+            aria-hidden="true"
+          ></i
+        ></a>
+        <ul class="ser1 ser11 z-depth-3" style="left: -30%;">
+          <div class="box111"></div>
+          <a href=".\about.html"><li>About Us</li></a>
+          <a href="#"><li>FAQ</li></a>
+        </ul>
+      </li>
+      <li><a href=".\Testimonials.html">Testimonials</a></li>
+      <li><a href="#">Quiz</a></li>
+      <li><a href="#">Career Advice</a></li>    
+      <li><a href=".\contact.html">Contact Us</a></li>
+    </ul>
+  </header>
+
+  <div class="upload_form container">
+    <form method='post' enctype='multipart/form-data' class="upload_form">
+        {% csrf_token %}
+
+        <label for="name">Name: </label>
+        {{ form.name }}
+        <br>
+
+        <label for="name">Phone: </label>
+        {{ form.phone }}
+        <br>
+
+        <label for="name">Email: </label>
+        {{ form.email }}
+        <br>
+
+        <label for="name">Resume: </label>
+        <br><br>
+        {{ form.resume }}
+        <br>
+        <br>
+
+        <button class="waves-effect waves-light btn" type="submit">Submit</button> 
+    </form>     
+  </div>
+  
+</body>
+</html>
