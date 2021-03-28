@@ -17,6 +17,8 @@
       rel="stylesheet"
     />
 
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!--Import materialize.css-->
@@ -48,94 +50,115 @@
 
   <body>
     <div class="all-one">
-      <header class="drop">
-        <a href="{% url 'home' %}" class="logo">
-          <!-- <img src="./FINAL-LOGO12.png" alt="" /> -->
-          <h5><span style="color: #0da1ec">Rapidez</span>Writer</h5>
-        </a>
-        <ul>
-          <li><a href="#">Resume Analysis</a></li>
-          <li>
-            <a href="#"
-              >Resume Services
-              <i
-                class="fa fa-chevron-down"
-                style="
-                  font-size: 10px;
-                  position: relative;
-                  bottom: 1px;
-                  opacity: 0.3;
-                "
-                aria-hidden="true"
-              ></i
-            ></a>
-            <ul class="ser1 ser12" style="left: 38%">
-              <div class="box111"></div>
-              <a href="{% url 'resumeWriting' %}"><li>Resume Writing</li></a>
-              <a href="{% url 'resumeMakeover' %}"
-                ><li>Resume template makeover</li></a
-              >
-              <a href="{% url 'linkedIn' %}"
-                ><li>Linkedin profile branding</li></a
-              >
-              <a href="{% url 'resumeVideo' %}"><li>Video Resume Building</li></a>
-              <a href="{% url 'resumeConsulting' %}"><li>Consulting</li></a>
-            </ul>
-          </li>
-          <li class="ser">
-            <a href="#"
-              >About
-              <i
-                class="fa fa-chevron-down"
-                style="
-                  font-size: 10px;
-                  position: relative;
-                  bottom: 1px;
-                  opacity: 0.3;
-                "
-                aria-hidden="true"
-              ></i
-            ></a>
-            <ul class="ser1 ser11" style="left: -30%">
-              <div class="box111"></div>
-              <a href="{% url 'about' %}"><li>About Us</li></a>
-              <a href="#"><li>FAQ</li></a>
-            </ul>
-          </li>
-          <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
-          <li><a href="#">Quiz</a></li>
-  
-          <li><a href="{% url 'career_list_page' %}">Career Advice</a></li>    
-  
-          <li><a href="{% url 'contactUs' %}">Contact Us</a></li>
-          {% if user.is_authenticated %}
-          <li>
-            <a href="#"
-              >Accounts
-              <i
-                class="fa fa-chevron-down"
-                style="
-                  font-size: 10px;
-                  position: relative;
-                  bottom: 1px;
-                  opacity: 0.3;
-                "
-                aria-hidden="true"
-              ></i
-            ></a>
-            <ul class="ser1 ser12" style="left: 38%">
-              <div class="box111"></div>
-              <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
-              <a href="{% url 'add_category' %}"><li>Create Category</li></a>
-              <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
-          {% endif %}
-            </ul>
-          </li>
-        </ul>
-      </header>
-      <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
 
-      <!-- navbar-end -->
+    <!-- Navbar -->
+    <header class="drop">
+
+      <a href="{% url 'home' %}"><img class="desk_logo" src="{% static '/image/homepage_logo_new.png' %}" alt="Rapidez Writer Logo" /></a>
+      <a href="{% url 'home' %}"><img class="mobile_logo" src="{% static '/image/logo-removebg.png' %}" alt="Rapidez Writer Logo" /></a>
+      
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+      <ul class="menu">
+        <li>
+          <a class="services">Services
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 serv" style="left: 38%">
+            <div class="box111"></div>
+            <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
+            <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
+            <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+            <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
+            <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
+            <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
+          </ul>
+        </li>
+
+        <li>
+          <a class="resources">Resources
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 rscs" style="left: 38%">
+            <a href="{% url 'quizes_list' %}"><li>Career Assessment</li></a>            
+            <a href="{% url 'career_list_page' %}"><li>Career Advice</li></a>
+            <a href="{% url 'faq' %}"><li>FAQ</li></a>
+            
+          </ul>
+        </li>
+
+        <li>
+          <a class="comp">Company
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 cmpy" style="left: 38%">
+            <a href="{% url 'about' %}"><li>Overview</li></a>
+            <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
+            <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
+            <a href="#"><li>Careers</li></a>          
+          </ul>
+        </li>
+
+        <li><a href="{% url 'testimonials' %}" class="testimonials">Testimonials</a></li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="#">Accounts
+            <i
+              class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12" style="left: 38%">
+            <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+            <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+          {% if request.user.is_staff %}
+            <a href="{% url 'signup' %}"> <li> Register User </li></a>
+          {% endif %}
+            <a href="{% url 'logout' %}"> <li> Logout </li></a>
+        {% endif %}
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- navbar-end -->
+
+
       <div class="m-opt">
         <div class="opt">
           <ul>
@@ -169,7 +192,7 @@
               <form class="col s12" action="{% url 'search' %}">
                 {% csrf_token %}
                 <div class="row">
-                  <div class="input-field col s3">
+                  <div class="input-field col s3 searchbar">
                     <input id="input_text" name="query"  type="search" />
                     <label for="input_text">Search</label>
                   </div>
@@ -198,7 +221,7 @@
         </div>
         {% endfor %}
 
-        <div class="part12 ptt">
+        <!-- <div class="part12 ptt">
           <a href="#">
             <img src="{% static '/image/rw2.jpg' %}" alt="" />
             <p>
@@ -206,66 +229,117 @@
               You
             </p>
           </a>
-        </div>
+        </div> -->
 
       </div>
     </div>
 
-    <!-- --------------------------------------------------footer----------------------------- -->
-    <!-- -----------------------------------------------------------------footer--------------------------- -->
+ <!-- --------------------------------------------------footer----------------------------- -->
+  <footer class="footer">
+    <div class="product">
+      <h5>PRODUCTS</h5>
+      <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+      <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+      <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+      <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+      <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+      <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+    </div>
 
-    <footer class="footer">
-      <div class="product">
-        <h5>PRODUCTS</h5>
-        <a href="#"><p>Resume Analysis</p></a>
-        <a href="{% url 'resumeWriting' %}"><p>Resume Writing</p></a>
-        <a href="{% url 'resumeMakeover' %}"><p>Resume Template Makeover</p></a>
-        <a href="{% url 'linkedIn' %}"><p>Linkedin Profile Branding</p></a>
-        <a href="{% url 'resumeVideo' %}"><p>Video Resume Building</p></a>
-        <a href="{% url 'resumeConsulting' %}"><p>Consulting</p></a>
-      </div>
+    <div class="learn">
+      <h5>LEARN MORE</h5>
+      <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+      <a href="#"><p>Career Advice</p></a>
+      <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+      <a href="#"><p>FAQs</p></a>
+    </div>
 
-      <div class="learn">
-        <h5>LEARN MORE</h5>
-        <a href="#"><p>FAQs</p></a>
-        <a href="#"><p>Quiz</p></a>
-        <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
-        <a href="#"><p>Carrer Advice</p></a>
-      </div>
+    <div class="company">
+      <h5>COMPANY</h5>
+      <a href="{% url 'about' %}"><p>Overview</p></a>
+      <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+      <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+      <a href="#"><p>Careers</p></a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"> <p> Logout </p></a>
+      {% else %}
+      <a href="{% url 'login' %}"> <p> Login </p></a>
+      {% endif %}
 
-      <div class="company">
-        <h5>COMPANY</h5>
-        <a href="#"><p>Careers</p></a>
-        <a href="{% url 'about' %}"><p>About Us</p></a>
-        <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
-      </div>
+    </div>
 
-      <div class="branded">
-        <a href="#">
-          <h5 style="color: #fff">
-            <span style="color: #0da1ec">Rapidez</span>Writer
-          </h5>
+    <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+    <div class="branded">
+      <a href="{% url 'home' %}">
+      <img 
+      class="desk_logo" 
+      src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+      alt="Rapidez Writer Logo" 
+      style="margin-bottom: 1.5em" />
+     
+      <!-- Google -->
+      <a 
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-google fa-2x"
+        style="margin-left: 20px; margin-right: 7px"
+        aria-hidden="true"
+      ></i>
+      </a>
 
-          <a href="#" style="color: #a7b2d8"
-            ><i class="fa fa-facebook fa-2x" aria-hidden="true"></i
-          ></a>
-          <a href="#" style="color: #a7b2d8">
-            <i
-              class="fa fa-twitter fa-2x"
-              style="margin-left: 20px"
-              aria-hidden="true"
-            ></i
-          ></a>
-          <a href="#" style="color: #a7b2d8">
-            <i
-              class="fa fa-linkedin fa-2x"
-              style="margin-left: 20px; margin-right: 7px"
-              aria-hidden="true"
-            ></i
-          ></a>
+      <!-- LinkedIn -->
+      <a 
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-linkedin fa-2x"
+        style="margin-left: 20px; margin-right: 7px"
+        aria-hidden="true">
+      </i>
+      </a>
+
+    <!-- Facebook -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-facebook fa-2x" 
+          style="margin-left: 20px; margin-right: 7px"
+          aria-hidden="true">
+        </i>
         </a>
-      </div>
-    </footer>
+
+      <!-- Instagram -->
+      <a 
+        href="https://www.facebook.com/RapidezWriter/" 
+        style="color: #dbe0f2"
+        target="blank">
+        <i 
+        class="fab fa-instagram fa-2x"
+        aria-hidden="true"
+        style="margin-left: 20px; margin-right: 7px">
+      </i>
+      </a>
+
+
+      <!-- Youtube -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-youtube fa-2x" 
+          aria-hidden="true"
+          style="margin-left: 20px; margin-right: 7px">
+        </i>
+        </a>          
+      
+    </div>
+  </footer>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
@@ -315,5 +389,37 @@
         $("select").formSelect();
       });
     </script>
+
+<script>
+  if($(window).width() <= 480){
+
+// For the sub-menu
+//Services
+$(".services").click(function(){
+$('.rscs').hide();
+$('.cmpy').hide();
+$('.serv').slideToggle('normal');
+$('.serv').css("position", "relative");
+});
+
+//Resources
+$(".resources").click(function(){
+$('.serv').hide();
+$('.cmpy').hide();
+$('.rscs').slideToggle('normal');
+$('.rscs').css("position", "relative");
+});
+
+//Company
+$(".comp").click(function(){
+$('.serv').hide();
+$('.rscs').hide();
+$('.cmpy').slideToggle('normal');
+$('.cmpy').css("position", "relative");
+});
+
+}
+</script>
+
   </body>
 </html>
