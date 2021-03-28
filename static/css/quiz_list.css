@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: "Muli";
 }
 p,
 li {
@@ -40,8 +40,6 @@ header {
 }
 header h5 {
   font-weight: 600 !important;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-
   font-size: 26px;
   padding-top: 15px;
 }
@@ -54,7 +52,7 @@ header a {
   width: 183px;
   padding-bottom: 20px;
   padding-top: 20px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -68,7 +66,6 @@ header.sticky {
 
 header.sticky a {
   padding-bottom: 0px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   padding-bottom: 20px;
 }
 
@@ -147,12 +144,10 @@ header ul li a {
 
 .drop ul li {
   position: relative;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   cursor: pointer;
 }
 .drop ul ul {
   position: absolute;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   padding: 0;
   display: none;
   top: 100%;
@@ -422,7 +417,6 @@ header ul li a {
   .how-it-works{
     background: #6bbbe4;
     background: linear-gradient(180deg, #8bc7e6 3%, #6bbbe4 25%, #36ace7 73%);
-    font-family: Cabin,sans-serif;
     margin-top: 0 !important;
   }
   
@@ -566,7 +560,6 @@ header ul li a {
   
   /* -------------------------------------------------------footer--------------------------------- */
 .footer {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 250px) 1fr;
   height: 273px;
@@ -591,14 +584,12 @@ header ul li a {
 }
 
 .footer h5 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: #a7b2d8;
 }
 
 .footer p {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 5px;
@@ -610,7 +601,6 @@ header ul li a {
 }
 
 .branded h5 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: 600;
   font-size: 34px;
 }
@@ -626,7 +616,215 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 30%;
-  width: 62%;
-  margin-right: -6em;
+  height: 45%;
+  width: 58%;
+  margin-right: -20em;
+}
+
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+
+/* Header */
+
+header{
+  position: fixed;
+}
+
+header.sticky{
+  height: 125px;
+}
+
+.drop{
+  display: block;
+  z-index: 1;
+  user-select: none;
+  padding: 0;
+  width: 100vw;
+  height: 125px;
+  background: #fff;
+}
+
+.drop .desk_logo{
+  display: none;
+}
+
+.drop .mobile_logo{
+  display: block;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  width: 6em;
+  height: 115px;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+  display: block;
+}
+
+header ul li{
+  margin: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.drop ul ul li {
+  padding-left: 0px;
+}
+
+
+/* menu */
+
+.drop .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+/* menu icon */
+
+.drop .menu-icon {
+  cursor: pointer;
+  display: block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  margin-top: -7.5em;
+  margin-right: 1em;
+}
+
+.drop .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.drop .menu-icon .navicon:before,
+.drop .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.drop .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.drop .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.drop .menu-btn {
+  display: none;
+}
+
+.drop .menu-btn:checked ~ .menu {
+  max-height: 350px;
+}
+
+.drop .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.drop .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.drop .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.drop .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.drop .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.drop ul li:hover > ul {
+  display: none;
+}
+
+
+.services{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.resources{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.comp{
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-right: 14%; */
+}
+
+.testimonials{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* footer */
+
+.footer{
+  display: block;
+  background: #09143b;
+  height: auto;
+  padding: 0;
+}
+
+.footer p{
+  color: #dbe0f2;
+}
+
+.product, .learn, .company {
+  margin: 3em;
+}
+
+.product h5{
+  padding-top: 3em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #a7b2d8;
+}
+
+.learn h5{
+  padding-bottom: 1em;
+  border-bottom: 1px solid #a7b2d8;
+}
+
+.company h5{
+  padding-bottom: 1em;
+  border-bottom: 1px solid #a7b2d8;
+}
+
+.branded {
+  text-align: center;
+  padding-bottom: 3em;
+  margin-right: 2em;
+}
+
+.footer .desk_logo{
+  width: 100%;
+  padding-left: 1em;
+  margin-right: 0;
+  margin-bottom: 0 !important;
+}
+
+/* footer ends */
+
 }
