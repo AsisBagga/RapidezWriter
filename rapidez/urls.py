@@ -28,8 +28,6 @@ urlpatterns = [
 
     path('signup/', views.signup, name='signup'),
     path('accounts/',include('django.contrib.auth.urls')),
-
-
     #Service Pages
     path('resumeAnalysis/', include('resumeAnalysis.urls')),
     path('Resume-Consulting', views.resume_consulting, name="resumeConsulting"),
@@ -46,7 +44,13 @@ urlpatterns = [
     # About Pages
     path('About', views.about, name="about"),
     path('Contact-Us', views.contact_us, name="contactUs"),
+    path('search/', views.search, name="search"),
+
+    #FAQ
     path('FAQ', views.faq, name="faq"),
+    path('addFAQ/', views.addFAQ, name="addFAQ"),
+    path('updateFAQ/<int:pk>', views.updateFAQ, name="updateFAQ"),
+    path('deleteFAQ/<int:pk>', views.deleteFAQ, name="deleteFAQ"),
 
     #Testimonials
     path('Testimonials', views.testimonials, name="testimonials"),
@@ -80,8 +84,13 @@ urlpatterns = [
     path('payment_status/', views.payment_status, name='payment_status'),
     # path('payment_success/', views.payment_success, name='payment_success'),
 
-    # Career Page
-    path('career/', views.career_page, name="career_page"),
+    # Job Page
+    path('Jobs/', views.job_page, name="job_page"),
+    path('CreateJob/', views.addJob, name="addJob"),
+    path('updateJob/<int:pk>', views.updateJob, name="updateJob"),
+    path('deleteJob/<int:pk>', views.deleteJob, name="deleteJob"),
+    path('SubmitApplication/<int:pk>', views.submitJob, name="submitJob")
+
 ]
 
 if settings.DEBUG:

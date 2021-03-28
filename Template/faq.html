@@ -140,6 +140,7 @@
           <ul class="ser1 ser12" style="left: 38%">
             <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
             <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'addFAQ' %}"><li>Create FAQ</li></a>
             <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
           {% if request.user.is_staff %}
             <a href="{% url 'signup' %}"> <li> Register User </li></a>
@@ -154,184 +155,126 @@
 
 
     <!-- ------------------------------------------------------faq update------------------------------ -->
-    <div class="faq0">
+  <div class="faq0">
         <h2>Frequently Asked Questions</h2>
         <div class="container mycontainer" >
             <h5> Questions? Here's some info that just might help.</h5>
         </div>
-      </div>
-
-    <div class="Ourcontainer container">
+  </div>
+  <div class="Ourcontainer container">
         <div class="heading inline">
-            <h4 style="font-weight: 600; color: #858282;">Heading FAQ</h4>
+            <h4 style="font-weight: 600; color: #858282;">Top Seven</h4>
         </div>
     <div class="faq1 inline">
       <ul class="collapsible expandable" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
+        {% for i in objects %}
+        {% if i.category == 'TopSeven' %}
         <li>
           <div class="collapsible-header">
-            <h6>What does TopResume do?</h6>
+            <h6>{{ i.heading }}</h6>
           </div>
           <div class="collapsible-body">
-            <span
-              >Rapidez Writer is the world’s largest resume-writing service. Our
-              team of experts have reviewed millions of resumes and helped over
-              300,000 professionals land more interviews and get hired faster.
-              We are committed to helping professionals identify and best
-              articulate their personal brands. We offer resume-writing services
-              and expert career advice that helps our clients stand out in
-              today’s crowded job market.</span
-            >
+            <span>
+            {{ i.description |safe}} 
+            {% if user.is_authenticated %}
+            <a style="text-decoration: none;" href="{% url 'updateFAQ' i.pk %}"> UPDATE </a> |
+            <a style="text-decoration: none;" href="{% url 'deleteFAQ' i.pk %}"> DELETE </a>
+            {% endif %}
+            </span>
           </div>
         </li>
-        <li>
-          <div class="collapsible-header">
-            <h6>What’s Rapidez writers relationship with job boards?</h6>
-          </div>
-          <div class="collapsible-body">
-            <span
-              >We are the preferred resume-writing partners for many major and
-              niche job boards, thanks to our history of client satisfaction and
-              success. Our focus is on the job seeker. We hone our strategies
-              based on recruiter, hiring manager and other industry feedback,
-              ensuring that each job seeker has the best resume for their job
-              search.</span
-            >
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <h6>What do your customers and clients have to say?</h6>
-          </div>
-          <div class="collapsible-body">
-            <span
-              >You can find testimonials from real Rapidez Writer customers
-              here, as well as recent Rapidez Writer clients on TrustPilot and
-              SiteJabber.</span
-            >
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <h6>
-              Does every job seeker need professional resume-writing services?
-            </h6>
-          </div>
-          <div class="collapsible-body">
-            <span
-              >No, not everyone needs professional help with their resume.
-              That’s why our resume experts will review your resume; to
-              determine whether it’s formatted correctly and successfully
-              showcases your skills. If your resume is already in good shape, we
-              will be sure to let you know!</span
-            >
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <h6>
-              Does Rapidez Writer provide resume writing for specialized fields?
-            </h6>
-          </div>
-          <div class="collapsible-body">
-            <span
-              >Yes, our expert writers are certified in over 65 industries,
-              including writing specialized resumes for the military, federal,
-              and academic sectors. They’re well-versed in current best
-              practices and are able to translate experience from one industry
-              to another.</span
-            >
-          </div>
-        </li>
+          {% endif %}
+          {% endfor %}
       </ul>
     </div>
-</div>
+  </div>
+<br>
+  <div class="Ourcontainer container">
+    <div class="heading inline">
+        <h4 style="font-weight: 600; color: #858282;">CategoryOne</h4>
+    </div>
+  <div class="faq1 inline">
+  <ul class="collapsible expandable collapsible1 expandable1" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
+    {% for i in objects %}
+    {% if i.category == 'CategoryOne' %}
+    <li>
+      <div class="collapsible-header">
+        <h6>{{ i.heading }}</h6>
+      </div>
+      <div class="collapsible-body">
+        <span>
+        {{ i.description |safe}}
+        {% if user.is_authenticated %}
+        <a style="text-decoration: none;" href="{% url 'updateFAQ' i.pk %}"> UPDATE </a> |
+        <a style="text-decoration: none;" href="{% url 'deleteFAQ' i.pk %}"> DELETE </a>
+        {% endif %}
+        </span>
+      </div>
+    </li>
+      {% endif %}
+      {% endfor %}
+  </ul>
+  </div>
+  </div>
 <br>
 <div class="Ourcontainer container">
-    <div class="heading inline">
-        <h4 style="font-weight: 600; color: #858282;">Heading FAQ</h4>
-    </div>
+  <div class="heading inline">
+      <h4 style="font-weight: 600; color: #858282;">CategoryTwo</h4>
+  </div>
 <div class="faq1 inline">
-  <ul class="collapsible expandable collapsible1 expandable1" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
-    <li>
-      <div class="collapsible-header">
-        <h6>What does TopResume do?</h6>
-      </div>
-      <div class="collapsible-body">
-        <span
-          >Rapidez Writer is the world’s largest resume-writing service. Our
-          team of experts have reviewed millions of resumes and helped over
-          300,000 professionals land more interviews and get hired faster.
-          We are committed to helping professionals identify and best
-          articulate their personal brands. We offer resume-writing services
-          and expert career advice that helps our clients stand out in
-          today’s crowded job market.</span
-        >
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <h6>What’s Rapidez writers relationship with job boards?</h6>
-      </div>
-      <div class="collapsible-body">
-        <span
-          >We are the preferred resume-writing partners for many major and
-          niche job boards, thanks to our history of client satisfaction and
-          success. Our focus is on the job seeker. We hone our strategies
-          based on recruiter, hiring manager and other industry feedback,
-          ensuring that each job seeker has the best resume for their job
-          search.</span
-        >
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <h6>What do your customers and clients have to say?</h6>
-      </div>
-      <div class="collapsible-body">
-        <span
-          >You can find testimonials from real Rapidez Writer customers
-          here, as well as recent Rapidez Writer clients on TrustPilot and
-          SiteJabber.</span
-        >
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <h6>
-          Does every job seeker need professional resume-writing services?
-        </h6>
-      </div>
-      <div class="collapsible-body">
-        <span
-          >No, not everyone needs professional help with their resume.
-          That’s why our resume experts will review your resume; to
-          determine whether it’s formatted correctly and successfully
-          showcases your skills. If your resume is already in good shape, we
-          will be sure to let you know!</span
-        >
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <h6>
-          Does Rapidez Writer provide resume writing for specialized fields?
-        </h6>
-      </div>
-      <div class="collapsible-body">
-        <span
-          >Yes, our expert writers are certified in over 65 industries,
-          including writing specialized resumes for the military, federal,
-          and academic sectors. They’re well-versed in current best
-          practices and are able to translate experience from one industry
-          to another.</span
-        >
-      </div>
-    </li>
+<ul class="collapsible expandable collapsible2 expandable2" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
+  {% for i in objects %}
+  {% if i.category == 'CategoryTwo' %}
+  <li>
+    <div class="collapsible-header">
+      <h6>{{ i.heading }}</h6>
+    </div>
+    <div class="collapsible-body">
+      <span>
+      {{ i.description |safe}}
+      {% if user.is_authenticated %}
+      <a style="text-decoration: none;" href="{% url 'updateFAQ' i.pk %}"> UPDATE </a> |
+      <a style="text-decoration: none;" href="{% url 'deleteFAQ' i.pk %}"> DELETE </a>
+      {% endif %}
+      </span>
+    </div>
+  </li>
+    {% endif %}
+    {% endfor %}
   </ul>
-</div>
-</div>
+  </div>
+  </div>
+  <br>
+  <div class="Ourcontainer container">
+    <div class="heading inline">
+        <h4 style="font-weight: 600; color: #858282;">CategoryThree</h4>
+    </div>
+  <div class="faq1 inline">
+  <ul class="collapsible expandable collapsible3 expandable3" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
+    {% for i in objects %}
+    {% if i.category == 'CategoryThree' %}
+    <li>
+      <div class="collapsible-header">
+        <h6>{{ i.heading }}</h6>
+      </div>
+      <div class="collapsible-body">
+        <span>
+        {{ i.description |safe}}
+        {% if user.is_authenticated %}
+        <a style="text-decoration: none;" href="{% url 'updateFAQ' i.pk %}"> UPDATE </a> |
+        <a style="text-decoration: none;" href="{% url 'deleteFAQ' i.pk %}"> DELETE </a>
+        {% endif %}
+        </span>
+      </div>
+    </li>
+      {% endif %}
+      {% endfor %}
+  </ul>
+  </div>
+  </div>
+ <br>
 
-    <!-- --------------------------------------------------footer----------------------------- -->
+<!-- --------------------------------------------------footer----------------------------- -->
     <footer class="footer">
       <div class="product">
         <h5>PRODUCTS</h5>
@@ -421,6 +364,14 @@
         accordion: false,
       });
       var elem = document.querySelector(".collapsible1.expandable1");
+      var instance = M.Collapsible.init(elem, {
+        accordion: false,
+      });
+      var elem = document.querySelector(".collapsible2.expandable2");
+      var instance = M.Collapsible.init(elem, {
+        accordion: false,
+      });
+      var elem = document.querySelector(".collapsible3.expandable");
       var instance = M.Collapsible.init(elem, {
         accordion: false,
       });

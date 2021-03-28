@@ -1,5 +1,5 @@
 from django import forms
-from .models import Database, Category, Testimonials
+from .models import Database, Category, Testimonials, FAQ, Job, SubmitJob
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -29,3 +29,18 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
+
+class FAQForm(forms.ModelForm):
+    class Meta:
+        model=FAQ
+        fields = '__all__'
+    
+class JobForm(forms.ModelForm):
+    class Meta:
+        model=Job
+        fields = '__all__'
+
+class SubmitJobForm(forms.ModelForm):
+    class Meta:
+        model=SubmitJob
+        fields = ('name', 'email', 'phone', 'resume') 
