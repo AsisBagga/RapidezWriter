@@ -166,12 +166,12 @@
   </div>
   <div class="Ourcontainer container">
         <div class="heading inline">
-            <h4 style="font-weight: 600; color: #858282;">Top Seven</h4>
+            <h4 style="font-weight: 600; color: #858282;">About Rapidez Writer</h4>
         </div>
     <div class="faq1 inline">
       <ul class="collapsible expandable" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
         {% for i in objects %}
-        {% if i.category == 'TopSeven' %}
+        {% if i.category == 'About Us' %}
         <li>
           <div class="collapsible-header">
             <h6>{{ i.heading }}</h6>
@@ -194,12 +194,13 @@
 <br>
   <div class="Ourcontainer container">
     <div class="heading inline">
-        <h4 style="font-weight: 600; color: #858282;">CategoryOne</h4>
+        <h4 style="font-weight: 600; color: #858282;">About Our Services
+        </h4>
     </div>
   <div class="faq1 inline">
   <ul class="collapsible expandable collapsible1 expandable1" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
     {% for i in objects %}
-    {% if i.category == 'CategoryOne' %}
+    {% if i.category == 'About Our Services' %}
     <li>
       <div class="collapsible-header">
         <h6>{{ i.heading }}</h6>
@@ -222,12 +223,12 @@
 <br>
 <div class="Ourcontainer container">
   <div class="heading inline">
-      <h4 style="font-weight: 600; color: #858282;">CategoryTwo</h4>
+      <h4 style="font-weight: 600; color: #858282;">About Our Writers      </h4>
   </div>
 <div class="faq1 inline">
 <ul class="collapsible expandable collapsible2 expandable2" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
   {% for i in objects %}
-  {% if i.category == 'CategoryTwo' %}
+  {% if i.category == 'About Our Writers' %}
   <li>
     <div class="collapsible-header">
       <h6>{{ i.heading }}</h6>
@@ -250,12 +251,12 @@
   <br>
   <div class="Ourcontainer container">
     <div class="heading inline">
-        <h4 style="font-weight: 600; color: #858282;">CategoryThree</h4>
+        <h4 style="font-weight: 600; color: #858282;">Help & Support        </h4>
     </div>
   <div class="faq1 inline">
   <ul class="collapsible expandable collapsible3 expandable3" style="box-shadow: none!important; -webkit-box-shadow: none!important; border: none;">
     {% for i in objects %}
-    {% if i.category == 'CategoryThree' %}
+    {% if i.category == 'Help & Support' %}
     <li>
       <div class="collapsible-header">
         <h6>{{ i.heading }}</h6>

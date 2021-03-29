@@ -169,21 +169,18 @@
       <div class="m-owner">
         <div class="owner">
           <img
-            src="{% static '/image/morten-pedersen-Z-bgD8pMv30-unsplash (1).jpg' %}"
+            src="{% static '/image/prashanth.jpg' %}"
             alt=""
           />
           <div class="o-p">
-            <p>
-              Hi, I'm Adam , career advice expert for Resume Writing. I'm a
-              certified professional career coach and resume writer who is
-              passionate about helping job seekers find careers they love,
-              faster. Check out my top reads for the week.
-            </p>
+            <p>Talent leader with 15 years of experience in building and scaling businesses through strategic business operations, 
+              talent acquisition, HR transformation, marketing and branding.
+              </p>
           </div>
         </div>
         <div class="topread">
           {% for i in all_objects %}
-          
+          {% if forloop.counter < 6 %}
           <div class="part1 ptt">
             <a href="{% url 'career_detail_page' i.pk %}">
               {% if i.banner %}
@@ -193,244 +190,74 @@
               </p>
             </a>
           </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>
     </div>
+    {% for key, value in test.items %}
+      {% if forloop.counter|divisibleby:"2" == 0  %}
+      <div class="m-head11">
+        <div class="all-m">
+          <div class="head11">
+            <a href="#"
+              ><h5>
+                {{ key }}
+                <a
+                  href="{% url 'career_view_all_page' %}"
+                  class="waves-effect waves-light btn"
+                  >View all</a
+                >
+              </h5></a
+            >
+          </div>
 
-    <!-- -----------------------------------------------------COVID 19--------------------------------- -->
-    <div class="m-head11">
+          <div class="g-img1">
+            {% for i in value %}
+                    <div class="part11 ptt">
+                      {% if i.banner %}
+                      <a href="{% url 'career_detail_page' i.pk %}">
+                        <img src="{{ i.banner.url }}" alt="" />
+                      {% endif %}
+                      <p>{{i.heading}}</p>
+                      </a>
+                    </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% else %}
       <div class="all-m">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              COVID 19
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- ------------------------------------------------------Resume and Cover Letter----------------------- -->
-
-    <div class="all-m">
-      <div class="m-head11 pttt1">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Resume and Cover Letter
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-
-      </div>
-    </div>
-
-    <!-- -----------------------------------------------------Interview--------------------------------------------- -->
-
-    <div class="m-head11">
-      <div class="all-m">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Interview
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
+        <div class="m-head11 pttt1">
+          <div class="head11">
+            <a href="#"
+              ><h5>
+                {{ key }}
+                <a
+                  href="{% url 'career_view_all_page' %}"
+                  class="waves-effect waves-light btn"
+                  >View all</a
+                >
+              </h5></a
+            >
+          </div>
+  
+          <div class="g-img1">
+            {% for i in value %}
+                    <div class="part11 ptt">
+                      {% if i.banner %}
+                      <a href="{% url 'career_detail_page' i.pk %}">
+                        <img src="{{ i.banner.url }}" alt="" />
+                      {% endif %}
+                      <p>{{i.heading}}</p>
+                      </a>
+                    </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- --------------------------------------------------Personal Branding------------------------------ -->
-    <div class="all-m">
-      <div class="m-head11 pttt1">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Personal Branding
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- ------------------------------------------------------Networking--------------------------------------- -->
-    <div class="m-head11">
-      <div class="all-m">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Networking
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- ------------------------------------------------Getting Ahead--------------------------------------------- -->
-    <div class="all-m">
-      <div class="m-head11 pttt1">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Getting Ahead
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- ----------------------------------------------------Workplace--------------------------------------------- -->
-
-    <div class="m-head11">
-      <div class="all-m">
-        <div class="head11">
-          <a href="#"
-            ><h5>
-              Workplace
-              <a
-                href="{% url 'career_view_all_page' %}"
-                class="waves-effect waves-light btn"
-                >View all</a
-              >
-            </h5></a
-          >
-        </div>
-
-        <div class="g-img1">
-          {% for i in all_objects %}
-                {% if 'test_category_two' == 'test_category_two' %}
-                  <div class="part11 ptt">
-                    {% if i.banner %}
-                    <a href="{% url 'career_detail_page' i.pk %}">
-                      <img src="{{ i.banner.url }}" alt="" />
-                    {% endif %}
-                    <p>{{i.heading}}</p>
-                    </a>
-                  </div>
-                  {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+      {% endif %}
+    {% endfor %}
 
  <!-- --------------------------------------------------footer----------------------------- -->
  <footer class="footer">

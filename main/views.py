@@ -44,13 +44,14 @@ def contact_us(request):
     if request.method == "POST":
         name = request.POST.get('name')
         services = request.POST.getlist('services')
+        phone = request.POST.get('phone')
         query = request.POST.get('query')
         email = request.POST.get('email')
         print("Details: ", name, query, email, services)
         email_from = settings.EMAIL_HOST_USER
         email_to = 'bharath.nr1@gmail.com'
         email_admin = settings.EMAIL_ADMIN
-        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query
+        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
@@ -97,17 +98,42 @@ def deleteFAQ(request, pk):
 
 # Service Pages
 def resume_consulting(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        services = request.POST.getlist('services')
+        phone = request.POST.get('phone')
+        query = request.POST.get('query')
+        email = request.POST.get('email')
+        print("Details: ", name, query, email, services)
+        email_from = settings.EMAIL_HOST_USER
+        email_to = 'bharath.nr1@gmail.com'
+        email_admin = settings.EMAIL_ADMIN
+        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
+        isSuccess = send_mail(
+            'Customer Contact',
+            text_content,
+            email_admin,
+            [email_to],
+            fail_silently=False,
+        )
+        isSuccess.send()
+        print("Email sent : ", isSuccess)
     return render(request,"resume_consulting.html")
 def resume_writing(request):
-    return render(request,"resume_writing.html")
+    faq = FAQ.objects.filter(category='Help & Support')
+    return render(request,"resume_writing.html", {'faqs':faq})
 def resume_makeover(request):
-    return render(request,"resume_makeover.html")
+    faq = FAQ.objects.filter(category='Help & Support')
+    return render(request,"resume_makeover.html", {'faqs':faq})
 def resume_makeover_1(request):
-    return render(request,"resume_makeover1.html")
+    faq = FAQ.objects.filter(category='Help & Support')
+    return render(request,"resume_makeover1.html", {'faqs':faq})
 def resume_makeover_2(request):
-    return render(request,"resume_makeover2.html")
+    faq = FAQ.objects.filter(category='Help & Support')
+    return render(request,"resume_makeover2.html", {'faqs':faq})
 def resume_makeover_3(request):
-    return render(request,"resumeMakeover3.html")
+    faq = FAQ.objects.filter(category='Help & Support')
+    return render(request,"resumeMakeover3.html", {'faqs':faq})
 def resume_video(request):
     return render(request,"resume_video.html")
 def linkedin(request):
@@ -131,7 +157,11 @@ def create_blog(request):
 # Blog Listings
 def career_list_page(request):
     all_objects = Database.objects.all()
-    return render(request, 'career_list.html', {"all_objects": all_objects})
+    category = Category.objects.all()
+    test = dict()
+    for i in category:
+        test[i] = Database.objects.filter( category=i )
+    return render(request, 'career_list.html', {"all_objects": all_objects, "test": test})
 # Blog Page details
 def career_detail_page(request, pk):
     category = Category.objects.all()
