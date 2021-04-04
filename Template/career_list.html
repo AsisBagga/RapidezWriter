@@ -432,113 +432,130 @@
       </div>
     </div>
 
- <!-- --------------------------------------------------footer----------------------------- -->
- <footer class="footer">
-  <div class="product">
-    <h5>PRODUCTS</h5>
-    <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
-    <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
-    <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
-    <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
-    <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
-    <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
-  </div>
+   <!-- --------------------------------------------------footer----------------------------- -->
+   <footer class="footer">
+    <div class="product">
+      <h5>PRODUCTS</h5>
+      <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+      <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+      <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+      <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+      <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+      <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+    </div>
 
-  <div class="learn">
-    <h5>LEARN MORE</h5>
-    <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
-    <a href="#"><p>Career Advice</p></a>
-    <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
-    <a href="#"><p>FAQs</p></a>
-  </div>
+    <div class="learn">
+      <h5>LEARN MORE</h5>
+      <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+      <a href="#"><p>Career Advice</p></a>
+      <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+      <a href="#"><p>FAQs</p></a>
+    </div>
 
-  <div class="company">
-    <h5>COMPANY</h5>
-    <a href="{% url 'about' %}"><p>Overview</p></a>
-    <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
-    <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
-    <a href="#"><p>Careers</p></a>
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}"> <p> Logout </p></a>
-    {% else %}
-    <a href="{% url 'login' %}"> <p> Login </p></a>
-    {% endif %}
+    <div class="company">
+      <h5>COMPANY</h5>
+      <a href="{% url 'about' %}"><p>Overview</p></a>
+      <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+      <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+      <a href="#"><p>Careers</p></a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"> <p> Logout </p></a>
+      {% else %}
+      <a href="{% url 'login' %}"> <p> Login </p></a>
+      {% endif %}
+    </div>
 
-  </div>
-
-  <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
-  <div class="branded">
-    <a href="{% url 'home' %}">
-    <img 
-    class="desk_logo" 
-    src="{% static '/image/homepage_logo_small-removebg.png' %}" 
-    alt="Rapidez Writer Logo" 
-    style="margin-bottom: 1.5em" />
-   
-    <!-- Google -->
-    <a 
-    href="https://www.linkedin.com/company/rapidezwriters/" 
-    style="color: #dbe0f2"
-    target="blank">
-    <i
-      class="fab fa-google fa-2x"
-      style="margin-left: 20px; margin-right: 7px"
-      aria-hidden="true"
-    ></i>
-    </a>
-
-    <!-- LinkedIn -->
-    <a 
-    href="https://www.linkedin.com/company/rapidezwriters/" 
-    style="color: #dbe0f2"
-    target="blank">
-    <i
-      class="fab fa-linkedin fa-2x"
-      style="margin-left: 20px; margin-right: 7px"
-      aria-hidden="true">
-    </i>
-    </a>
-
-  <!-- Facebook -->
+    <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+    <!-- style="margin-bottom: 1.5em" -->
+    <div class="branded">
+      <a href="{% url 'home' %}">
+      <img 
+      class="desk_logo" 
+      src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+      alt="Rapidez Writer Logo" 
+       />
+     
+      <ul class="socialmedia-icons">
+      
+      <li>
+      <!-- Google -->
+      <!-- style="margin-left: 20px; margin-right: 7px" -->
       <a 
-        href="https://www.facebook.com/RapidezWriter/" 
-        style="color: #dbe0f2"
-        target="blank">
-        <i 
-        class="fab fa-facebook fa-2x" 
-        style="margin-left: 20px; margin-right: 7px"
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-google fa-2x"
+        
+        aria-hidden="true"
+      ></i>
+      </a>
+      </li>
+
+      <li>
+      <!-- LinkedIn -->
+      <!--         style="margin-left: 20px; margin-right: 7px" -->
+      <a 
+      href="https://www.linkedin.com/company/rapidezwriters/" 
+      style="color: #dbe0f2"
+      target="blank">
+      <i
+        class="fab fa-linkedin fa-2x"
         aria-hidden="true">
       </i>
       </a>
+      </li>
 
-    <!-- Instagram -->
-    <a 
-      href="https://www.facebook.com/RapidezWriter/" 
-      style="color: #dbe0f2"
-      target="blank">
-      <i 
-      class="fab fa-instagram fa-2x"
-      aria-hidden="true"
-      style="margin-left: 20px; margin-right: 7px">
-    </i>
-    </a>
+      <li>
+    <!-- Facebook -->
+    <!-- style="margin-left: 20px; margin-right: 7px" -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-facebook fa-2x" 
+          
+          aria-hidden="true">
+        </i>
+        </a>
+      </li>
 
-
-    <!-- Youtube -->
+      <li>
+      <!-- Instagram -->
+      <!-- style="margin-left: 20px; margin-right: 7px" -->
       <a 
         href="https://www.facebook.com/RapidezWriter/" 
         style="color: #dbe0f2"
         target="blank">
         <i 
-        class="fab fa-youtube fa-2x" 
+        class="fab fa-instagram fa-2x"
         aria-hidden="true"
-        style="margin-left: 20px; margin-right: 7px">
+        
+        >
       </i>
-      </a>          
-    
-  </div>
-</footer>
+      </a>
+      </li>
 
+      <li>
+      <!-- Youtube -->
+      <!--           style="margin-left: 20px; margin-right: 7px" -->
+        <a 
+          href="https://www.facebook.com/RapidezWriter/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-youtube fa-2x" 
+          aria-hidden="true"
+
+          >
+        </i>
+        </a>
+      </li>   
+      
+      </ul>
+    </div>
+  </footer>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="http://code.jquery.com/jquery-3.5.1.js"></script>

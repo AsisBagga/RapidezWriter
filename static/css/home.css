@@ -1017,9 +1017,19 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 45%;
-  width: 58%;
-  margin-right: -20em;
+  height: 6.5rem;
+  width: auto;
+}
+
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
+
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
 }
 
 
@@ -1274,12 +1284,12 @@ header ul li{
 }
 
 .aboutus-desc h3{
-  text-align: justify !important;
+  text-align: center !important;
   margin-right: -1em;
 }
 
 .aboutus-desc h5{
-  text-align: center !important;
+  text-align: justify !important;
   margin-right: 0em;
   margin-top: 0em;
 }
@@ -1304,6 +1314,8 @@ header ul li{
   column-gap: 0;
   grid-row-gap: 1.5em;
   margin-left: 0;
+  padding: 2em;
+  text-align: center;
 }
 
 .image1212 img{
@@ -1355,7 +1367,7 @@ header ul li{
 /* How it works */
 
 .fwwsa{
-  margin-top: 37.5em;
+  margin-top: 42.5em;
   background: linear-gradient(to right,#303D46,#1EAEDB);
   text-align: center;
   padding: 0;
@@ -1381,7 +1393,7 @@ header ul li{
 }
 
 .hiw-contact-btn{
-  width: 60%;
+  width: auto;
   margin-top: -4em;
 }
 

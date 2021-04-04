@@ -208,7 +208,7 @@ header ul li a {
 /* <!-- ---------------------------------------------------main head--------------------------------------- --> */
 .m-head .m-back {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-color: #09143b;
   margin-top: 80px;
 }
@@ -232,7 +232,7 @@ header ul li a {
   line-height: 35px;
 }
 
-.order-now-btn{
+.order-now-btn {
   border-radius: 2em;
   height: 50px;
   padding-top: 5px;
@@ -240,10 +240,11 @@ header ul li a {
   text-transform: none;
   background: #0da1ec;
   margin-top: 30px;
-  width: 25%;
-  margin-left: 37%;
+  width: auto;
   font-size: 20px;
   font-weight: 600;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
 .order-now-btn:hover{
@@ -336,34 +337,30 @@ header ul li a {
 }
 
 .p1 h5 {
-  /* opacity: 0.5; */
   color: #8992a4;
   font-size: 20px;
 }
 
 .p1 h5 span {
   color: black;
-  /* font-weight: bold; */
 }
 
 /* <!-- ----------------------------------------------mobile-type-------------------------------------- --> */
 
 .m-mobile {
-  /* height: 750px; */
   height: auto;
   padding: 0px 6%;
+  display: flex;
 }
 .text-1 {
-  width: 60%;
-  float: right;
-  margin-top: 2em;
-  padding-left: 2em;
+  margin-top: 8em;
+  flex: 1 1 0;
+  text-align: center;
 }
 .mob-img {
-  padding-left: 33px;
   padding-top: 64px;
-  float: left;
   height: auto;
+  flex: 1 1 0;
 }
 
 .text-1 .light {
@@ -689,12 +686,13 @@ header ul li a {
 }
 .content121 {
   height: 350px;
+  text-align: center;
 }
 
 /* -------------------------------------------------------footer--------------------------------- */
 .footer {
   display: grid;
-  grid-template-columns: repeat(3, 250px) 1fr;
+  grid-template-columns: repeat(4, 25%) 1fr;
   height: 273px;
   padding: 9px 60px;
   background: #09143b;
@@ -712,8 +710,11 @@ header ul li a {
 
 .product,
 .learn,
-.company {
+.company,
+.branded {
   margin-left: 50px;
+  display: block;
+  position: relative;
 }
 
 .footer h5 {
@@ -749,10 +750,21 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 45%;
-  width: 58%;
-  margin-right: -20em;
+  height: 6.5rem;
+  width: auto;
 }
+
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
+
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
+}
+
 
 
 /* #### Mobile Phones Portrait #### */
@@ -1027,6 +1039,7 @@ header ul li{
   .m-mobile{
     height: auto;
     padding: 0;
+    display: block;
   }
 
   .mob-img {

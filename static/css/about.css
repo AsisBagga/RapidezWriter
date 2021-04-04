@@ -548,11 +548,20 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 45%;
-  width: 58%;
-  margin-right: -20em;
+  height: 6.5rem;
+  width: auto;
 }
 
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
+
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
+}
 
 
 /* #### Mobile Phones Portrait #### */

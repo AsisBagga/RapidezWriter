@@ -227,7 +227,7 @@ header ul li a {
 }
 
 .owner img {
-  width: 300px;
+  width: 250px;
 }
 
 .owner p {
@@ -426,9 +426,19 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 30%;
-  width: 62%;
-  margin-right: -6em;
+  height: 6.5rem;
+  width: auto;
+}
+
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
+
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
 }
 
 

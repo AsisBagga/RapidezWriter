@@ -224,7 +224,6 @@ def testimonial_delete(request, pk):
 #Payment Gateway integration
 client = razorpay.Client(auth=("rzp_live_nQOflfXhoAJfEG", "rpKTqVpjezaNxt8SWXHjqQUg"))
 def payment(request):
-    print("Inside payment method")
     context = {}
     if request.method == "POST":
         print("Inside payment method if loop")
@@ -234,52 +233,28 @@ def payment(request):
         phone = request.POST.get('phone')
         email = request.POST.get('email')
         template_id=request.POST.get('template_id')
-        print("template_id: " + template_id)
+        template_photo=request.POST.get('template_photo')
+        template_price=request.POST.get('template_price')
+        print("template_price: " + template_price)
 
-        response = client.order.create({'amount': order_amount, 'currency': order_currency, 'payment_capture': '1'})
+        response = client.order.create({'amount': template_price, 'currency': order_currency, 'payment_capture': '1'})
         order_id = response['id']
         order_status = response['status']
-        print("Order Status Response: ")
-        print(order_status)
-        print("\n")
-
-        print("Order ID  Response: ")
-        print(order_id)
-        print("\n")
+        print("response: ", response)
 
         if order_status=='created':
-            print("Order created")
-            # context['price'] = order_amount
-            # context['currency'] = order_currency
+            print("Order created: ")
+            print(order_id)
             context['name'] = name
             context['phone'] = phone
             context['email'] = email
             context['template_id'] = template_id
-
-            # data that'll be send to the razorpay for
+            context['template_photo'] = template_photo
+            context['template_price'] = template_price
             context['order_id'] = order_id
 
-            # return render(request, 'resume_makeover.html', {'context': context})
-        else:
-            return HttpResponse('<h1> Error in creating a payment order</h1>')
-    
-    response = request.POST
-    print("Response of params_dict from Razorpay: ")
-    print(response)
-    print("\n")
-    
-    params_dict = {
-        'razorpay_payment_id' : response['razorpay_payment_id'],
-        'razorpay_order_id' : response['razorpay_order_id'],
-        'razorpay_signature' : response['razorpay_signature']
-    }
-
-        # VERIFYING SIGNATURE
-    try:
-        status = client.utility.verify_payment_signature(params_dict)
-        return render(request, 'payment_success.html', {'status': 'Payment Successful!'})
-    except:
-        return render(request, 'payment_failure.html', {'status': 'Payment Failure!'})  
+            return render(request, 'order_summary.html', {'context': context})
+    return HttpResponse('<h1> Error in creating a payment order</h1>')
 
 def payment_status(request):
 
@@ -300,7 +275,8 @@ def payment_status(request):
         status = client.utility.verify_payment_signature(params_dict)
         return render(request, 'payment_success.html', {'status': 'Payment Successful!'})
     except:
-        return render(request, 'payment_failure.html', {'status': 'Payment Failure!'})    
+        return render(request, 'payment_failure.html', {'status': 'Payment Failure!'})
+
 def payment_success(request):
     return render(request, "payment_success.html")
 
@@ -383,3 +359,9 @@ def search(request):
         template="search.html"
         context={"category":category}
     return render(request, template, context)
+
+def privacypolicy(request):
+    return render(request, "privacypolicy.html")
+
+def terms(request):
+    return render(request, "terms.html")    

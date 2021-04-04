@@ -89,7 +89,11 @@ urlpatterns = [
     path('CreateJob/', views.addJob, name="addJob"),
     path('updateJob/<int:pk>', views.updateJob, name="updateJob"),
     path('deleteJob/<int:pk>', views.deleteJob, name="deleteJob"),
-    path('SubmitApplication/<int:pk>', views.submitJob, name="submitJob")
+    path('SubmitApplication/<int:pk>', views.submitJob, name="submitJob"),
+
+    #Privacy Policy and Terms&Conditions
+    path('privacypolicy', views.privacypolicy, name="privacypolicy"),
+    path('terms', views.terms, name="terms"),
 
 ]
 

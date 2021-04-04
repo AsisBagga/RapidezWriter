@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,22 +17,19 @@
         }
      </style>
 
-         <!-- -----------------fontawesome------------------------------ -->
-    <link
-    rel="stylesheet"
-    href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
-  />
 </head>
 <body>
+
     <div class="center">
         <h3>
            Uh oh! Looks like the payment has failed! Please try again...<i class="fas fa-times-circle"></i>
         </h3>
         <h5>
-           <a href="% url 'home' %">
+           <a href="{% url 'home' %}">
                 Click here to go back to Home
            </a>
         </h5>
      </div>
+
 </body>
 </html>

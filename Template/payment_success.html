@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +16,19 @@
         transform: translate(-50%, -50%);
         }
      </style>
-
-         <!-- -----------------fontawesome------------------------------ -->
-    <link
-    rel="stylesheet"
-    href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
-  />
 </head>
 <body>
+    
     <div class="center">
         <h3>
            Payment is successful! We shall contact you soon.<i class="fas fa-check-circle"></i>
         </h3>
         <h5>
-            <a href="% url 'home' %">
+            <a href="{% url 'home' %}">
                 Click here to go back to Home
             </a>
         </h5>
      </div>
+
 </body>
 </html>

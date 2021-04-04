@@ -176,7 +176,7 @@
 
       <div class="contents1" style="margin-left: 2em;">
         <div class="headlines1">
-          <h3>Who we are</h3>
+          <h3>Who are we</h3>
         </div>
         <p class="">
           Established in 2010, Rapidez HR Global Services is one of  <b> the most promising executive hiring firms </b> in India with multiple global allies.
@@ -248,7 +248,7 @@
           <br><br>
           Talent leader with 15 years of experience in building and scaling businesses through strategic business operations, talent acquisition, HR transformation, marketing and branding.
           <br><br>
-          Right after graduation, started my career as a Freelance Technical Recruiter – Associate Director of Global Recruitment & acquired Rapidez HR Global Services  - An Executive Talent Consulting Group in 2011 & Founded Rapidez Writer in 2018 a Division specialized in 
+          Right after graduation, started his career as a Freelance Technical Recruiter – Associate Director of Global Recruitment & acquired Rapidez HR Global Services  - An Executive Talent Consulting Group in 2011 & Founded Rapidez Writer in 2018 a Division specialized in 
           <span style="color: #0783ca; font-weight: bold;"> Executive Resume Writing, Personal Branding, LinkedIn optimization & Consulting as a Service </span>
           for  Niche Customers like CEO, CTO, VP, Director, & Manager with the aim of branding job Seekers to adopt technological advancements such as ATS(Applicant Tracking System).
           <br><br>
@@ -297,55 +297,67 @@
       {% else %}
       <a href="{% url 'login' %}"> <p> Login </p></a>
       {% endif %}
-
     </div>
 
     <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+    <!-- style="margin-bottom: 1.5em" -->
     <div class="branded">
       <a href="{% url 'home' %}">
       <img 
       class="desk_logo" 
       src="{% static '/image/homepage_logo_small-removebg.png' %}" 
       alt="Rapidez Writer Logo" 
-      style="margin-bottom: 1.5em" />
+       />
      
+      <ul class="socialmedia-icons">
+      
+      <li>
       <!-- Google -->
+      <!-- style="margin-left: 20px; margin-right: 7px" -->
       <a 
       href="https://www.linkedin.com/company/rapidezwriters/" 
       style="color: #dbe0f2"
       target="blank">
       <i
         class="fab fa-google fa-2x"
-        style="margin-left: 20px; margin-right: 7px"
+        
         aria-hidden="true"
       ></i>
       </a>
+      </li>
 
+      <li>
       <!-- LinkedIn -->
+      <!--         style="margin-left: 20px; margin-right: 7px" -->
       <a 
       href="https://www.linkedin.com/company/rapidezwriters/" 
       style="color: #dbe0f2"
       target="blank">
       <i
         class="fab fa-linkedin fa-2x"
-        style="margin-left: 20px; margin-right: 7px"
         aria-hidden="true">
       </i>
       </a>
+      </li>
 
+      <li>
     <!-- Facebook -->
+    <!-- style="margin-left: 20px; margin-right: 7px" -->
         <a 
           href="https://www.facebook.com/RapidezWriter/" 
           style="color: #dbe0f2"
           target="blank">
           <i 
           class="fab fa-facebook fa-2x" 
-          style="margin-left: 20px; margin-right: 7px"
+          
           aria-hidden="true">
         </i>
         </a>
+      </li>
 
+      <li>
       <!-- Instagram -->
+      <!-- style="margin-left: 20px; margin-right: 7px" -->
       <a 
         href="https://www.facebook.com/RapidezWriter/" 
         style="color: #dbe0f2"
@@ -353,12 +365,15 @@
         <i 
         class="fab fa-instagram fa-2x"
         aria-hidden="true"
-        style="margin-left: 20px; margin-right: 7px">
+        
+        >
       </i>
       </a>
+      </li>
 
-
+      <li>
       <!-- Youtube -->
+      <!--           style="margin-left: 20px; margin-right: 7px" -->
         <a 
           href="https://www.facebook.com/RapidezWriter/" 
           style="color: #dbe0f2"
@@ -366,10 +381,13 @@
           <i 
           class="fab fa-youtube fa-2x" 
           aria-hidden="true"
-          style="margin-left: 20px; margin-right: 7px">
+
+          >
         </i>
-        </a>          
+        </a>
+      </li>   
       
+      </ul>
     </div>
   </footer>
   

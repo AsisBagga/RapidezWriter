@@ -1,0 +1,377 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- -----------------fontawesome------------------------------ -->
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}"
+    />
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static '/materialize/css/materialize.min.css' %}"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="{% static '/css/order_summary.css' %}" />
+    <link rel="stylesheet" href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}" />
+
+    <!-- ----------------slick--------------------------- -->
+    <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+    <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick-theme.css' %}" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+     <!-- Navbar -->
+     <header class="drop">
+
+      <a href="{% url 'home' %}"><img class="desk_logo" src="{% static '/image/homepage_logo_new.png' %}" alt="Rapidez Writer Logo" /></a>
+      <a href="{% url 'home' %}"><img class="mobile_logo" src="{% static '/image/logo-removebg.png' %}" alt="Rapidez Writer Logo" /></a>
+      
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      
+      <ul class="menu">
+        <li>
+          <a class="services">Services
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 serv" style="left: 38%">
+            <div class="box111"></div>
+            <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
+            <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
+            <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+            <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
+            <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
+            <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
+          </ul>
+        </li>
+
+        <li>
+          <a class="resources">Resources
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 rscs" style="left: 38%">
+            <a href="{% url 'quizes_list' %}"><li>Career Assessment</li></a>            
+            <a href="{% url 'career_list_page' %}"><li>Career Advice</li></a>
+            <a href="{% url 'faq' %}"><li>FAQ</li></a>
+            
+          </ul>
+        </li>
+
+        <li>
+          <a class="comp">Company
+            <i class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+                color: #0783ca;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12 cmpy" style="left: 38%">
+            <a href="{% url 'about' %}"><li>Overview</li></a>
+            <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
+            <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
+            <a href="#"><li>Careers</li></a>          
+          </ul>
+        </li>
+
+        <li><a href="{% url 'testimonials' %}" class="testimonials">Testimonials</a></li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="#">Accounts
+            <i
+              class="fa fa-chevron-down"
+              style="
+                font-size: 10px;
+                position: relative;
+                bottom: 1px;
+                opacity: 0.3;
+              "
+              aria-hidden="true">
+            </i>
+          </a>
+          <ul class="ser1 ser12" style="left: 38%">
+            <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+            <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+          {% if request.user.is_staff %}
+            <a href="{% url 'signup' %}"> <li> Register User </li></a>
+          {% endif %}
+            <a href="{% url 'logout' %}"> <li> Logout </li></a>
+        {% endif %}
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- navbar-end -->
+
+<div class="order_summary">
+        <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
+        <br/>
+
+        <fieldset>
+            <legend>
+              <h3>Selected Product</h3>
+            </legend>
+              <div class="gender" >
+                <img src="{{ context.template_photo }}">
+              </div>
+    
+          </fieldset>
+          <fieldset>
+            <legend>
+              <h3>Personal Details</h3>
+            </legend>
+            <div class="personal-details">
+              <div>
+                <div><label>Name*</label><input type="text" name="name" placeholder="{{ context.name }}" disabled></div>
+                <div><label>Phone*</label><input type="text" name="name" placeholder="{{ context.phone }}" disabled></div>
+                <div><label>Email*</label><input type="text" name="name" placeholder="{{ context.email }}" disabled></div>
+              </div>
+            </div>
+          </fieldset>
+
+        <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
+        <br/>
+        <div class="razorpay-payment-script"> 
+        <form action="{% url 'payment_status' %}" method="POST" class="text-center border border-light p-5">{% csrf_token %}
+          <!-- RAZORPAY INTEGRATION HERE-->
+         
+
+          <script    
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_live_nQOflfXhoAJfEG"
+            data-amount="{{ context.template_price }}"
+            data-currency="INR"
+            data-order_id="{{ context.order_id }}"
+            data-buttontext="Pay with Razorpay"
+            data-name="Rapidez Writer"
+            data-description="Resume Template"
+            data-image="{% static '/image/logo.png' %}"
+            data-prefill.name="{{ context.name }}"
+            data-prefill.email="{{ context.email }}"
+            data-prefill.contact="{{ context.phone }}"
+            data-theme.color="#F37254">
+          </script>
+          <input type="hidden" custom="Hidden Element" name="hidden">  
+         
+          
+      </form>
+    </div>
+</div>
+
+
+    <!-----------------------------footer------------------------------->
+    <footer class="footer">
+        <div class="product">
+          <h5>PRODUCTS</h5>
+          <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+          <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+          <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+          <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+          <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+          <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+        </div>
+    
+        <div class="learn">
+          <h5>LEARN MORE</h5>
+          <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+          <a href="#"><p>Career Advice</p></a>
+          <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+          <a href="#"><p>FAQs</p></a>
+        </div>
+    
+        <div class="company">
+          <h5>COMPANY</h5>
+          <a href="{% url 'about' %}"><p>Overview</p></a>
+          <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+          <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+          <a href="#"><p>Careers</p></a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}"> <p> Logout </p></a>
+          {% else %}
+          <a href="{% url 'login' %}"> <p> Login </p></a>
+          {% endif %}
+    
+        </div>
+    
+        <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+        <div class="branded">
+          <a href="{% url 'home' %}">
+          <img 
+          class="desk_logo" 
+          src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+          alt="Rapidez Writer Logo" 
+          style="margin-bottom: 1.5em" />
+         
+          <!-- Google -->
+          <a 
+          href="https://www.linkedin.com/company/rapidezwriters/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i
+            class="fab fa-google fa-2x"
+            style="margin-left: 20px; margin-right: 7px"
+            aria-hidden="true"
+          ></i>
+          </a>
+    
+          <!-- LinkedIn -->
+          <a 
+          href="https://www.linkedin.com/company/rapidezwriters/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i
+            class="fab fa-linkedin fa-2x"
+            style="margin-left: 20px; margin-right: 7px"
+            aria-hidden="true">
+          </i>
+          </a>
+    
+        <!-- Facebook -->
+            <a 
+              href="https://www.facebook.com/RapidezWriter/" 
+              style="color: #dbe0f2"
+              target="blank">
+              <i 
+              class="fab fa-facebook fa-2x" 
+              style="margin-left: 20px; margin-right: 7px"
+              aria-hidden="true">
+            </i>
+            </a>
+    
+          <!-- Instagram -->
+          <a 
+            href="https://www.facebook.com/RapidezWriter/" 
+            style="color: #dbe0f2"
+            target="blank">
+            <i 
+            class="fab fa-instagram fa-2x"
+            aria-hidden="true"
+            style="margin-left: 20px; margin-right: 7px">
+          </i>
+          </a>
+    
+    
+          <!-- Youtube -->
+            <a 
+              href="https://www.facebook.com/RapidezWriter/" 
+              style="color: #dbe0f2"
+              target="blank">
+              <i 
+              class="fab fa-youtube fa-2x" 
+              aria-hidden="true"
+              style="margin-left: 20px; margin-right: 7px">
+            </i>
+            </a>          
+          
+        </div>
+      </footer>
+
+          <!--JavaScript at end of body for optimized loading-->
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script
+      type="text/javascript"
+      src="{% static '/materialize/js/materialize.min.js' %}"
+    ></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+    </script>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+
+<script>
+  if($(window).width() <= 480){
+
+// For the sub-menu
+//Services
+$(".services").click(function(){
+$('.rscs').hide();
+$('.cmpy').hide();
+$('.serv').slideToggle('normal');
+$('.serv').css("position", "relative");
+});
+
+//Resources
+$(".resources").click(function(){
+$('.serv').hide();
+$('.cmpy').hide();
+$('.rscs').slideToggle('normal');
+$('.rscs').css("position", "relative");
+});
+
+//Company
+$(".comp").click(function(){
+$('.serv').hide();
+$('.rscs').hide();
+$('.cmpy').slideToggle('normal');
+$('.cmpy').css("position", "relative");
+});
+
+}
+</script>
+
+<script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
+
+</body>
+</html>

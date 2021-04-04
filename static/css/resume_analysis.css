@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: 'Muli';
 }
+*:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
 p,
 li {
   font-size: 18px;
@@ -211,6 +217,7 @@ header ul li a {
 
 .banner .desk_banner{
   display: block;
+  width: 100%;
 }
 
 .over {
@@ -222,9 +229,9 @@ header ul li a {
   }
   
   .banner {
-    position: absolute;
+    position: relative;
     top: 0;
-    height: 80vh;
+    height: auto;
     width: 100%;
     overflow: hidden;
     text-align: center;
@@ -259,7 +266,7 @@ header ul li a {
   }
 
   .btn {
-    background: #355565;
+    background: #2aacef !important;;
     border-radius: 5px;
   }
   .btn:hover{
@@ -318,7 +325,6 @@ header ul li a {
 
 .work{
   margin-bottom: 4em;
-  margin-top: 35%;
 }
 
 .gworkm {
@@ -384,8 +390,18 @@ header ul li a {
 }
 
 /* <!-- -------------------------------------------------memorial-design--------------------------------- --> */
+
+.allb{
+  display: flex;
+}
+
 .all1 {
-  float: left;
+  height: auto;
+  flex: 1 1 0;
+}
+
+.all2{
+  flex: 1 1 0;
 }
 
 .all1 img {
@@ -395,14 +411,19 @@ header ul li a {
 }
 
 .all3 {
-  float: left;
-  padding-bottom: 8em;
+  height: auto;
+  flex: 1 1 0;
 }
 
 .all3 img{
     width: 150px;
     margin-bottom: -3em;
     margin-left: 14em;
+}
+
+.all4{
+  flex: 1 1 0;
+  margin-top: 2em;
 }
 
 .tex1 {
@@ -648,9 +669,19 @@ header ul li a {
 }
 
 .footer .desk_logo{
-  height: 45%;
-  width: 58%;
-  margin-right: -20em;
+  height: 6.5rem;
+  width: auto;
+}
+
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
+
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
 }
 
 

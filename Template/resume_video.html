@@ -229,8 +229,8 @@
       <a class="waves-effect waves-light btn btn-large" href="{% url 'contactUs' %}">Make a video resume</a>
     </section>
 
- <!-- --------------------------------------------------footer----------------------------- -->
- <footer class="footer">
+<!-- --------------------------------------------------footer----------------------------- -->
+<footer class="footer">
   <div class="product">
     <h5>PRODUCTS</h5>
     <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
@@ -260,55 +260,67 @@
     {% else %}
     <a href="{% url 'login' %}"> <p> Login </p></a>
     {% endif %}
-
   </div>
 
   <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+  <!-- style="margin-bottom: 1.5em" -->
   <div class="branded">
     <a href="{% url 'home' %}">
     <img 
     class="desk_logo" 
     src="{% static '/image/homepage_logo_small-removebg.png' %}" 
     alt="Rapidez Writer Logo" 
-    style="margin-bottom: 1.5em" />
+     />
    
+    <ul class="socialmedia-icons">
+    
+    <li>
     <!-- Google -->
+    <!-- style="margin-left: 20px; margin-right: 7px" -->
     <a 
     href="https://www.linkedin.com/company/rapidezwriters/" 
     style="color: #dbe0f2"
     target="blank">
     <i
       class="fab fa-google fa-2x"
-      style="margin-left: 20px; margin-right: 7px"
+      
       aria-hidden="true"
     ></i>
     </a>
+    </li>
 
+    <li>
     <!-- LinkedIn -->
+    <!--         style="margin-left: 20px; margin-right: 7px" -->
     <a 
     href="https://www.linkedin.com/company/rapidezwriters/" 
     style="color: #dbe0f2"
     target="blank">
     <i
       class="fab fa-linkedin fa-2x"
-      style="margin-left: 20px; margin-right: 7px"
       aria-hidden="true">
     </i>
     </a>
+    </li>
 
+    <li>
   <!-- Facebook -->
+  <!-- style="margin-left: 20px; margin-right: 7px" -->
       <a 
         href="https://www.facebook.com/RapidezWriter/" 
         style="color: #dbe0f2"
         target="blank">
         <i 
         class="fab fa-facebook fa-2x" 
-        style="margin-left: 20px; margin-right: 7px"
+        
         aria-hidden="true">
       </i>
       </a>
+    </li>
 
+    <li>
     <!-- Instagram -->
+    <!-- style="margin-left: 20px; margin-right: 7px" -->
     <a 
       href="https://www.facebook.com/RapidezWriter/" 
       style="color: #dbe0f2"
@@ -316,12 +328,15 @@
       <i 
       class="fab fa-instagram fa-2x"
       aria-hidden="true"
-      style="margin-left: 20px; margin-right: 7px">
+      
+      >
     </i>
     </a>
+    </li>
 
-
+    <li>
     <!-- Youtube -->
+    <!--           style="margin-left: 20px; margin-right: 7px" -->
       <a 
         href="https://www.facebook.com/RapidezWriter/" 
         style="color: #dbe0f2"
@@ -329,10 +344,13 @@
         <i 
         class="fab fa-youtube fa-2x" 
         aria-hidden="true"
-        style="margin-left: 20px; margin-right: 7px">
+
+        >
       </i>
-      </a>          
+      </a>
+    </li>   
     
+    </ul>
   </div>
 </footer>
 
