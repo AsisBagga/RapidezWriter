@@ -3,10 +3,10 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 from resumeAnalysis.validators import validate_resume_ext_job
  
-FAQ_CHOICES = (('TopSeven', 'TopSeven'),
-                ('CategoryOne', 'CategoryOne'),
-                ('CategoryTwo', 'CategoryTwo'),
-                ('CategoryThree', 'CategoryThree')
+FAQ_CHOICES = (('About Us', 'About Us'),
+                ('About Our Services', 'About Our Services'),
+                ('About Our Writers', 'About Our Writers'),
+                ('Help & Support', 'Help & Support')
               )
 
 # Create your models here.

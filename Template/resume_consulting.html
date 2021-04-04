@@ -181,38 +181,65 @@
       <!-- --------------------------------------------------form-------------------------------------------------- -->
 
       <div class="row cust-form" >
-        <form class="col s12" style="width: 100%">
-          <div class="row" style="width: 100%">
-            <div
-              class="input-field col s12"
-              style="width: 100%; padding: 0; padding-left: 10px"
-            >
-              <textarea id="name" class="materialize-textarea"></textarea>
-              <label for="name" style="margin-left: 12px">Name</label>
-            </div>
-          </div>
-          <div class="row" style="width: 100%">
-            <div class="input-field col s12" style="width: 100%">
-              <input id="email" type="email" class="validate" />
-              <label for="email" style="margin-left: 15px">Email ID</label>
-            </div>
-          </div>
+        <form class="col s12" style="width: 100%" action="{% url 'resumeConsulting' %}" method="POST">
+
+          {% csrf_token %}
 
           <div class="row" style="width: 100%">
             <div
               class="input-field col s12"
               style="width: 100%; padding: 0; padding-left: 10px"
             >
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <!-- <input id="name" class="materialize-textarea"></textarea> -->
+              <input id="name" type="text" name="name" class="validate" />
+              <label for="name" style="margin-left: 12px">Name</label>
+            </div>
+          </div>
+
+
+          <div class="row" style="width: 100%">
+            <div class="input-field col s12" style="width: 100%">
+              <input id="phone" type="text" name="phone" class="validate" />
+              <label for="phone" style="margin-left: 15px">Contact Number</label>
+            </div>
+          </div>
+          <div class="row" style="width: 100%">
+            <div class="input-field col s12" style="width: 100%">
+              <input id="email" name="email" type="email" class="validate" />
+              <label for="email" style="margin-left: 15px">Email ID</label>
+            </div>
+          </div>
+          
+          <div class="input-field col s12">
+            <select id="services" name="services" size="5" multiple>
+              <option value="Executive Resume Writing">Executive Resume Writing</option>
+              <option value="Resume Makeover">Resume Makeover</option>
+              <option value="LinkedIn Branding">LinkedIn Branding</option>
+              <option value="Video Resume">Video Resume</option>
+              <option value="Job Consulting">Job Consulting</option>
+            </select>
+            <label>Rapidez Writer Services</label>
+          </div>
+
+
+          <div class="row" style="width: 100%">
+            <div
+              class="input-field col s12"
+              style="width: 100%; padding: 0; padding-left: 10px"
+            >
+              <input id="textarea1" type="text" name="query" class="validate" />
               <label for="textarea1" style="margin-left: 12px">Query</label>
             </div>
           </div>
+
+
+
           <div
             class="button"
             style="width: 100%; text-align: center; margin-top: 20px"
           >
-            <a class="waves-effect waves-light btn" style="width: 180px"
-              >Send</a
+            <button class="waves-effect waves-light btn" style="width: 180px" type="submit"
+              >Send</button
             >
           </div>
         </form>
@@ -423,6 +450,19 @@
       type="text/javascript"
       src="{% static '/materialize/js/materialize.min.js' %}"
     ></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+    </script>
 
     <script type="text/javascript">
       window.addEventListener("scroll", function () {
