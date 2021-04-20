@@ -35,8 +35,8 @@ def resume_upload(request):
             # request.session['id'] = form.pk
             
             userResumePath = userResume.resume.path
-            print("userResumePath: " + userResumePath)
-            resume_parser(userResumePath)
+            user_email = userResume.email
+            resume_parser(userResumePath, user_email)
             
             return redirect('resumeAnalysis:thankyou')
     else:
@@ -44,7 +44,7 @@ def resume_upload(request):
     return render(request, 'resume_upload.html', {'form': form})
 
 
-def resume_parser(resumePath):
+def resume_parser(resumePath, user_email):
     # id = request.session.get('id')
     # print(id)
     # user = Resume.objects.filter(pk=id)
@@ -121,7 +121,7 @@ def resume_parser(resumePath):
         'Resume Analysis',
         text_content,
         email_from,
-        [email_to],
+        [user_email],
         fail_silently=False,
     )
     
