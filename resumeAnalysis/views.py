@@ -16,7 +16,7 @@ from django.core.mail import send_mail
 import docx
 
 # Resume parser
-# from pyresparser import ResumeParser
+from pyresparser import ResumeParser
 
 import json
 
@@ -55,8 +55,8 @@ def resume_parser(resumePath):
 
     # data = ResumeParser(resumePath).get_extracted_data()
     print("\n")
-    pretty_data = json.dumps(data, sort_keys=True, indent=4)
-    print(pretty_data)
+    # pretty_data = json.dumps(data, sort_keys=True, indent=4)
+    # print(pretty_data)
 
     doc = docx.Document(resumePath)
     # all_paras = doc.paragraphs
@@ -109,21 +109,18 @@ def resume_parser(resumePath):
         print("Relevant sections included")
 
     # Email 
-    email_from = settings.EMAIL_HOST_USER
+    email_from = settings.EMAIL_FROM
     email_to = 'bharath.nr1@gmail.com'
-    email_admin = settings.EMAIL_ADMIN
+    # email_admin = settings.EMAIL_ADMIN
     content = 'Resume Analysis'
 
-    html_content = render_to_string('mail_template.html') 
+    html_content = render_to_string('mail_template.html')
     text_content = strip_tags(html_content)
 
-    # message1 = ('Quote request', 'Have attached the pdf with the required materials', email_from, [email_to])
-    # message2 = ('New comedian registration', content , email_from, [email_admin])
-    # send_mass_mail((message1, message2), fail_silently=False)
     isSuccess = send_mail(
         'Resume Analysis',
         text_content,
-        email_admin,
+        email_from,
         [email_to],
         fail_silently=False,
     )

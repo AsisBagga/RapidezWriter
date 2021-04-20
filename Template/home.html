@@ -188,14 +188,92 @@
     </div>
     <br>
 
-    <div class="image1">
-      <img src="{% static '/image/microsoft.png' %}" style="height: 60px; " alt="" />
-      <img src="{% static '/image/ola.svg' %}" alt="" style="margin-top:40px; height: 40px;" />
-      <img src="{% static '/image/amazon.png' %}" alt="" />
-      <img src="{% static '/image/goldman_sachs.png' %}" alt="" />
-      <img src="{% static '/image/adobe.png' %}" alt="" />
-      <img src="{% static '/image/cisco.png' %}" alt="" />
+    <!-- Clients -->
+
+    <div class="page-wrapper2">
+      <div class="post-slider2">
+        <div class="post-wrapper2 part12">
+
+          <div class="post2">
+            <img src="{% static '/image/clients/adobe.png' %}" />
+          </div>
+          
+          <div class="post2">
+            <img src="{% static '/image/clients/amazon.png' %}" />
+          </div>
+          
+          <div class="post2">
+            <img src="{% static '/image/clients/cisco.png' %}" alt="" />
+          </div>
+          
+          <div class="post2">
+            <img src="{% static '/image/clients/dell.png' %}" alt="" />
+          </div>
+          
+          <div class="post2">
+            <img src="{% static '/image/clients/flipkart.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/goldman.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/hp.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/itc.jpg' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/marriott.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/microsoft.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/nestle.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/ola.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/paytm.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/reliance1.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/samsung.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/byju.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/sony.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/tata.png' %}" alt="" />
+          </div>
+
+          <div class="post2">
+            <img src="{% static '/image/clients/unilever.png' %}" alt="" />
+          </div>
+          
+        </div>
+      </div>
     </div>
+
 </div>
 
 <!-- -----------------------------------------------------------About Us----------------------------------- -->
@@ -489,36 +567,44 @@
     
     </div>
   
+<!-- --------------------------------------------c-write----------------------------------- -->
+<div class="main-cc1">
+  <br /><br /><br />
+  <h4>Customer Reviews</h4>
+  <div class="main-d1">
+    <div class="page-wrapper1">
+      <div class="post-slider1">
+        <i class="fas fa-chevron-left fa-3x prev pat0"></i>
+        <i class="fas fa-chevron-right fa-3x next pat00"></i>
+        <div class="post-wrapper1 part11">
 
 
-    <!-- -----------------------------------------------------Blog articles------------------------------ -->
-
-    <div class="carousel carousel-slider center blog-articles">
-      <div class="headline">
-        <h4>Our Latest Blogs</h4>
-      </div>
-  
-      <div class="carousel-fixed-item center"></div>
-      {% for i in blog %}
-      <div class="carousel-item " id="caro-one" href="{% url 'career_detail_page' i.pk %}">
-        <div class="parent-blog">
-          <div class="blog-photo" style="background: url({{ i.banner.url }}) no-repeat; background-size: contain;"></div>
-          <div class="blog-photo blog-text">
-            <div class="headline-blog">
-              <a class="waves-effect waves-light btn">Tags</a>
-              {% for j in i.category.all %}
-              <a class="waves-effect waves-light btn" href="{% url 'view_category_wise' j.category %}">{{j}}</a>
-              {% endfor %}
-            </div>
-            <h4><a target="_blank" href="{% url 'career_detail_page' i.pk %}" style="text-decoration: none; color: black">{{i.heading}}</a></h4>
-            <h5 style="text-align: justify; font-size: large">
-              <a target="_blank" href="{% url 'career_detail_page' i.pk %}" style="text-decoration: none; color: black;" ></a>{{i.pre_description}}</a>
-            </h5>
+          {% for i in blog %}
+          <div class="post1">
+              <div class="parent-blog">
+                <div class="blog-photo" style="background: url({{ i.banner.url }}) no-repeat; background-size: contain;"></div>
+                <div class="blog-photo blog-text">
+                  <div class="headline-blog">
+                    <a class="waves-effect waves-light btn">Tags</a>
+                    {% for j in i.category.all %}
+                    <a class="waves-effect waves-light btn" href="{% url 'view_category_wise' j.category %}">{{j}}</a>
+                    {% endfor %}
+                  </div>
+                  <h4><a target="_blank" href="{% url 'career_detail_page' i.pk %}" style="text-decoration: none; color: black">{{i.heading}}</a></h4>
+                  <h5 style="text-align: justify; font-size: large; word-break: break-all;">
+                    <a target="_blank" href="{% url 'career_detail_page' i.pk %}" style="text-decoration: none; color: black;" ></a>{{i.pre_description}}</a>
+                  </h5>
+                </div>
+              </div>            
           </div>
+          {% endfor %}
+
         </div>
       </div>
-      {% endfor %}
     </div>
+  </div>
+</div>
+
 
     <!-- -----------------------------------------------------customer rating------------------------------ -->
     <div class="colo1" style="background: #f8f8f8">
@@ -534,88 +620,6 @@
           </script>
         </div>
     </div>
-   <!-- -----------------------------------------------------customer rating------------------------------ -->
-   <!-- <div class="colo1" style="background: #f8f8f8">
-    <div class="headline container" style="padding-bottom: 10px">
-      <h4>What customers say about us </h4>
-      <p><span style="color: #f8c20e;">&#9733; &#9733; &#9733; &#9733;</span><span style="font-weight: bold; margin-left: 10px;"> 4.3 </span> Rating <span style="font-weight: bold; margin-left: 10px;">1033</span> Reviews</p>
-    </div>
-    <div class="page-wrapper">
-      <div class="post-slider">
-        <i class="fas fa-chevron-left fa-3x prev"></i>
-        <i class="fas fa-chevron-right fa-3x next"></i>
-        <div class="post-wrapper">
-          <div class="post z-depth-3">
-            <p class="b">
-              Rose Birdsell Jr. <br />
-              <span>&#9733; &#9733; &#9733; &#9733;</span>
-            </p>
-            <br />
-            <p>
-              I utilized Zety’s builder app to the fullest, applying
-              everything I learned, and even added some unique touches the
-              resume software offered. Now, instead of stressing over what
-              keyword or language to use on my resume, I can focus on which
-              job offer to accept.
-            </p>
-          </div>
-          <div class="post z-depth-3">
-            <p class="b">
-              Denise P. Jr. <br />
-              <span>&#9733; &#9733; &#9733; &#9733;</span>
-            </p>
-           <br />
-            <p>
-              I went from fired to hired in less than 3 weeks. I was let go
-              from my old job due to downsizing. With Zety, I was able to
-              build custom resumes tailored to the jobs I was applying to
-              quickly and easily. My last day was 3/9/18 and I had several
-              offers by 3/25/18. Accepted an excellent job on 3/27/18.
-            </p>
-          </div>
-          <div class="post z-depth-3">
-            <p class="b">
-              Jeanne Jr. <br />
-              <span>&#9733; &#9733; &#9733; &#9733;</span>
-            </p>
-            <br />
-            <p>
-              Zety is what will make you stand out. In less than a month and a
-              half, I got contacted by six employers and went in for three
-              interviews. They’ve all commented on how my résumé caught their
-              eye, and how “visually pleasant” it is.
-            </p>
-          </div>
-          <div class="post z-depth-3">
-            <p class="b">
-              Rania Jr. <br />
-              <span>&#9733; &#9733; &#9733; &#9733;</span>
-            </p>
-            <br />
-            <p>
-              Zety is what will make you stand out. In less than a month and a
-              half, I got contacted by six employers and went in for three
-              interviews. They’ve all commented on how my résumé caught their
-              eye, and how “visually pleasant” it is.
-            </p>
-          </div>
-          <div class="post z-depth-3">
-            <p class="b">
-              Olivia William <br />
-              <span>&#9733; &#9733; &#9733; &#9733;</span>
-            </p>
-            <br />
-            <p>
-              Zety is what will make you stand out. In less than a month and a
-              half, I got contacted by six employers and went in for three
-              interviews. They’ve all commented on how my résumé caught their
-              eye, and how “visually pleasant” it is.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
      <!-- --------------------------------------------------footer----------------------------- -->
   <footer class="footer">
@@ -883,6 +887,28 @@
         prevArrow: $(".prev"),
       });
     </script>
+
+    <script>
+      $(".post-wrapper1").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".next"),
+        prevArrow: $(".prev"),
+      });
+    </script>    
+
+    <script>
+      $(".post-wrapper2").slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        nextArrow: $(".next"),
+        prevArrow: $(".prev"),
+      });
+    </script>    
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

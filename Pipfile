@@ -18,6 +18,7 @@ django-ckeditor = "*"
 pillow = "*"
 django-bootstrap4 = "*"
 razorpay = "*"
+mailjet-rest = "*"
 
 [requires]
 python_version = "3.8"
