@@ -162,6 +162,20 @@ def career_list_page(request):
     for i in category:
         test[i] = Database.objects.filter( category=i )
     return render(request, 'career_list.html', {"all_objects": all_objects, "test": test})
+
+# View Blog Category wise
+def career_view_all_page(request, key):
+    filter = get_object_or_404(Category, category=key)
+    all_objects = Database.objects.filter( category=filter)
+    category = Category.objects.all()
+    return render(request, "career_view_all.html", {"all_objects": all_objects, "category":category, "filter":filter})
+
+def view_category_wise(request, filter):
+    filter = get_object_or_404(Category, category=filter)
+    all_objects = Database.objects.filter(category=filter)
+    category = Category.objects.all()
+    return render(request, 'career_view_all.html', {'all_objects':filter_op, "category":category, "filter":filter})
+
 # Blog Page details
 def career_detail_page(request, pk):
     category = Category.objects.all()
@@ -189,8 +203,7 @@ def blog_delete(request, pk):
         return HttpResponseRedirect(reverse('career_list_page'))
     return render(request, 'blogDelete.html')
 #
-def career_view_all_page(request):
-    return render(request, "career_view_all.html")
+
 
 # Categories
 def add_category(request):
@@ -212,12 +225,7 @@ def delete_category(request, pk):
         obj.delete()
         return HttpResponseRedirect(reverse('career_list_page'))
     return render(request, 'blogDeleteCategory.html', {"obj":obj})
-# View Blog Category wise
-def view_category_wise(request, filter):
-    category = Category.objects.all()
-    filter = get_object_or_404(Category, category=filter)
-    filter_op = Database.objects.filter(category=filter)
-    return render(request, 'career_view_all.html', {'filter_op':filter_op, "filter":filter, "category":category})
+
 
 # Testimonials CRUD
 def testimonials(request):

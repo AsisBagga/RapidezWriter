@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: 'Muli';
 }
-p{
+p,{
   font-size: 18px;
 }
 li {
@@ -416,7 +416,7 @@ header ul li a {
   padding: 20px;
 }
 .boss {
-  margin-left: auto;
+  margin-left: 10%;
   margin-top: 2em;
   margin-bottom: 4em;
 }
