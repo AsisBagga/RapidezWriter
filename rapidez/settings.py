@@ -25,7 +25,8 @@ SECRET_KEY = '#)xgga688w+sj=%&u=hupbrffk9_ptcp&_5y6n6xp!$r)t_q)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['45.80.181.32',]
 
 
 # Application definition
