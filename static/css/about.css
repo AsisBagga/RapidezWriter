@@ -9,7 +9,6 @@ p,
 li {
   font-size: 18px;
 }
-
 /* Navbar */
 
 .drop .mobile_logo{
@@ -60,7 +59,7 @@ header.sticky {
   height: 90px;
   align-items: center;
   z-index: 999;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1.5px solid #dbd6d6;
 }
 
 header.sticky a {

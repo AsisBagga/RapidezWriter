@@ -466,7 +466,6 @@ width: 50%;
 
 /* -------------------------------------------------------footer--------------------------------- */
 .footer {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 250px) 1fr;
   height: 273px;
@@ -491,14 +490,12 @@ width: 50%;
 }
 
 .footer h5 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: #a7b2d8;
 }
 
 .footer p {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 5px;
@@ -510,7 +507,6 @@ width: 50%;
 }
 
 .branded h5 {
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-weight: 600;
   font-size: 34px;
 }
@@ -519,6 +515,7 @@ width: 50%;
   text-align: right;
 }
 
+
 .btn-large {
   text-transform: none;
   font-size: 20px;
@@ -526,12 +523,20 @@ width: 50%;
 }
 
 .footer .desk_logo{
-  height: 30%;
-  width: 62%;
-  margin-right: -6em;
+  height: 6.5rem;
+  width: auto;
 }
 
+ul.socialmedia-icons{
+  margin: 0;
+  padding: 0;
+}
 
+ul.socialmedia-icons li{
+  display: inline-block;
+  margin: 6px;
+  font-size: 1em;
+}
 
 
 .h-upd {

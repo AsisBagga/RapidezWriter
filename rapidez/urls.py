@@ -62,9 +62,9 @@ urlpatterns = [
     path('create/', views.create_blog, name="create_blog"),
     path('update/<int:pk>', views.blog_update, name="blog_update"),
     path('delete/<int:pk>', views.blog_delete, name="blog_delete"),
-    path('career-advise-list', views.career_list_page, name="career_list_page"),
+    path('career-advise-list/', views.career_list_page, name="career_list_page"),
     path('career-advise-detail/<int:pk>', views.career_detail_page, name="career_detail_page"),
-    path('career-advise-view-all', views.career_view_all_page, name="career_view_all_page"),
+    path('career-advise-view-all/<str:key>', views.career_view_all_page, name="career_view_all_page"),
     path('view_category_wise/<str:filter>', views.view_category_wise, name="view_category_wise"),
     #CKEditor
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
