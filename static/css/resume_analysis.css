@@ -924,6 +924,11 @@ header ul li{
   text-align: justify;
 }
 
+.allb {
+  display: flex;
+  flex-direction: column;
+}
+
 /* footer */
 
 .footer{

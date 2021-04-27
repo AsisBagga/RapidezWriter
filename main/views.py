@@ -48,14 +48,16 @@ def contact_us(request):
         query = request.POST.get('query')
         email = request.POST.get('email')
         print("Details: ", name, query, email, services)
-        email_from = settings.EMAIL_HOST_USER
+        email_from = settings.EMAIL_FROM
         email_to = 'bharath.nr1@gmail.com'
-        email_admin = settings.EMAIL_ADMIN
-        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
+        servicesstr = "".join(services)
+        print(servicesstr)
+        
+        text_content = "name: "+name+" email: "+email+" services: "+servicesstr + " query: "+query, " phone number: "+phone
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
-            email_admin,
+            email_from,
             [email_to],
             fail_silently=False,
         )
@@ -105,14 +107,13 @@ def resume_consulting(request):
         query = request.POST.get('query')
         email = request.POST.get('email')
         print("Details: ", name, query, email, services)
-        email_from = settings.EMAIL_HOST_USER
+        email_from = settings.EMAIL_FROM
         email_to = 'bharath.nr1@gmail.com'
-        email_admin = settings.EMAIL_ADMIN
         text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
-            email_admin,
+            email_from,
             [email_to],
             fail_silently=False,
         )
@@ -352,14 +353,13 @@ def submitJob(request, pk):
             saved.job = str(obj.heading)
             print("name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job )
             saved.save()
-            email_from = settings.EMAIL_HOST_USER
+            email_from = settings.EMAIL_FROM
             email_to = 'bharath.nr1@gmail.com'
-            email_admin = settings.EMAIL_ADMIN
             text_content = "name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job 
             isSuccess = send_mail(
                 'New Job Profile Application',
                 text_content,
-                email_admin,
+                email_from,
                 [email_to],
                 fail_silently=False,
             )
