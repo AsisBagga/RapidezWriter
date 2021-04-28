@@ -123,12 +123,15 @@ def resume_writing(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_writing.html", {'faqs':faq})
 def resume_makeover(request):
+    work_around = list(range(11, 33))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover.html", {'faqs':faq})
+    return render(request,"resume_makeover.html", {'faqs':faq, "range": work_around})
 def resume_makeover_1(request):
+    work_around_2 = list(range(23, 34))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover1.html", {'faqs':faq})
+    return render(request,"resume_makeover1.html", {'faqs':faq, "range_2":work_around_2 })
 def resume_makeover_2(request):
+    work_around_2 = list(range(34, 84))
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_makeover2.html", {'faqs':faq})
 def resume_makeover_3(request):
@@ -274,6 +277,7 @@ def payment(request):
         template_photo=request.POST.get('template_photo')
         template_price=request.POST.get('template_price')
         print("template_price: " + template_price)
+        print("template_price: " + template_id)
 
         response = client.order.create({'amount': template_price, 'currency': order_currency, 'payment_capture': '1'})
         order_id = response['id']

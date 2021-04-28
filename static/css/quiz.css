@@ -222,6 +222,11 @@ header ul li a {
   min-height: 38em;
 }
 
+.image_updated{
+  width: 460px;
+  height: 550px;
+}
+
 .item h3{
   font-weight: 500;
 }
