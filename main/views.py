@@ -43,17 +43,16 @@ def about(request):
 def contact_us(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        services = request.POST.getlist('services')
         phone = request.POST.get('phone')
-        query = request.POST.get('query')
         email = request.POST.get('email')
-        print("Details: ", name, query, email, services)
+        services = request.POST.getlist('services')
+        query = request.POST.get('message')
         email_from = settings.EMAIL_FROM
-        email_to = 'bharath.nr1@gmail.com'
-        servicesstr = "".join(services)
-        print(servicesstr)
+        email_to = settings.EMAIL_ADMIN
+        servicesstr = " | ".join(services)
+        print("Details: ", name, phone, email, servicesstr, query)
         
-        text_content = "name: "+name+" email: "+email+" services: "+servicesstr + " query: "+query, " phone number: "+phone
+        text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Services: "+servicesstr + "\n Query: "+query
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
@@ -61,9 +60,12 @@ def contact_us(request):
             [email_to],
             fail_silently=False,
         )
-        isSuccess.send()
         print("Email sent : ", isSuccess)
-    return render(request,"contact.html")
+        if isSuccess == True :
+            return render(request,"thankyou_contact.html")
+        else:
+            return render(request,"failure_contact.html")
+    return render(request, "contact.html")
 
 #FAQ
 def faq(request):
@@ -102,14 +104,17 @@ def deleteFAQ(request, pk):
 def resume_consulting(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        services = request.POST.getlist('services')
         phone = request.POST.get('phone')
-        query = request.POST.get('query')
         email = request.POST.get('email')
-        print("Details: ", name, query, email, services)
+        services = request.POST.getlist('services')
+        query = request.POST.get('message')
         email_from = settings.EMAIL_FROM
-        email_to = 'bharath.nr1@gmail.com'
-        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
+        email_to = settings.EMAIL_ADMIN
+        servicesstr = " | ".join(services)
+        print("Details: ", name, phone, email, servicesstr, query)
+        
+        text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Services: "+servicesstr + "\n Query: "+query
+        print(text_content)
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
@@ -117,9 +122,13 @@ def resume_consulting(request):
             [email_to],
             fail_silently=False,
         )
-        isSuccess.send()
         print("Email sent : ", isSuccess)
+        if isSuccess == True :
+            return render(request,"thankyou_contact.html")
+        else:
+            return render(request,"failure_contact.html")
     return render(request,"resume_consulting.html")
+
 def resume_writing(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_writing.html", {'faqs':faq})

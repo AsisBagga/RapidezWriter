@@ -287,123 +287,63 @@ header ul li a {
 }
 
 /* <!-- -----------------------------------------------------customer raiting------------------------------ --> */
-.page-wrapper {
-  margin-top: 30px;
+
+/* Clients */
+
+.page-wrapper2 {
+  margin-top: 20px;
 }
-.post-slider {
-  /* border: 1px solid red; */
-  /* background: lightcoral; */
+.post-slider2 {
   position: relative;
+  height: auto;
 }
 
-.post-slider .post-wrapper {
-  width: 80%;
-  height: 300px;
+.post-slider2 .post-wrapper2 {
+  width: 90%;
+  height: 80px;
   margin: 0 auto;
-  /* border: 1px solid rebeccapurple; */
-  /* overflow: hidden; */
 }
 
-.post-slider .post-wrapper .post {
-  /* width: 300px !important; */
-  height: 300px;
-  display: inline-block;
-  /* background: lightblue; */
-  border: 1px solid rgb(226, 215, 215);
-  box-shadow: 5px 15px 10px #f4f4f4;
-  background: #fff;
-  margin: 0 10px;
-  padding: 20px;
+.post-slider2 .post-wrapper2 .post2 {
+  margin-right: 4em;
+  width: auto !important;
 }
 
-.post-slider .next {
+.post-slider2 .next {
   position: absolute;
   top: 40%;
-  right: 80px;
+  right: 60px;
   cursor: pointer;
-  color: #757575;
 }
 
-.post-slider .prev {
+.post-slider2 .prev {
   position: absolute;
   top: 40%;
-  left: 80px;
+  left: 60px;
   cursor: pointer;
-  color: #757575;
 }
 
-.Pcontent {
+.post2 img {
   position: relative;
-  line-height: 18px;
-  margin-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: auto;
+  height: 70px;
 }
 
-.post .b {
-  font-weight: bold;
-  margin-left: 120px;
-  margin-top: 30px;
-}
-
-.post img {
-  position: absolute;
-  top: 15px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-}
-
-.post p span {
-  color: #223c9973;
-}
 
 .headline {
   text-align: center;
 }
 
-.part {
-  padding-top: 10px;
-}
-
-.image1 {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 80px;
-  margin-bottom: 20px;
-}
-
-.image1 img {
-  height: 80px;
-  margin: 30px 0px;
-
-  justify-content: space-between;
-}
-
-.border {
-  /* border-top: 2px solid #e0e0e0;  */
-  margin-top: 50px;
-  padding: 0 50px;
-  /* border-bottom: 2px solid #e0e0e0;*/
-}
-
 .cornerLeft {
   padding-left: 22pc;
   padding-top: 20px;
-  /* padding-right: 10pc; */
-  /* padding-top: 30px; */
 }
 .gray {
   height: 270px;
-  /* background: #f8f8f8; */
   padding-top: 10px;
   padding: 10px 20px;
   border-bottom: 2px solid #f2f2f2;
   border-radius: 5px;
-  /* -webkit-box-shadow: 0 1px 4px #0000004d, 0 0 40px #0000001a inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px #0000001a inset;
-  box-shadow: 0 1px 4px #0000004d, 0 0 40px #0000001a inset;   */
 }
 
 .designation {
@@ -652,6 +592,27 @@ header ul li{
 .testimonials{
   font-size: 20px;
   font-weight: 600;
+}
+
+/* Trusted by companies */
+
+.trustedby{
+  width: 100vw;
+  display: block;
+}
+
+.trustedby .headline h4{
+  margin-bottom: 0;
+  font-weight: 300;
+  padding-top: 0.5em;
+}
+
+.slick-track {
+  height: auto !important;
+}
+
+.post-slider2 .post-wrapper2 {
+  width: 85vw;
 }
 
 /* footer */

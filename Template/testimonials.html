@@ -170,21 +170,105 @@
         </div>
    </div>
 
-    <!-- ------------------------------------------ Trusted By ------------------------------------------ -->
-    <div class="border">
-        <div class="headline part">
-          <h4 style="margin-top:0px">Trusted By Companies</h4>
+    <!-- -------------------------------Resumes have been shortlisted by--------------------------- -->
+    
+    <div class="trustedby">
+      <div class="headline">
+        <h4  
+        style="
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 2em;
+        letter-spacing: 1.4px;
+        ">TRUSTED BY PROFESSIONALS FROM</h4>
+      </div>
+      <br>
+  
+      <div class="page-wrapper2">
+        <div class="post-slider2">
+          <div class="post-wrapper2 part12">
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/adobe.png' %}" />
+            </div>
+            
+            <div class="post2">
+              <img src="{% static '/image/clients/amazon.png' %}" />
+            </div>
+            
+            <div class="post2">
+              <img src="{% static '/image/clients/cisco.png' %}" alt="" />
+            </div>
+            
+            <div class="post2">
+              <img src="{% static '/image/clients/dell.png' %}" alt="" />
+            </div>
+            
+            <div class="post2">
+              <img src="{% static '/image/clients/flipkart.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/goldman.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/hp.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/itc.jpg' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/marriott.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/microsoft.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/nestle.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/ola.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/paytm.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/reliance1.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/samsung.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/byju.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/sony.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/tata.png' %}" alt="" />
+            </div>
+  
+            <div class="post2">
+              <img src="{% static '/image/clients/unilever.png' %}" alt="" />
+            </div>
+            
+          </div>
         </div>
-
-        <div class="image1">
-          <img src="{% static '/image/microsoft.png' %}" style="height: 60px; " alt="" />
-          <img src="{% static '/image/ola.svg' %}" alt="" style="margin-top:20px; height: 40px;" />
-          <img src="{% static '/image/amazon.png' %}" alt="" />
-          <img src="{% static '/image/goldman_sachs.png' %}" alt="" />
-          <img src="{% static '/image/adobe.png' %}" alt="" />
-          <img src="{% static '/image/cisco.png' %}" alt="" />
-        </div>
-    </div>
+      </div>
+  
+  </div>
 
     <!-- ---------------------------------------------------analysis detail 2--------------------------------------- -->
     <div class="ourContainer">
@@ -245,8 +329,6 @@
         {% endif %}
       </div>
   
-      <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
-      <!-- style="margin-bottom: 1.5em" -->
       <div class="branded">
         <a href="{% url 'home' %}">
         <img 
@@ -259,7 +341,6 @@
         
         <li>
         <!-- Google -->
-        <!-- style="margin-left: 20px; margin-right: 7px" -->
         <a 
         href="https://www.linkedin.com/company/rapidezwriters/" 
         style="color: #dbe0f2"
@@ -274,7 +355,6 @@
   
         <li>
         <!-- LinkedIn -->
-        <!--         style="margin-left: 20px; margin-right: 7px" -->
         <a 
         href="https://www.linkedin.com/company/rapidezwriters/" 
         style="color: #dbe0f2"
@@ -288,7 +368,6 @@
   
         <li>
       <!-- Facebook -->
-      <!-- style="margin-left: 20px; margin-right: 7px" -->
           <a 
             href="https://www.facebook.com/RapidezWriter/" 
             style="color: #dbe0f2"
@@ -303,7 +382,6 @@
   
         <li>
         <!-- Instagram -->
-        <!-- style="margin-left: 20px; margin-right: 7px" -->
         <a 
           href="https://www.facebook.com/RapidezWriter/" 
           style="color: #dbe0f2"
@@ -319,7 +397,6 @@
   
         <li>
         <!-- Youtube -->
-        <!--           style="margin-left: 20px; margin-right: 7px" -->
           <a 
             href="https://www.facebook.com/RapidezWriter/" 
             style="color: #dbe0f2"
@@ -419,6 +496,27 @@ $('.cmpy').css("position", "relative");
 
 }
 </script>
+
+<script>
+  $(".post-wrapper2").slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+      slidesToShow: 2,
+      centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+      slidesToScroll: 1
+      }
+    }
+  ]
+
+  });
+</script> 
 
     <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
   </body>
