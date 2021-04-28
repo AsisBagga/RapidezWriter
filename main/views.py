@@ -131,9 +131,10 @@ def resume_makeover_1(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_makeover1.html", {'faqs':faq, "range_2":work_around_2 })
 def resume_makeover_2(request):
-    work_around_2 = list(range(34, 84))
+    work_around = list(range(40, 50))
+    work_around_2 = list(range(54, 84))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover2.html", {'faqs':faq})
+    return render(request,"resume_makeover2.html", {'faqs':faq, "range":work_around, "range_2":work_around_2})
 def resume_makeover_3(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resumeMakeover3.html", {'faqs':faq})

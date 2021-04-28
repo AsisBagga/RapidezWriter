@@ -25,7 +25,8 @@ SECRET_KEY = '#)xgga688w+sj=%&u=hupbrffk9_ptcp&_5y6n6xp!$r)t_q)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['45.80.181.32', '127.0.0.1']
 
 
 # Application definition
@@ -159,6 +160,7 @@ CELERY_TASK_SERIALIZER = 'json'
 EMAIL_FILE_PATH = str(os.path.join(BASE_DIR,  'sent_emails'))
 EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 EMAIL_FROM = 'support@rapidezglobal.com'
+EMAIL_ADMIN = 'prashanth@rapidezglobal.com'
 MAILJET_API_KEY = 'fb7bc2f9185bbfde6a4687f97c86e690'
 MAILJET_API_SECRET = '8455204be92cbccbc8619decf136b839'
 

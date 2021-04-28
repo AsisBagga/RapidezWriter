@@ -220,7 +220,7 @@ header ul li a {
 .text-p{
   text-align: justify;
   margin-right: 4em;
-  margin-top: 2em;
+  margin-top: 6em;
 }
 
 .text-p p {
@@ -330,8 +330,6 @@ ul.socialmedia-icons li{
 /* #### Mobile Phones Portrait #### */
 @media screen and (max-device-width: 480px) and (orientation: portrait){
 
-
-  
 /* Header */
 
 header{

@@ -924,6 +924,7 @@ header ul li{
   }
 
   .allb {
+    display: block;
     margin-top: 2em;
   }
 
@@ -937,6 +938,7 @@ header ul li{
     float: left;
     margin: 0;
     padding: 1em;
+    margin-bottom: 2em;
   }
 
   .tex1 {

@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Upload</title>
+
+  <!-- -----------------fontawesome------------------------------ -->
+  <link rel="stylesheet" href="{% static '/fontawesome-free-5.14.0-web/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static '/fontawesome-free-5.14.0-web/css/fontawesome.min.css' %}" />
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href= "{% static '/materialize/css/materialize.min.css' %}" media="screen,projection"/>
+  <link rel="stylesheet" href="{% static '/lightbox2-dev/dist/css/lightbox.min.css' %}" />
+
+  <!-- ----------------slick--------------------------- -->
+  <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick.css' %}" />
+  <link rel="stylesheet" href="{% static '/slick-1.8.1/slick/slick-theme.css' %}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <link rel="stylesheet" href="{% static '/css/resume_upload.css' %}">
+</head>
+<body>
+
+ <!-- Navbar -->
+ <header class="drop">
+
+  <a href="{% url 'home' %}"><img class="desk_logo" src="{% static '/image/homepage_logo_new.png' %}" alt="Rapidez Writer Logo" /></a>
+  <a href="{% url 'home' %}"><img class="mobile_logo" src="{% static '/image/logo-removebg.png' %}" alt="Rapidez Writer Logo" /></a>
+  
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  
+  <ul class="menu">
+    <li>
+      <a class="services">Services
+        <i class="fa fa-chevron-down"
+          style="
+            font-size: 10px;
+            position: relative;
+            bottom: 1px;
+            opacity: 0.3;
+            color: #0783ca;
+          "
+          aria-hidden="true">
+        </i>
+      </a>
+      <ul class="ser1 ser12 serv" style="left: 38%;">
+        <div class="box111"></div>
+        <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
+        <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
+        <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+        <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
+        <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
+        <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
+      </ul>
+    </li>
+
+    <li>
+      <a class="resources">Resources
+        <i class="fa fa-chevron-down"
+          style="
+            font-size: 10px;
+            position: relative;
+            bottom: 1px;
+            opacity: 0.3;
+            color: #0783ca;
+          "
+          aria-hidden="true">
+        </i>
+      </a>
+      <ul class="ser1 ser12 rscs" style="left: 38%">
+        <a href="{% url 'quizes_list' %}"><li>Career Assessment</li></a>            
+        <a href="{% url 'career_list_page' %}"><li>Career Advice</li></a>
+        <a href="{% url 'faq' %}"><li>FAQ</li></a>
+        
+      </ul>
+    </li>
+
+    <li>
+      <a class="comp">Company
+        <i class="fa fa-chevron-down"
+          style="
+            font-size: 10px;
+            position: relative;
+            bottom: 1px;
+            opacity: 0.3;
+            color: #0783ca;
+          "
+          aria-hidden="true">
+        </i>
+      </a>
+      <ul class="ser1 ser12 cmpy" style="left: 38%">
+        <a href="{% url 'about' %}"><li>Overview</li></a>
+        <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
+        <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
+        <a href="#"><li>Careers</li></a>          
+      </ul>
+    </li>
+
+    <li><a href="{% url 'testimonials' %}" class="testimonials">Testimonials</a></li>
+
+    {% if user.is_authenticated %}
+    <li>
+      <a href="#">Accounts
+        <i
+          class="fa fa-chevron-down"
+          style="
+            font-size: 10px;
+            position: relative;
+            bottom: 1px;
+            opacity: 0.3;
+          "
+          aria-hidden="true">
+        </i>
+      </a>
+      <ul class="ser1 ser12" style="left: 38%">
+        <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
+        <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+        <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
+      {% if request.user.is_staff %}
+        <a href="{% url 'signup' %}"> <li> Register User </li></a>
+      {% endif %}
+        <a href="{% url 'logout' %}"> <li> Logout </li></a>
+    {% endif %}
+      </ul>
+    </li>
+  </ul>
+</header>
+<!-- navbar-end -->
+
+<div class="cont">
+    <h3>Something went wrong. Please try again in some time. You can also ring us up on the number mentioned in Contact Us right away.</h3>
+    <p><a href="{% url 'home' %}">Return to Home</a></p>
+</div>
+
+      <!-- --------------------------------------------------footer----------------------------- -->
+      <footer class="footer">
+        <div class="product">
+          <h5>PRODUCTS</h5>
+          <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
+          <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
+          <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+          <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
+          <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
+          <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
+        </div>
+  
+        <div class="learn">
+          <h5>LEARN MORE</h5>
+          <a href="{% url 'quizes_list' %}"><p>Career Assessment</p></a>
+          <a href="#"><p>Career Advice</p></a>
+          <a href="{% url 'testimonials' %}"><p>Testimonials</p></a>
+          <a href="#"><p>FAQs</p></a>
+        </div>
+  
+        <div class="company">
+          <h5>COMPANY</h5>
+          <a href="{% url 'about' %}"><p>Overview</p></a>
+          <a href="{% url 'about' %}#aboutFounder"><p>About Founder</p></a>
+          <a href="{% url 'contactUs' %}"><p>Contact Us</p></a>
+          <a href="#"><p>Careers</p></a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}"> <p> Logout </p></a>
+          {% else %}
+          <a href="{% url 'login' %}"> <p> Login </p></a>
+          {% endif %}
+  
+        </div>
+  
+        <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+        <div class="branded">
+          <a href="{% url 'home' %}">
+          <img 
+          class="desk_logo" 
+          src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+          alt="Rapidez Writer Logo" 
+           />
+         
+          <ul class="socialmedia-icons">
+          
+          <li>
+          <!-- Google -->
+          <!-- style="margin-left: 20px; margin-right: 7px" -->
+          <a 
+          href="https://www.linkedin.com/company/rapidezwriters/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i
+            class="fab fa-google fa-2x"
+            
+            aria-hidden="true"
+          ></i>
+          </a>
+          </li>
+    
+          <li>
+          <!-- LinkedIn -->
+          <!--         style="margin-left: 20px; margin-right: 7px" -->
+          <a 
+          href="https://www.linkedin.com/company/rapidezwriters/" 
+          style="color: #dbe0f2"
+          target="blank">
+          <i
+            class="fab fa-linkedin fa-2x"
+            aria-hidden="true">
+          </i>
+          </a>
+          </li>
+    
+          <li>
+        <!-- Facebook -->
+        <!-- style="margin-left: 20px; margin-right: 7px" -->
+            <a 
+              href="https://www.facebook.com/RapidezWriter/" 
+              style="color: #dbe0f2"
+              target="blank">
+              <i 
+              class="fab fa-facebook fa-2x" 
+              
+              aria-hidden="true">
+            </i>
+            </a>
+          </li>
+    
+          <li>
+          <!-- Instagram -->
+          <!-- style="margin-left: 20px; margin-right: 7px" -->
+          <a 
+            href="https://www.facebook.com/RapidezWriter/" 
+            style="color: #dbe0f2"
+            target="blank">
+            <i 
+            class="fab fa-instagram fa-2x"
+            aria-hidden="true"
+            
+            >
+          </i>
+          </a>
+          </li>
+    
+          <li>
+          <!-- Youtube -->
+          <!--           style="margin-left: 20px; margin-right: 7px" -->
+            <a 
+              href="https://www.facebook.com/RapidezWriter/" 
+              style="color: #dbe0f2"
+              target="blank">
+              <i 
+              class="fab fa-youtube fa-2x" 
+              aria-hidden="true"
+    
+              >
+            </i>
+            </a>
+          </li>   
+          
+          </ul>
+        </div>
+      </footer>
+  
+
+        <!--JavaScript at end of body for optimized loading-->
+  <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="{% static '/lightbox2-dev/dist/js/lightbox.js' %}"></script>
+
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="{% static '/materialize/js/materialize.min.js' %}"
+  ></script>
+
+  <script type="text/javascript">
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $(".carousel").carousel();
+    });
+  </script>
+
+  <script>
+    $(".post-wrapper").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      nextArrow: $(".next"),
+      prevArrow: $(".prev"),
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+    });
+  </script>
+
+<script>
+  if($(window).width() <= 480){
+
+    // For the sub-menu
+    //Services
+    $(".services").click(function(){
+      $('.rscs').hide();
+      $('.cmpy').hide();
+      $('.serv').slideToggle('normal');
+      $('.serv').css("position", "relative");
+    });
+
+    //Resources
+    $(".resources").click(function(){
+      $('.serv').hide();
+      $('.cmpy').hide();
+      $('.rscs').slideToggle('normal');
+      $('.rscs').css("position", "relative");
+    });
+
+    //Company
+    $(".comp").click(function(){
+      $('.serv').hide();
+      $('.rscs').hide();
+      $('.cmpy').slideToggle('normal');
+      $('.cmpy').css("position", "relative");
+    });
+
+  }
+  </script>  
+  <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
+
+
+</body>
+</html>

@@ -115,6 +115,7 @@ def resume_parser(resumePath, user_email):
     content = 'Resume Analysis'
 
     html_content = render_to_string('mail_template.html')
+    #html_content = render_to_string('mail_template.html', {'context': 'values'}) -- use this to send the above values to the html page
     text_content = strip_tags(html_content)
 
     isSuccess = send_mail(

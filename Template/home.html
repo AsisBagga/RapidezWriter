@@ -176,8 +176,9 @@
 </div>
 
     <!-- -------------------------------Resumes have been shortlisted by--------------------------- -->
+    
 <div class="trustedby">
-    <div class="headline container ">
+    <div class="headline">
       <h4  
       style="
       font-size: 18px;
@@ -187,8 +188,6 @@
       ">TRUSTED BY PROFESSIONALS FROM</h4>
     </div>
     <br>
-
-    <!-- Clients -->
 
     <div class="page-wrapper2">
       <div class="post-slider2">
@@ -288,9 +287,7 @@
   </div>
 
   <div class="aboutus-desc">
-    <h3 style="text-align: left; font-weight: 800; width: 100%;">Prashanth Mudaliar</h3>
-    <!-- <h5 style="font-size: 22px; color: black;">Founder & CEO, Rapidez Writer <br> Director, Rapidez HR Global Services</h5> -->
-    
+    <h3 style="text-align: left; font-weight: 800; width: 100%;">Prashanth Mudaliar</h3>    
     <h5 style="font-size: 22px; font-weight: 600; color: black;">Leadership Branding and Career Coach <h5>
 
     <h5>
@@ -304,7 +301,6 @@
     </h5>
 
     <a href="https://www.linkedin.com/in/prashanthmudaliar/?originalSubdomain=in" target="blank" style="font-size: 22px; color: black;">
-        <!-- <i class="fa fa-linkedin fa-1x" style="margin-left: 5px; margin-right: 2px" aria-hidden="true"></i> -->
         <img 
           class="linkedin-follow"  
           src="{% static '/image/linkedin-follow.png' %}"
@@ -328,7 +324,7 @@
         <div class="image1212">
           <img src="{% static '\image\wsh1.png' %}" />
         </div>
-        <div class="pt1 pt" data-aos="fade-left" data-aos-duration="3500">
+        <div class="pt1 pt" data-aos="fade-up" data-aos-duration="3500">
           <h5>
             <span>Visibility on Job Portals</span>
           </h5>
@@ -340,7 +336,7 @@
           <img src="{% static '\image\wsh2.png' %}" />
         </div>
 
-        <div class="pt2 pt" data-aos="fade-left" data-aos-duration="4000">
+        <div class="pt2 pt" data-aos="fade-up" data-aos-duration="4000">
           <h5>
             <span>Adoption of ATS</span>
           </h5>
@@ -352,7 +348,7 @@
           <img src="{% static '\image\wsh8.png' %}" />
         </div>
 
-        <div class="pt3 pt" data-aos="fade-left" data-aos-duration="4500">
+        <div class="pt3 pt" data-aos="fade-up" data-aos-duration="4500">
           <h5>
             <span>Vague Content</span>
           </h5>
@@ -364,7 +360,7 @@
           <img src="{% static '\image\wsh7.png' %}" />
         </div>
 
-        <div class="pt4 pt" data-aos="fade-left" data-aos-duration="5000">
+        <div class="pt4 pt" data-aos="fade-up" data-aos-duration="5000">
           <h5>
             <span>Irrelevant Interview calls</span>
           </h5>
@@ -376,7 +372,7 @@
           <img src="{% static '\image\wsh6.png' %}" />
         </div>
 
-        <div class="pt5 pt" data-aos="fade-left" data-aos-duration="5500">
+        <div class="pt5 pt" data-aos="fade-up" data-aos-duration="5500">
           <h5>
             <span>Insignificant keywords</span>
           </h5>
@@ -388,7 +384,7 @@
           <img src="{% static '\image\wsh9.png' %}" />
         </div>
 
-        <div class="p6 pt" data-aos="fade-left" data-aos-duration="6000">
+        <div class="pt6 pt" data-aos="fade-up" data-aos-duration="6000">
           <h5>
             <span>Grammatical errors</span>
           </h5>
@@ -447,10 +443,7 @@
 
     <!-- -------------------------------------------------memorial-design--------------------------------- -->
     
-    <div class="boss1" 
-      style="background: #f8f8f8"
-    >
-    <!-- style="background: #f8f8f8" -->
+    <div class="boss1" style="background: #f8f8f8">
       <div class="headline container">
         <h4>Features of our Resume</h4>
       </div>
@@ -569,8 +562,8 @@
   
 <!-- --------------------------------------------c-write----------------------------------- -->
 <div class="main-cc1">
-  <br /><br /><br />
-  <h4>Customer Reviews</h4>
+  <br />
+  <h4>Career Advice</h4>
   <div class="main-d1">
     <div class="page-wrapper1">
       <div class="post-slider1">
@@ -610,7 +603,6 @@
     <div class="colo1" style="background: #f8f8f8">
       <div class="headline container" style="padding-bottom: 10px">
         <h4>What customers say about us </h4>
-        <!-- <p><span style="color: #f8c20e;">&#9733; &#9733; &#9733; &#9733;</span><span style="font-weight: bold; margin-left: 10px;"> 4.3 </span> Rating <span style="font-weight: bold; margin-left: 10px;">1033</span> Reviews</p> -->
         <br>
       </div>
       <div class="taggbox-container" style=" width:100%;height:100%;overflow: auto;">
@@ -878,24 +870,25 @@
     </script>
 
     <script>
-      $(".post-wrapper").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        nextArrow: $(".next"),
-        prevArrow: $(".prev"),
-      });
-    </script>
-
-    <script>
-      $(".post-wrapper1").slick({
+      $(".part11").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
-        nextArrow: $(".next"),
-        prevArrow: $(".prev"),
+        autoplaySpeed: 6000,
+        nextArrow: $(".pat00"),
+        prevArrow: $(".pat0"),
+
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+          slidesToShow: 1,
+          centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+          slidesToScroll: 1
+          }
+        }
+      ]
+
       });
     </script>    
 
@@ -905,8 +898,18 @@
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        nextArrow: $(".next"),
-        prevArrow: $(".prev"),
+
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+          slidesToShow: 2,
+          centerMode: false, /* set centerMode to false to show complete slide instead of 3 */
+          slidesToScroll: 1
+          }
+        }
+      ]
+
       });
     </script>    
 
@@ -916,6 +919,6 @@
         duration: 1200,
       });
     </script>
-    <!-- <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script> -->
+    <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
   </body>
 </html>
