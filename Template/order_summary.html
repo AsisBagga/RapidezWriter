@@ -114,7 +114,7 @@
             <a href="{% url 'about' %}"><li>Overview</li></a>
             <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
             <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
-            <a href="#"><li>Careers</li></a>          
+            <a href="{% url 'job_page' %}"><li>Careers</li></a>          
           </ul>
         </li>
 
@@ -137,6 +137,9 @@
           <ul class="ser1 ser12" style="left: 38%">
             <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
             <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'addFAQ' %}"><li>Create FAQ</li></a>
+            <a href="{% url 'addJob' %}"><li>Create Job</li></a>
+
             <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
           {% if request.user.is_staff %}
             <a href="{% url 'signup' %}"> <li> Register User </li></a>

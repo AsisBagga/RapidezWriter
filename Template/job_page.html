@@ -448,6 +448,38 @@
         accordion: false,
       });
     </script>
+
+      <script>
+        if($(window).width() <= 480){
+
+      // For the sub-menu
+      //Services
+      $(".services").click(function(){
+      $('.rscs').hide();
+      $('.cmpy').hide();
+      $('.serv').slideToggle('normal');
+      $('.serv').css("position", "relative");
+      });
+
+      //Resources
+      $(".resources").click(function(){
+      $('.serv').hide();
+      $('.cmpy').hide();
+      $('.rscs').slideToggle('normal');
+      $('.rscs').css("position", "relative");
+      });
+
+      //Company
+      $(".comp").click(function(){
+      $('.serv').hide();
+      $('.rscs').hide();
+      $('.cmpy').slideToggle('normal');
+      $('.cmpy').css("position", "relative");
+      });
+
+      }
+      </script>
+
     <script src="//code.tidio.co/8cfnhkqijnxjlimblu2zc8oezedbmt9r.js" async></script>
   </body>
 </html>
