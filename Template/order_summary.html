@@ -160,10 +160,19 @@
             <legend>
               <h3>Selected Product</h3>
             </legend>
+              {% if context.template_id == "Temp_pb_or_jc" %}
+              <div class="gender_xyz" >
+                <img src="{{ context.template_photo }}">
+              </div>
+              {% elif  context.template_id == "Temp_linkedin" %}
+              <div class="gender_xyz" >
+                <img src="{{ context.template_photo }}">
+              </div>
+              {% else %}
               <div class="gender" >
                 <img src="{{ context.template_photo }}">
               </div>
-    
+              {% endif %}
           </fieldset>
           <fieldset>
             <legend>

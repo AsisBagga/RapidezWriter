@@ -325,6 +325,15 @@ legend{
     height: 550px;
 }
 
+.gender_xyz{
+    text-align: center;
+}
+
+.gender_xyz img{
+  width: auto;
+  height: auto;
+}
+
 
   /* #### Mobile Phones Portrait #### */
 @media screen and (max-device-width: 480px) and (orientation: portrait){
