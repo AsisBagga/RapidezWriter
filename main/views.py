@@ -57,7 +57,7 @@ def contact_us(request):
             'Customer Contact',
             text_content,
             email_from,
-            [email_to],
+            [email_from],
             fail_silently=False,
         )
         print("Email sent : ", isSuccess)
@@ -119,7 +119,7 @@ def resume_consulting(request):
             'Customer Contact',
             text_content,
             email_from,
-            [email_to],
+            [email_from],
             fail_silently=False,
         )
         print("Email sent : ", isSuccess)
@@ -292,13 +292,23 @@ def payment(request):
         template_photo=request.POST.get('template_photo')
         template_price=request.POST.get('template_price')
         print("template_price: " + template_price)
-
         response = client.order.create({'amount': template_price, 'currency': order_currency, 'payment_capture': '1'})
         order_id = response['id']
         order_status = response['status']
-        print("response: ", response)
-
+        print("response: ", response)        
         if order_status=='created':
+            email_from = settings.EMAIL_FROM
+            email_to = settings.EMAIL_ADMIN
+            text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Template ID: "+template_id + "\n Template Price: "+template_price
+            print(text_content)
+            isSuccess = send_mail(
+                'Order Details',
+                text_content,
+                email_from,
+                [email_from],
+                fail_silently=False,
+            )
+            print("Email sent : ", isSuccess)
             print("Order created: ")
             print(order_id)
             context['name'] = name
@@ -308,7 +318,6 @@ def payment(request):
             context['template_photo'] = template_photo
             context['template_price'] = template_price
             context['order_id'] = order_id
-
             return render(request, 'order_summary.html', {'context': context})
     return HttpResponse('<h1> Error in creating a payment order</h1>')
 
@@ -379,13 +388,13 @@ def submitJob(request, pk):
             print("name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job )
             saved.save()
             email_from = settings.EMAIL_FROM
-            email_to = 'bharath.nr1@gmail.com'
+#            email_to = 
             text_content = "name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job 
             isSuccess = send_mail(
                 'New Job Profile Application',
                 text_content,
                 email_from,
-                [email_to],
+                [email_from],
                 fail_silently=False,
             )
             isSuccess.attach(saved.resume)
