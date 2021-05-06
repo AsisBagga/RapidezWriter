@@ -43,25 +43,29 @@ def about(request):
 def contact_us(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        services = request.POST.getlist('services')
         phone = request.POST.get('phone')
-        query = request.POST.get('query')
         email = request.POST.get('email')
-        print("Details: ", name, query, email, services)
-        email_from = settings.EMAIL_HOST_USER
-        email_to = 'bharath.nr1@gmail.com'
-        email_admin = settings.EMAIL_ADMIN
-        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
+        services = request.POST.getlist('services')
+        query = request.POST.get('message')
+        email_from = settings.EMAIL_FROM
+        email_to = settings.EMAIL_ADMIN
+        servicesstr = " | ".join(services)
+        print("Details: ", name, phone, email, servicesstr, query)
+        
+        text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Services: "+servicesstr + "\n Query: "+query
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
-            email_admin,
+            email_from,
             [email_to],
             fail_silently=False,
         )
-        isSuccess.send()
         print("Email sent : ", isSuccess)
-    return render(request,"contact.html")
+        if isSuccess == True :
+            return render(request,"thankyou_contact.html")
+        else:
+            return render(request,"failure_contact.html")
+    return render(request, "contact.html")
 
 #FAQ
 def faq(request):
@@ -100,41 +104,51 @@ def deleteFAQ(request, pk):
 def resume_consulting(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        services = request.POST.getlist('services')
         phone = request.POST.get('phone')
-        query = request.POST.get('query')
         email = request.POST.get('email')
-        print("Details: ", name, query, email, services)
-        email_from = settings.EMAIL_HOST_USER
-        email_to = 'bharath.nr1@gmail.com'
-        email_admin = settings.EMAIL_ADMIN
-        text_content = "name: "+name+" email: "+email+" services: "+services + " query: "+query, " phone number: "+phone
+        services = request.POST.getlist('services')
+        query = request.POST.get('message')
+        email_from = settings.EMAIL_FROM
+        email_to = settings.EMAIL_ADMIN
+        servicesstr = " | ".join(services)
+        print("Details: ", name, phone, email, servicesstr, query)
+        
+        text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Services: "+servicesstr + "\n Query: "+query
+        print(text_content)
         isSuccess = send_mail(
             'Customer Contact',
             text_content,
-            email_admin,
+            email_from,
             [email_to],
             fail_silently=False,
         )
-        isSuccess.send()
         print("Email sent : ", isSuccess)
+        if isSuccess == True :
+            return render(request,"thankyou_contact.html")
+        else:
+            return render(request,"failure_contact.html")
     return render(request,"resume_consulting.html")
+
 def resume_writing(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_writing.html", {'faqs':faq})
+
 def resume_makeover(request):
     work_around = list(range(11, 33))
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_makeover.html", {'faqs':faq, "range": work_around})
+
 def resume_makeover_1(request):
     work_around_2 = list(range(23, 34))
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_makeover1.html", {'faqs':faq, "range_2":work_around_2 })
+
 def resume_makeover_2(request):
     work_around = list(range(40, 50))
     work_around_2 = list(range(54, 84))
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_makeover2.html", {'faqs':faq, "range":work_around, "range_2":work_around_2})
+
 def resume_makeover_3(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resumeMakeover3.html", {'faqs':faq})
@@ -278,7 +292,6 @@ def payment(request):
         template_photo=request.POST.get('template_photo')
         template_price=request.POST.get('template_price')
         print("template_price: " + template_price)
-        print("template_price: " + template_id)
 
         response = client.order.create({'amount': template_price, 'currency': order_currency, 'payment_capture': '1'})
         order_id = response['id']
@@ -365,14 +378,13 @@ def submitJob(request, pk):
             saved.job = str(obj.heading)
             print("name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job )
             saved.save()
-            email_from = settings.EMAIL_HOST_USER
+            email_from = settings.EMAIL_FROM
             email_to = 'bharath.nr1@gmail.com'
-            email_admin = settings.EMAIL_ADMIN
             text_content = "name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job 
             isSuccess = send_mail(
                 'New Job Profile Application',
                 text_content,
-                email_admin,
+                email_from,
                 [email_to],
                 fail_silently=False,
             )
@@ -407,4 +419,4 @@ def privacypolicy(request):
     return render(request, "privacypolicy.html")
 
 def terms(request):
-    return render(request, "terms.html")    
+    return render(request, "terms.html") 

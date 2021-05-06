@@ -425,7 +425,7 @@ header ul li a {
   grid-template-columns: 63px 250px 63px 250px 63px 250px;
   height: 400px;
   justify-items: center;
-  column-gap: 4em;
+  column-gap: 2em;
   margin-left: 1em;
 }
 

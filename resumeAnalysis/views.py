@@ -29,16 +29,20 @@ def thankyou(request):
 
 def resume_upload(request):
     if request.method == 'POST':
+        print("Received POST call")
         form = ResumeForm(request.POST, request.FILES)
         if form.is_valid():
+            print("forms valid")
             userResume = form.save()
             # request.session['id'] = form.pk
             
             userResumePath = userResume.resume.path
             user_email = userResume.email
             resume_parser(userResumePath, user_email)
-            
+            print("Parsed Sucessfully")
             return redirect('resumeAnalysis:thankyou')
+        else:
+            print("Invalid Form")
     else:
             form = ResumeForm()
     return render(request, 'resume_upload.html', {'form': form})
