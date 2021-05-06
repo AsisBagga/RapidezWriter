@@ -217,8 +217,13 @@ header ul li a {
   display: block;
 }
 
+.btn-top{
+  background: #2aacef;
+}
+
 .update {
   padding-top: 80px;
+  text-align: center;
   /* height: 590px; */
   overflow: hidden;
 }
@@ -267,7 +272,6 @@ header ul li a {
 }
 
 .btn {
-  margin-left: 33%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
