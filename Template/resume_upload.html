@@ -155,7 +155,23 @@
         <br>
         <br>
 
-        <button class="waves-effect waves-light btn" type="submit">Submit</button> 
+        <button class="waves-effect waves-light btn" type="submit">Submit</button>
+		<br ><br>
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ field.label }} : </strong><span>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+		
     </form>     
   </div>
 
@@ -179,6 +195,32 @@
           <a href="#"><p>FAQs</p></a>
         </div>
   
+      <!-- src="{% static '/image/homepage_logo-removebg.png' %}"  -->
+      <!-- style="margin-bottom: 1.5em" -->
+      <div class="branded">
+        <a href="{% url 'home' %}">
+        <img 
+        class="desk_logo" 
+        src="{% static '/image/homepage_logo_small-removebg.png' %}" 
+        alt="Rapidez Writer Logo" 
+         />
+       
+        <ul class="socialmedia-icons">
+        
+        <li>
+        <!-- Google -->
+        <!-- style="margin-left: 20px; margin-right: 7px" -->
+        <a 
+	  href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3bae3f8b54c6882b:0xade680c7e44156dc?source=g.page.m"
+        style="color: #dbe0f2"
+        target="blank">
+        <i
+          class="fab fa-google fa-2x"
+          
+          aria-hidden="true"
+        ></i>
+        </a>
+        </li>
         <div class="company">
           <h5>COMPANY</h5>
           <a href="{% url 'about' %}"><p>Overview</p></a>
@@ -208,11 +250,11 @@
           <!-- Google -->
           <!-- style="margin-left: 20px; margin-right: 7px" -->
           <a 
-          href="https://www.linkedin.com/company/rapidezwriters/" 
-          style="color: #dbe0f2"
-          target="blank">
-          <i
-            class="fab fa-google fa-2x"
+	  href="https://www.facebook.com/Rapidezwriter"
+            style="color: #dbe0f2"
+            target="blank">
+            <i 
+            class="fab fa-facebook fa-2x" 
             
             aria-hidden="true"
           ></i>
@@ -236,27 +278,42 @@
           <li>
         <!-- Facebook -->
         <!-- style="margin-left: 20px; margin-right: 7px" -->
-            <a 
-              href="https://www.facebook.com/RapidezWriter/" 
-              style="color: #dbe0f2"
-              target="blank">
-              <i 
-              class="fab fa-facebook fa-2x" 
-              
-              aria-hidden="true">
-            </i>
-            </a>
-          </li>
-    
-          <li>
-          <!-- Instagram -->
-          <!-- style="margin-left: 20px; margin-right: 7px" -->
+        <a 
+	  href="https://www.instagram.com/rapidezwriters/"
+          style="color: #dbe0f2"
+          target="blank">
+          <i 
+          class="fab fa-instagram fa-2x"
+          aria-hidden="true"
+          
+          >
+        </i>
+        </a>
+        </li>
+  
+        <li>
+        <!-- Youtube -->
+        <!--           style="margin-left: 20px; margin-right: 7px" -->
           <a 
-            href="https://www.facebook.com/RapidezWriter/" 
+	  href="https://www.youtube.com/channel/UCaabk3MePID64Vh6R1-8Fhg"
             style="color: #dbe0f2"
             target="blank">
             <i 
-            class="fab fa-instagram fa-2x"
+	 class="fab fa-youtube fa-2x" 
+ 	 aria-hidden="true"> 
+ 	 </i> 
+ 	 </a> 
+ 	 </li> 
+ 
+ 	 <li> 
+ 	 <!-- Quora --> 
+ 	 <a 
+ 	 href="https://rapidezwriterbyprashanthmudaliar.quora.com/" 
+ 	 style="color: #dbe0f2" 
+ 	 target="blank"> 
+ 	 <i 
+ 	 class="fab fa-quora fa-2x" 
+ 	 
             aria-hidden="true"
             
             >

@@ -40,6 +40,7 @@ def home(request):
     return render(request,"home.html", {"blog":all_objects})
 def about(request):
     return render(request,"about.html")
+
 def contact_us(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -48,7 +49,6 @@ def contact_us(request):
         services = request.POST.getlist('services')
         query = request.POST.get('message')
         email_from = settings.EMAIL_FROM
-        email_to = settings.EMAIL_ADMIN
         servicesstr = " | ".join(services)
         print("Details: ", name, phone, email, servicesstr, query)
         
@@ -66,7 +66,7 @@ def contact_us(request):
         else:
             return render(request,"failure_contact.html")
     return render(request, "contact.html")
-
+    
 #FAQ
 def faq(request):
     all_objects = FAQ.objects.all()
