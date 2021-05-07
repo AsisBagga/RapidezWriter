@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'bootstrap4',
+    'django_inlinecss',
 ]
 
 MIDDLEWARE = [
@@ -161,8 +162,8 @@ EMAIL_FILE_PATH = str(os.path.join(BASE_DIR,  'sent_emails'))
 EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 EMAIL_FROM = 'support@rapidezglobal.com'
 EMAIL_ADMIN = 'prashanth@rapidezglobal.com'
-MAILJET_API_KEY = 'fb7bc2f9185bbfde6a4687f97c86e690'
-MAILJET_API_SECRET = '8455204be92cbccbc8619decf136b839'
+MAILJET_API_KEY = '26cd0d4c6f29ff9e8813a6442cb92fd7'
+MAILJET_API_SECRET = '2ec2b0c82ea473fa68372c521a7db460'
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 

@@ -3,8 +3,12 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from .forms import ResumeForm
 from .models import Resume
+from django.contrib import messages
+
+#Email stuff
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.core.mail import EmailMultiAlternatives, EmailMessage
 
 # Celery
 # from .tasks import sleepy, send_email
@@ -29,37 +33,29 @@ def thankyou(request):
 
 def resume_upload(request):
     if request.method == 'POST':
+        print("Inside resume_upload func ")
         form = ResumeForm(request.POST, request.FILES)
         if form.is_valid():
             userResume = form.save()
-            # request.session['id'] = form.pk
+            userName = userResume.name
+            userPhone = userResume.phone
+            userEmail = userResume.email
             
             userResumePath = userResume.resume.path
-            user_email = userResume.email
-            resume_parser(userResumePath, user_email)
+            resume_parser(userResumePath, userName, userEmail, userPhone)
             
             return redirect('resumeAnalysis:thankyou')
+        else:
+            print("Invalid form")
+            print(form.errors)
     else:
+            print("POST method Else block")
             form = ResumeForm()
     return render(request, 'resume_upload.html', {'form': form})
 
 
-def resume_parser(resumePath, user_email):
-    # id = request.session.get('id')
-    # print(id)
-    # user = Resume.objects.filter(pk=id)
-    # for i in user:
-    #     resume_file = i.resume.url
-    #     print(i.resume.url)
-    # doc = docx.Document(resume_file)
-
-    # data = ResumeParser(resumePath).get_extracted_data()
-    print("\n")
-    # pretty_data = json.dumps(data, sort_keys=True, indent=4)
-    # print(pretty_data)
-
+def resume_parser(resumePath, userName, userEmail, userPhone):
     doc = docx.Document(resumePath)
-    # all_paras = doc.paragraphs
 
     imagePresentInResume = False
     numberOfPages = 0
@@ -87,7 +83,8 @@ def resume_parser(resumePath, user_email):
                 secntionsPresent.append(section)
 
     print("numberOfPages:")
-    print(numberOfPages+1)
+    numberOfPages = numberOfPages + 1
+    print(numberOfPages)
     if imagePresentInResume == True:
         print("Images or graphic is present in the resume")
     else:
@@ -105,28 +102,54 @@ def resume_parser(resumePath, user_email):
     elif sectionCount < 4:
         print("Relevant sections are present, maybe can include more optional ones")
     else:
+        print("Sections: ")
         print(sectionCount)
         print("Relevant sections included")
 
     # Email 
     email_from = settings.EMAIL_FROM
     email_to = 'bharath.nr1@gmail.com'
-    # email_admin = settings.EMAIL_ADMIN
+    email_temp_from = "bharath.nr1@s-hybrid.com"
+    email_admin = settings.EMAIL_ADMIN
     content = 'Resume Analysis'
+    
 
-    html_content = render_to_string('mail_template.html')
-    #html_content = render_to_string('mail_template.html', {'context': 'values'}) -- use this to send the above values to the html page
+    html_content = render_to_string('mail_template.html', 
+                                    {
+                                    'name' : userName,
+                                    'email': userEmail,
+                                    'phone': userPhone,
+                                    'sections' : sectionCount,
+                                    'imagePresentInResume' : imagePresentInResume,
+                                    'numberOfPages' : numberOfPages,
+                                    'numberOfBullets' : numberOfBullets,
+                                   })
     text_content = strip_tags(html_content)
 
-    isSuccess = send_mail(
+    email_to_user = EmailMultiAlternatives(
         'Resume Analysis',
         text_content,
-        email_from,
-        [user_email],
-        fail_silently=False,
+        email_temp_from,
+        [email_to], #user_email
     )
+    email_to_user.attach_alternative(html_content, "text/html")
+    email_to_user.send()
     
-    print("Email sent : ", isSuccess)
+    resume_summary = "\n Name: "+userName+"\n Email: "+userEmail+"\n Phone Number: "+str(userPhone)+"\n sectionCount: "+str(sectionCount)+"\n imagePresentInResume: "+str(imagePresentInResume)+"\n numberOfPages: "+str(numberOfPages)+"\n numberOfBullets: "+str(numberOfBullets)
+
+    email_to_admin = EmailMessage(
+        'Customer Resume Analysis Summary',
+        resume_summary,
+        email_temp_from,
+        [email_to], #email_admin
+        )
+    
+    print(resumePath)
+    email_to_admin.attach_file(resumePath)
+    email_to_admin.send()
+        
+    print("EMail sent to admin", email_to_admin)
+
     return
 
 
