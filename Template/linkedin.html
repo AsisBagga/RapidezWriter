@@ -44,7 +44,9 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    <meta name="description"  content="Rapidez provides professional LinkedIn profile writing services in India for Leaders,Job seekers & professionals to optimize their LinkedIn profile.">
+    <title>Linkedin Profile Makeover</title>
+        
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -421,11 +423,50 @@
         LINKEDIN PROFILE MAKEOVER
       </p>
       <h2>Set yourself up for job search success</h2>
-      <a
-        data-aos="zoom-in"
-        class="waves-effect waves-light btn order-now-btn"
-        >Order Now - &#8377;2500</a
-      >
+
+        <div class="main-111">
+          <div class="small11">
+            <a class="modal-trigger" href="#modal12">
+               
+            </a>
+          </div>
+
+          <div class="small11 order_pb">
+            <a class="modal-trigger" href="#paymentModal1">
+                <button type="submit" data-aos="zoom-in" class="waves-effect waves-light btn order-now-btn" value="Order Now">Order Now @ &#8377 2500</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal1" class="modal scrollbar scroll-style content212">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp_linkedin" name="template_id">
+                    <input type="hidden" value="250000" name="template_price">
+                    <input type="hidden" value="{% static '/image/linkedin_prashanth.png' %}" name="template_photo">
+
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
+          </div>
+        </div>
+        <div id="modal12" class="modal scrollbar scroll-style">
+          <div class="modal-content">
+                <img src="{% static '/image/linkedin_prashanth.png' %}" alt="" /><br />
+          </div>
+        </div>
+
+
+
     </div>
 
      <!-- --------------------------------------------------footer----------------------------- -->
@@ -576,6 +617,12 @@
       type="text/javascript"
       src="{% static '/materialize/js/materialize.min.js' %}"
     ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+    </script>
 
     <script type="text/javascript">
       window.addEventListener("scroll", function () {

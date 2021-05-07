@@ -45,6 +45,8 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"  content="Our Inhouse Career Coach  with decade experience in Talent Acquisition Team has reviewed hundreds of resumes and helped over 400 professionals land more interviews and get hired faster.">
+    <title>Job Consulting</title>
   </head>
 
   <body>
@@ -220,7 +222,7 @@
               <option value="Video Resume">Video Resume</option>
               <option value="Job Consulting">Job Consulting</option>
             </select>
-            <label>Rapidez Writer Services</label>
+            <label>Services</label>
           </div>
 
 
@@ -230,7 +232,7 @@
               style="width: 100%; padding: 0; padding-left: 10px"
             >
               <input id="query" type="text" name="message" class="validate" />
-              <label for="query" style="margin-left: 12px">Query</label>
+              <label for="query" style="margin-left: 12px">Message</label>
             </div>
           </div>
 
@@ -246,12 +248,12 @@
       </div>
     </div>
 
-    <!-- -----------------------------------------------------Quote------------------------------ -->
-
-    <div class="quote">
-      <h3>Boutique Executive Consulting Models</h3>
-      <h5 style="font-weight: 200;">Our discrete executive career transition services are designed to meet the unique needs of senior executives. They include customized packages which typically include brand building, professionally written resume,  LinkedIn profile update, strategic job search coaching and interview coaching.</h5>
-    </div>
+        <!-- -----------------------------------------------------Quote------------------------------ -->
+  
+        <div class="quote container text-p">
+          <h4>Boutique Executive Consulting Models</h4>
+          <h6 style="font-weight: 200;">Our discrete executive career transition services are designed to meet the unique needs of senior executives. They include customized packages which typically include brand building, professionally written resume,  LinkedIn profile update, strategic job search coaching and interview coaching.</h6>
+        </div>
 
     <!-- -------------------------------------------------step3------------------------------------- -->
     <div class="m-lin ">
@@ -282,10 +284,90 @@
               <ul>Professional Networking</ul>
             </div>
           </div>
-          <div class="order_pb"><a class="waves-effect waves-light btn order-now-btn">Order Now - &#8377;23500 </a></div>
-          <div class="order_jc"><a class="waves-effect waves-light btn order-now-btn">Order Now - &#8377;5000</a></div>
+          <!-- <div class="order_pb"><a class="waves-effect waves-light btn order-now-btn">Order Now - &#8377;23500 </a></div> -->
+          <!-- <div class="order_jc"><a class="waves-effect waves-light btn order-now-btn">Order Now - &#8377;5000</a></div> -->
           <div class="mob_order_jc"><a class="waves-effect waves-light btn order-now-btn">Order Now - &#8377;5000</a></div>
-          
+
+          <div class="main-111">
+            <div class="small11">
+              <a class="modal-trigger" href="#modal12">
+                 
+              </a>
+            </div>
+  
+            <div class="small11 order_pb">
+              <a class="modal-trigger" href="#paymentModal1">
+                  <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 29000</button>
+              </a>
+            </div>
+  
+  
+            <!-- Modal Structure -->
+            <div id="paymentModal1" class="modal scrollbar scroll-style">
+              <div class="modal-content">
+                <form action="{% url 'payment' %}" method="POST">
+                  {% csrf_token %}
+                  <div  class="personal-details container">
+                    <div>
+                      <div><label>Name*</label><input type="text" name="name" required></div>
+                      <div><label>Phone*</label><input type="text" name="phone" required></div>
+                      <div><label>Email*</label><input type="email" name="email" required></div>
+                      <input type="hidden" value="Temp_pb_or_jc" name="template_id">
+                      <input type="hidden" value="2900000" name="template_price">
+                      <input type="hidden" value="{% static '/image/pb.png' %}" name="template_photo">
+                    </div>
+                  </div>
+                  <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+                </form> 
+              </div>
+            </div>
+          </div>
+          <div id="modal12" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <img src="{% static '/image/pb.png' %}" alt="" /><br />
+            </div>
+          </div>
+
+          <div class="main-111">
+            <div class="small11">
+              <a class="modal-trigger" href="#modal13">
+                 
+              </a>
+            </div>
+  
+            <div class="small11 order_jc">
+              <a class="modal-trigger" href="#paymentModal2">
+                  <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 5000</button>
+              </a>
+            </div>
+  
+  
+            <!-- Modal Structure -->
+            <div id="paymentModal2" class="modal scrollbar scroll-style">
+              <div class="modal-content">
+                <form action="{% url 'payment' %}" method="POST">
+                  {% csrf_token %}
+                  <div  class="personal-details container">
+                    <div>
+                      <div><label>Name*</label><input type="text" name="name" required></div>
+                      <div><label>Phone*</label><input type="text" name="phone" required></div>
+                      <div><label>Email*</label><input type="email" name="email" required></div>
+                      <input type="hidden" value="Temp_pb_or_jc" name="template_id">
+                      <input type="hidden" value="500000" name="template_price">
+                      <input type="hidden" value="{% static '/image/jc.png' %}" name="template_photo">
+                    </div>
+                  </div>
+                  <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+                </form> 
+              </div>
+            </div>
+          </div>
+          <div id="modal13" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <img src="{% static '/image/jc.png' %}" alt="" /><br />
+            </div>
+          </div>
+
         </div>
         
     </div>
@@ -439,6 +521,12 @@
       type="text/javascript"
       src="{% static '/materialize/js/materialize.min.js' %}"
     ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+    </script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

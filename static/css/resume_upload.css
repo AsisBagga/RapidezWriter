@@ -514,5 +514,9 @@
       margin-bottom: 0 !important;
     }
     
-    /* footer ends */
+    /* footer ends */    
+    .upload_form {
+      width: 100%;
+      margin-top: 9em;
+    }
 }

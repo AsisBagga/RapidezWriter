@@ -57,7 +57,7 @@ def contact_us_original(request):
             'Customer Contact',
             text_content,
             email_from,
-            [email_to],
+            [email_from],
             fail_silently=False,
         )
         print("Email sent : ", isSuccess)
@@ -146,7 +146,7 @@ def resume_consulting(request):
             'Customer Contact',
             text_content,
             email_from,
-            [email_to],
+            [email_from],
             fail_silently=False,
         )
         print("Email sent : ", isSuccess)
@@ -159,15 +159,23 @@ def resume_consulting(request):
 def resume_writing(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resume_writing.html", {'faqs':faq})
+
 def resume_makeover(request):
+    work_around = list(range(11, 33))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover.html", {'faqs':faq})
+    return render(request,"resume_makeover.html", {'faqs':faq, "range": work_around})
+
 def resume_makeover_1(request):
+    work_around_2 = list(range(23, 34))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover1.html", {'faqs':faq})
+    return render(request,"resume_makeover1.html", {'faqs':faq, "range_2":work_around_2 })
+
 def resume_makeover_2(request):
+    work_around = list(range(40, 50))
+    work_around_2 = list(range(54, 84))
     faq = FAQ.objects.filter(category='Help & Support')
-    return render(request,"resume_makeover2.html", {'faqs':faq})
+    return render(request,"resume_makeover2.html", {'faqs':faq, "range":work_around, "range_2":work_around_2})
+
 def resume_makeover_3(request):
     faq = FAQ.objects.filter(category='Help & Support')
     return render(request,"resumeMakeover3.html", {'faqs':faq})
@@ -311,13 +319,23 @@ def payment(request):
         template_photo=request.POST.get('template_photo')
         template_price=request.POST.get('template_price')
         print("template_price: " + template_price)
-
         response = client.order.create({'amount': template_price, 'currency': order_currency, 'payment_capture': '1'})
         order_id = response['id']
         order_status = response['status']
-        print("response: ", response)
-
+        print("response: ", response)        
         if order_status=='created':
+            email_from = settings.EMAIL_FROM
+            email_to = settings.EMAIL_ADMIN
+            text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Template ID: "+template_id + "\n Template Price: "+template_price
+            print(text_content)
+            isSuccess = send_mail(
+                'Order Details',
+                text_content,
+                email_from,
+                [email_from],
+                fail_silently=False,
+            )
+            print("Email sent : ", isSuccess)
             print("Order created: ")
             print(order_id)
             context['name'] = name
@@ -327,7 +345,6 @@ def payment(request):
             context['template_photo'] = template_photo
             context['template_price'] = template_price
             context['order_id'] = order_id
-
             return render(request, 'order_summary.html', {'context': context})
     return HttpResponse('<h1> Error in creating a payment order</h1>')
 
@@ -398,13 +415,13 @@ def submitJob(request, pk):
             print("name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job )
             saved.save()
             email_from = settings.EMAIL_FROM
-            email_to = 'bharath.nr1@gmail.com'
+#            email_to = 
             text_content = "name: "+saved.name+" email: "+saved.email+" phone: "+saved.phone + " Job: "+saved.job 
             isSuccess = send_mail(
                 'New Job Profile Application',
                 text_content,
                 email_from,
-                [email_to],
+                [email_from],
                 fail_silently=False,
             )
             isSuccess.attach(saved.resume)
@@ -438,4 +455,4 @@ def privacypolicy(request):
     return render(request, "privacypolicy.html")
 
 def terms(request):
-    return render(request, "terms.html")    
+    return render(request, "terms.html") 

@@ -114,7 +114,7 @@
             <a href="{% url 'about' %}"><li>Overview</li></a>
             <a href="{% url 'about' %}#aboutFounder"><li>About Founder</li></a>
             <a href="{% url 'contactUs' %}"><li>Contact Us</li></a>
-            <a href="#"><li>Careers</li></a>          
+            <a href="{% url 'job_page' %}"><li>Careers</li></a>          
           </ul>
         </li>
 
@@ -137,6 +137,9 @@
           <ul class="ser1 ser12" style="left: 38%">
             <a href="{% url 'create_blog' %}"><li>Create Blog</li></a>
             <a href="{% url 'add_category' %}"><li>Create Category</li></a>
+            <a href="{% url 'addFAQ' %}"><li>Create FAQ</li></a>
+            <a href="{% url 'addJob' %}"><li>Create Job</li></a>
+
             <a href="{% url 'category_list_page' %}"><li>Delete Category</li></a>
           {% if request.user.is_staff %}
             <a href="{% url 'signup' %}"> <li> Register User </li></a>
@@ -157,10 +160,19 @@
             <legend>
               <h3>Selected Product</h3>
             </legend>
+              {% if context.template_id == "Temp_pb_or_jc" %}
+              <div class="gender_xyz" >
+                <img src="{{ context.template_photo }}">
+              </div>
+              {% elif  context.template_id == "Temp_linkedin" %}
+              <div class="gender_xyz" >
+                <img src="{{ context.template_photo }}">
+              </div>
+              {% else %}
               <div class="gender" >
                 <img src="{{ context.template_photo }}">
               </div>
-    
+              {% endif %}
           </fieldset>
           <fieldset>
             <legend>
@@ -191,7 +203,7 @@
             data-buttontext="Pay with Razorpay"
             data-name="Rapidez Writer"
             data-description="Resume Template"
-            data-image="{% static '/image/logo.png' %}"
+            data-image="/static/image/homepage_logo_new.png" 
             data-prefill.name="{{ context.name }}"
             data-prefill.email="{{ context.email }}"
             data-prefill.contact="{{ context.phone }}"

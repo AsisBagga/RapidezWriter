@@ -422,6 +422,10 @@ header ul li a {
   justify-content: center;
 }
 
+.small111{
+  width: 27% !important;
+  margin-bottom: 1%;
+}
 .main-111 {
   margin-bottom: 2em;
   margin-top: 2em;
@@ -521,7 +525,15 @@ header ul li a {
   text-align: center;
   margin-top: 80px;
   margin-left: 10%;
+  padding: 10px;
 }
+
+.modal{
+  width: 30%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+
 
 .upa img {
   border-radius: 10px;
@@ -601,7 +613,8 @@ header ul li a {
 
 .razorpay-payment-button{
     background: #0da1ec;
-    width: 90%;
+    width: 100%;
+    margin-top: 3%;
     color: white;
     padding: 0.75em;
     border-color: white;

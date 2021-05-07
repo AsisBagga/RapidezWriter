@@ -44,6 +44,9 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"  content="Rapidez Executive provides bespoke branding & resume writing services to C-level executives, senior managers and Board members">
+    <title>Resume Template Makeover  @ Rs.999*</title>
+        
   </head>
 
   <body>
@@ -201,31 +204,30 @@
           <div class="m-upd">
             <div class="upd">
               <div class="upd1 upa z-depth-3">
-                <img src="{% static '/image/font1.PNG' %}" alt="" />
-    
-                <h5>Buy A Template</h5>
-                <p>
-                  A mighty engine with the agility to adapt to your business, now
-                  and in the future
-                </p>
-              </div>
-    
-              <div class="upd2 upa z-depth-3">
-                <img src="{% static '/image/font2.PNG' %}" alt="" />
-    
-                <h5>Connect with our designers and share your content</h5>
-                <p>
-                  An award-winning and streamlined user experience for all quality
-                  processes
-                </p>
-              </div>
-    
-              <div class="upd3 upa z-depth-3">
-                <img src="{% static '/image/font3.PNG' %}" alt="" />
-    
-                <h5>Get your transformed resume delivered to your inbox</h5>
-                <p>Access securely anytime and anywhere</p>
-              </div>
+
+                    <img src="{% static '/image/font1.PNG' %}" alt="" />
+  
+                    <h5>Buy A Template</h5>
+                    <p>
+                      Choose templates based on your preference
+                    </p>
+                  </div>
+  
+                  <div class="upd2 upa z-depth-3">
+                    <img src="{% static '/image/font2.PNG' %}" alt="" />
+  
+                    <h5>Connect </h5>
+                    <p>
+                      Interact with our designers and share your content
+                    </p>
+                  </div>
+  
+                  <div class="upd3 upa z-depth-3">
+                    <img src="{% static '/image/font3.PNG' %}" alt="" />
+  
+                    <h5>Transform</h5>
+                    <p>Get your transformed resume delivered to your inbox</p>
+                  </div>
             </div>
           </div>
         </div>
@@ -262,2081 +264,654 @@
     <div class="container" style="width: 100%; overflow: hidden">
       <div class="top-d">
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal12">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp34.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=150000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1500"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp34">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
         <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal13">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp35.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#modal2">
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp34.png' %}"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=250000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 2500"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp35">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal1">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1500</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal1" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp34" name="template_id">
+                    <input type="hidden" value="150000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp34.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+
+        
+        <div class="main-111">
+          <div class="small11">
+            <a class="modal-trigger" href="#modal13">
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp35.png' %}"
+                  alt=""
+                />
+            </a>
+          </div>
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal2">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 2500</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal2" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp35" name="template_id">
+                    <input type="hidden" value="250000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp35.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
+          </div>
+        </div>
+
+
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal14">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp36.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp36.png' %}"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=200000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 2000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp36">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal3">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 2000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal3" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp36" name="template_id">
+                    <input type="hidden" value="200000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp36.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal15">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp37.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp37.png' %}"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp37">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal4">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal4" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp37" name="template_id">
+                    <input type="hidden" value="100000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp37.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal16">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp38.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp38.png' %}"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Diamond</h5>
-            <p>Classic cover letter template in a one column layout</p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp38">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal5">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal5" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp38" name="template_id">
+                    <input type="hidden" value="100000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp38.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal17">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp39.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="{% static '/image/RT/Visual/Temp39.png' %}"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Enfold</h5>
-            <p>
-              Two column cover letter template with contact information
-              highlighted on the right
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=300000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 3000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp39">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal6">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 3000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal6" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp39" name="template_id">
+                    <input type="hidden" value="300000" name="template_price">
+                    <input type="hidden" value="{% static '/image/RT/Visual/Temp39.png' %}" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal18">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp40.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Iconic</h5>
-            <p>
-              Clean cover letter template with plenty of whitespace and a layout
-              that feels complete
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp40">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-     
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal19">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp41.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp41">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
+
+        {% for value in range %}
 
         <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal20">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp42.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#modal{{value}}">
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp{{value}}.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp42">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal{{value}}">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp{{value}}" name="template_id">
+                    <input type="hidden" value="100000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal21">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp43.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp43">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal22">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp44.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp44">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>        
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal23">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp45.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp45">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal24">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp46.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp46">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal25">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp47.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp48">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal26">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp48.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Diamond</h5>
-            <p>Classic cover letter template in a one column layout</p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp48">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal27">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp49.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Enfold</h5>
-            <p>
-              Two column cover letter template with contact information
-              highlighted on the right
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp49">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
+        {% endfor %}
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal28">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp50.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp50.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Iconic</h5>
-            <p>
-              Clean cover letter template with plenty of whitespace and a layout
-              that feels complete
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=350000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 3500"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp50">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal7">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 3500</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal7" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp50" name="template_id">
+                    <input type="hidden" value="350000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp50.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
-     
+
+
+
+
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal29">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp51.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp51.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=300000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 3000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp51">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal8">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 3000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal8" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp51" name="template_id">
+                    <input type="hidden" value="300000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp51.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+
+
+
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal30">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp52.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp52.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=200000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 2000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp52">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal9">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 2000</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal9" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp52" name="template_id">
+                    <input type="hidden" value="200000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp52.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+     
+
+
 
         <div class="main-111">
           <div class="small11">
             <a class="modal-trigger" href="#modal31">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp53.png' %}"
-                alt=""
-              />
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp53.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=150000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1500"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp53">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+
+          <div class="small11">
+            <a class="modal-trigger" href="#paymentModal10">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1500</button>
+            </a>
+          </div>
+
+
+          <!-- Modal Structure -->
+          <div id="paymentModal10" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp53" name="template_id">
+                    <input type="hidden" value="150000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp53.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal32">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp54.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp54">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-        
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal33">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp55.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=200000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 2000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp55">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal34">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp56.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=120000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1200"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp56">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
+        {% for value in range_2 %}
 
+        {% if forloop.counter == 2 %}
         <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal35">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp57.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#modal{{value}}">
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp{{value}}.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp57">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal36">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp58.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#paymentModal{{value}}">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 2000</button>
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Diamond</h5>
-            <p>Classic cover letter template in a one column layout</p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp58">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal37">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp59.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Enfold</h5>
-            <p>
-              Two column cover letter template with contact information
-              highlighted on the right
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp59">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal38">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp60.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Iconic</h5>
-            <p>
-              Clean cover letter template with plenty of whitespace and a layout
-              that feels complete
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp60">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+          <!-- Modal Structure -->
+          <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp{{value}}" name="template_id">
+                    <input type="hidden" value="200000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
-     
+        {% elif forloop.counter == 3 %}
         <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal39">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp61.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#modal{{value}}">
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp{{value}}.png"
+                  alt=""
+                />
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp61">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal40">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp62.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#paymentModal{{value}}">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1200</button>
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp62">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal41">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp63.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp63">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal42">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp64.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp64">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div> 
-        
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal43">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp65.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp65">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+          <!-- Modal Structure -->
+          <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp{{value}}" name="template_id">
+                    <input type="hidden" value="120000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+        {% elif forloop.counter == 17 %}
+        <div class="main-111">
+          <div class="small11">
+            <a class="modal-trigger" href="#modal{{value}}">
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp{{value}}.png"
+                  alt=""
+                />
+            </a>
+          </div>
 
-        <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal44">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp66.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#paymentModal{{value}}">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1200</button>
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp66">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal45">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp67.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp67">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal46">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp68.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Diamond</h5>
-            <p>Classic cover letter template in a one column layout</p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp68">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+          <!-- Modal Structure -->
+          <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp{{value}}" name="template_id">
+                    <input type="hidden" value="120000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+        {% elif forloop.last %}
+        <div class="main-111">
+          <div class="small11">
+            <a class="modal-trigger" href="#modal{{value}}">
+                <img
+                  class="z-depth-2"
+                  src="/static/image/RT/Visual/Temp{{value}}.png"
+                  alt=""
+                />
+            </a>
+          </div>
 
-        <div class="main-111">
           <div class="small11">
-            <a class="modal-trigger" href="#modal47">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp69.png' %}"
-                alt=""
-              />
+            <a class="modal-trigger" href="#paymentModal{{value}}">
+                <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1200</button>
             </a>
           </div>
-          <div class="m-text">
-            <!-- <h5>Enfold</h5>
-            <p>
-              Two column cover letter template with contact information
-              highlighted on the right
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp69">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal48">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp70.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Iconic</h5>
-            <p>
-              Clean cover letter template with plenty of whitespace and a layout
-              that feels complete
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=120000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1200"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp70">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-     
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal49">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp71.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp71">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal50">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp72.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp72">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
+          <!-- Modal Structure -->
+          <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+            <div class="modal-content">
+              <form action="{% url 'payment' %}" method="POST">
+                {% csrf_token %}
+                <div  class="personal-details container">
+                  <div>
+                    <div><label>Name*</label><input type="text" name="name" required></div>
+                    <div><label>Phone*</label><input type="text" name="phone" required></div>
+                    <div><label>Email*</label><input type="email" name="email" required></div>
+                    <input type="hidden" value="Temp{{value}}" name="template_id">
+                    <input type="hidden" value="120000" name="template_price">
+                    <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                  </div>
+                </div>
+                <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+              </form> 
+            </div>
           </div>
         </div>
+        {% else %}
+          <div class="main-111">
+            <div class="small11">
+              <a class="modal-trigger" href="#modal{{value}}">
+                  <img
+                    class="z-depth-2"
+                    src="/static/image/RT/Visual/Temp{{value}}.png"
+                    alt=""
+                  />
+              </a>
+            </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal51">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp73.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp73">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
+            <div class="small11">
+              <a class="modal-trigger" href="#paymentModal{{value}}">
+                  <button type="submit" class="razorpay-payment-button" value="Order Now">Order Now @ &#8377 1000</button>
+              </a>
+            </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal52">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp74.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp74">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div> 
-        
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal53">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp75.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp75">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
 
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal54">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp76.png' %}"
-                alt=""
-              />
-            </a>
+            <!-- Modal Structure -->
+            <div id="paymentModal{{value}}" class="modal scrollbar scroll-style">
+              <div class="modal-content">
+                <form action="{% url 'payment' %}" method="POST">
+                  {% csrf_token %}
+                  <div  class="personal-details container">
+                    <div>
+                      <div><label>Name*</label><input type="text" name="name" required></div>
+                      <div><label>Phone*</label><input type="text" name="phone" required></div>
+                      <div><label>Email*</label><input type="email" name="email" required></div>
+                      <input type="hidden" value="Temp{{value}}" name="template_id">
+                      <input type="hidden" value="100000" name="template_price">
+                      <input type="hidden" value="/static/image/RT/Visual/Temp{{value}}.png" name="template_photo">
+                    </div>
+                  </div>
+                  <button type="submit" class="container small11 small111 razorpay-payment-button" value="Order Now">Order Now</button>
+                </form> 
+              </div>
+            </div>
           </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp76">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal55">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp77.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Vibes</h5>
-            <p>
-              Sleek cover letter template with a light feel and color accents
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp77">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal56">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp78.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Diamond</h5>
-            <p>Classic cover letter template in a one column layout</p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp78">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal57">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp79.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Enfold</h5>
-            <p>
-              Two column cover letter template with contact information
-              highlighted on the right
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp79">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal58">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp80.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Iconic</h5>
-            <p>
-              Clean cover letter template with plenty of whitespace and a layout
-              that feels complete
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp80">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-     
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal59">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp81.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Concept</h5>
-            <p>
-              Modern cover letter template with delicate icons for contact
-              information.
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp81">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal60">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp82.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Crisp</h5>
-            <p>
-              Creative cover letter template with graphic elements and two
-              columns
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=100000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1000"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp82">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
-
-        <div class="main-111">
-          <div class="small11">
-            <a class="modal-trigger" href="#modal61">
-              <img
-                class="z-depth-2"
-                src="{% static '/image/RT/Visual/Temp83.png' %}"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="m-text">
-            <!-- <h5>Cubic</h5>
-            <p>
-              Perfect cover letter template with a dash of color and a
-              structured layout
-            </p> -->
-            <form class="text-center border border-light p-5" action="{% url 'payment_status' %}" method="POST">
-              {% csrf_token %}
-              <!-- <a href="{% url 'payment_status' %}" data-aos="zoom-in" class="waves-effect waves-light btn btn90" style="z-index: 10; margin-bottom: -2em;">Order Now </a> -->
-              <br/>
-                <!-- RAZORPAY INTEGRATION HERE -->
-                <script 
-                    src="https://checkout.razorpay.com/v1/checkout.js"
-                    data-key="rzp_live_nQOflfXhoAJfEG"
-                    data-amount=120000
-                    data-currency="INR"
-                    data-order_id="{{context.order_id}}"
-                    data-buttontext="Order Now @ &#8377 1200"
-                    data-name="Rapidez Writer"
-                    data-description="Resume Template"
-                    data-image="{% static '/image/logo.png' %}"
-                    data-prefill.name=""
-                    data-prefill.email=""
-                    data-theme.color="#F37254" 
- 	                  data-notes.template_id="Temp83">
-                </script>
-                <input type="hidden" name="hidden">
-            </form>
-            <br />
-          </div>
-        </div>
+          {% endif %}
+        {% endfor %}
 
       </div>
     </div>
@@ -2379,65 +954,13 @@
       </div>
     </div>
 
-    <div id="modal18" class="modal scrollbar scroll-style">
+    {% for value in range %}
+    <div id="modal{{value}}" class="modal scrollbar scroll-style">
       <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp40.png' %}" alt="" /><br />
+        <img src="/static/image/RT/Visual/Temp{{value}}.png' %}" alt="" /><br />
       </div>
     </div>
-
-    <div id="modal19" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp41.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal20" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp42.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal21" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp43.png' %}" alt="" /><br />
-      </div>
-    </div>    
-
-    <div id="modal22" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp44.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal23" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp45.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal24" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp46.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal25" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp47.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal26" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp48.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal27" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp49.png' %}" alt="" /><br />
-      </div>
-    </div>
+    {% endfor %}
 
     <div id="modal28" class="modal scrollbar scroll-style">
       <div class="modal-content">
@@ -2462,187 +985,13 @@
         <img src="{% static '/image/RT/Visual/Temp53.png' %}" alt="" /><br />
       </div>
     </div>
-
-    <div id="modal32" class="modal scrollbar scroll-style">
+    {% for value in range_2 %}
+    <div id="modal{{value}}" class="modal scrollbar scroll-style">
       <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp54.png' %}" alt="" /><br />
+        <img src="static/image/RT/Visual/Temp{{value}}.png" alt="" /><br />
       </div>
     </div>
-
-    <div id="modal33" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp55.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal34" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp56.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal35" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp57.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal36" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp58.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal37" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp59.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal38" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp60.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal39" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp61.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal40" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp62.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal41" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp63.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal42" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp64.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal43" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp65.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal44" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp66.png' %}" alt="" /><br />
-      </div>
-    </div> 
-
-    <div id="modal45" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp67.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal46" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp68.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal47" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp69.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal48" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp70.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal49" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp71.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal50" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp72.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal51" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp73.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal52" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp74.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal53" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp75.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal54" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp76.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal55" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp77.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal56" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp78.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal57" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp79.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal58" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp80.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal59" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp81.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal60" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp82.png' %}" alt="" /><br />
-      </div>
-    </div>
-
-    <div id="modal61" class="modal scrollbar scroll-style">
-      <div class="modal-content">
-        <img src="{% static '/image/RT/Visual/Temp83.png' %}" alt="" /><br />
-      </div>
-    </div>
-
+    {% endfor %}
         <!-- ------------------------------------------------------faq update------------------------------ -->
         <div class="faq0">
           <h4>Frequently Asked Questions</h4>

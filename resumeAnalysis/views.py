@@ -34,8 +34,10 @@ def thankyou(request):
 def resume_upload(request):
     if request.method == 'POST':
         print("Inside resume_upload func ")
+        print("Received POST call")
         form = ResumeForm(request.POST, request.FILES)
         if form.is_valid():
+            print("forms valid")
             userResume = form.save()
             userName = userResume.name
             userPhone = userResume.phone

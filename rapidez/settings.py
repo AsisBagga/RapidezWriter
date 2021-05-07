@@ -26,7 +26,7 @@ SECRET_KEY = '#)xgga688w+sj=%&u=hupbrffk9_ptcp&_5y6n6xp!$r)t_q)m'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['45.80.181.32', '127.0.0.1']
+ALLOWED_HOSTS = ['45.80.181.32',]
 
 
 # Application definition
