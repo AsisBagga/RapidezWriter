@@ -192,7 +192,7 @@ def view_category_wise(request, filter):
     filter = get_object_or_404(Category, category=filter)
     all_objects = Database.objects.filter(category=filter)
     category = Category.objects.all()
-    return render(request, 'career_view_all.html', {'all_objects':filter_op, "category":category, "filter":filter})
+    return render(request, 'career_view_all.html', {'all_objects':all_objects, "category":category, "filter":filter})
 
 # Blog Page details
 def career_detail_page(request, pk):
