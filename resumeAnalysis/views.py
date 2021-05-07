@@ -110,8 +110,6 @@ def resume_parser(resumePath, userName, userEmail, userPhone):
 
     # Email 
     email_from = settings.EMAIL_FROM
-    email_to = 'bharath.nr1@gmail.com'
-    email_temp_from = "bharath.nr1@s-hybrid.com"
     email_admin = settings.EMAIL_ADMIN
     content = 'Resume Analysis'
     
@@ -142,8 +140,8 @@ def resume_parser(resumePath, userName, userEmail, userPhone):
     email_to_admin = EmailMessage(
         'Customer Resume Analysis Summary',
         resume_summary,
-        email_temp_from,
-        [email_to], #email_admin
+        email_from,
+        [email_from], #email_admin
         )
     
     print(resumePath)

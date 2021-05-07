@@ -40,32 +40,6 @@ def home(request):
     return render(request,"home.html", {"blog":all_objects})
 def about(request):
     return render(request,"about.html")
-def contact_us_original(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        services = request.POST.getlist('services')
-        query = request.POST.get('message')
-        email_from = settings.EMAIL_FROM
-        email_to = settings.EMAIL_ADMIN
-        servicesstr = " | ".join(services)
-        print("Details: ", name, phone, email, servicesstr, query)
-        
-        text_content = "\n Name: "+name+"\n Email: "+email+"\n Phone Number: "+phone+"\n Services: "+servicesstr + "\n Query: "+query
-        isSuccess = send_mail(
-            'Customer Contact',
-            text_content,
-            email_from,
-            [email_from],
-            fail_silently=False,
-        )
-        print("Email sent : ", isSuccess)
-        if isSuccess == True :
-            return render(request,"thankyou_contact.html")
-        else:
-            return render(request,"failure_contact.html")
-    return render(request, "contact.html")
 
 def contact_us(request):
     if request.method == "POST":
@@ -75,7 +49,6 @@ def contact_us(request):
         services = request.POST.getlist('services')
         query = request.POST.get('message')
         email_from = settings.EMAIL_FROM
-        email_to="bharath.nr1@gmail.com"
         servicesstr = " | ".join(services)
         print("Details: ", name, phone, email, servicesstr, query)
         
@@ -84,7 +57,7 @@ def contact_us(request):
             'Customer Contact',
             text_content,
             email_from,
-            [email_to],
+            [email_from],
             fail_silently=False,
         )
         print("Email sent : ", isSuccess)
