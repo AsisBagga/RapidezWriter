@@ -254,12 +254,13 @@ header ul li a {
   font-weight: 600;
   text-transform: none;
   background: #0da1ec;
-  margin-top: 30px;
+  margin-top: 0px;
+  margin-bottom: 15px;
   width: auto;
   font-size: 20px;
   font-weight: 600;
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .order-now-btn:hover{
@@ -368,9 +369,14 @@ header ul li a {
   display: flex;
 }
 .text-1 {
-  margin-top: 8em;
+  margin-top: 6em;
   flex: 1 1 0;
   text-align: center;
+}
+.modal{
+  width: 30%;
+  padding-top: 2%;
+  padding-bottom: 1%;
 }
 .mob-img {
   padding-top: 64px;
@@ -712,7 +718,7 @@ header ul li a {
   display: grid;
   grid-template-columns: repeat(4, 25%) 1fr;
   height: 273px;
-  padding: 9px 60px;
+  padding: 9px 80px;
   background: #09143b;
   color: #6275b975;
   background-image: linear-gradient(
@@ -730,6 +736,7 @@ header ul li a {
 .learn,
 .company,
 .branded {
+  width: 100%;
   margin-left: 50px;
   display: block;
   position: relative;

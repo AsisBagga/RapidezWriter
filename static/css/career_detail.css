@@ -274,9 +274,9 @@ header ul li a {
 }
 
 .big-img img {
-  width: 890px;
+  width: auto;
   margin-bottom: 20px;
-  height: 400px;
+  height: 450px; 
 }
 
 .big-img {

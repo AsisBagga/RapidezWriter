@@ -546,6 +546,7 @@ ul.socialmedia-icons li{
 
 .inline{
     display:inline-flex;
+    margin-left: 2em;
 }
 
 .mycontainer {

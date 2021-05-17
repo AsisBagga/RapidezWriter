@@ -666,6 +666,15 @@ header ul li a {
   text-transform: none;
   font-size: 20px;
   font-weight: 600;
+  background: #0da1ec;
+  border-radius: 2em;
+  box-shadow: none;
+}
+
+.btn-large:hover {
+  background: #1186c0;
+  border-radius: 5px;
+  box-shadow: none;
 }
 
 .footer .desk_logo{

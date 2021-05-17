@@ -154,7 +154,7 @@
 
     <!-- ---------------------------------------------------analysis detail--------------------------------------- -->
     <div class="container heading">
-      <h2>What our Customers say about us</h2>        
+      <h2 style="font-weight: 600;">What our Customers say about us</h2>        
       {% if user.is_authenticated %}
       <a class="waves-effect waves-light btn btn-large" href="{% url 'create_testimonial' %}">Create A Testimonial</a>
       <br>
@@ -163,12 +163,45 @@
     </div>
 
     <!-- -----------------------------------------------------Custom Testimonials------------------------------ -->
-        <div class="tagembed-container" style=" width:100%; height:300px; overflow: auto; margin-top: 20px;
+        <!-- -- <div class="tagembed-container" style=" width:100%; height:300px; overflow: auto; margin-top: 20px;
         margin-bottom: 50px;">
           <div class="tagembed-socialwall" data-wall-id="4131" view-url="https://widget.tagembed.com/4131?view">  </div> 
           <script src="//widget.tagembed.com/embed.min.js" type="text/javascript">
           </script>
+	</div> -->
+	<div class="tagembed-container" style=" width:100%;height:100%; height:300px; overflow: auto;">
+		<div class="tagembed-socialwall" data-wall-id="4164" view-url="https://widget.tagembed.com/4164?view">  </div> 
+		<script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script></div>
+    	</div>
+
+
+
+
+
+
+    <!-- ---------------------------------------------------analysis detail 2--------------------------------------- -->
+    <div class="ourContainer">
+      {% for object in objects %}
+      <div class="gray">
+        <div class="image12 smalle1">
+            {% if object.image %}
+            <img src="{{ object.image.url }}" alt="" />
+            {% endif %}
+            {% if object.profession %}
+            <p class="designation">{{ object.profession }}</p>
+            {% endif %}
         </div>
+        <div class="cornerLeft">
+            <h5>{{ object.name }}  {% if user.is_authenticated %}<a href="{% url 'testimonial_update' object.id %}">Update</a> / <a href="{% url 'testimonial_delete' object.id %}" style="color:maroon">Delete</a>{% endif %}</h5>
+            <p>
+              {% if object.content %}
+              {{object.content}}
+              {% endif %}
+            </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 
     <!-- -------------------------------Resumes have been shortlisted by--------------------------- -->
     
@@ -269,30 +302,6 @@
       </div>
   
   </div>
-
-    <!-- ---------------------------------------------------analysis detail 2--------------------------------------- -->
-    <div class="ourContainer">
-      {% for object in objects %}
-      <div class="gray">
-        <div class="image12 smalle1">
-            {% if object.image %}
-            <img src="{{ object.image.url }}" alt="" />
-            {% endif %}
-            {% if object.profession %}
-            <p class="designation">{{ object.profession }}</p>
-            {% endif %}
-        </div>
-        <div class="cornerLeft">
-            <h5>{{ object.name }}  {% if user.is_authenticated %}<a href="{% url 'testimonial_update' object.id %}">Update</a> / <a href="{% url 'testimonial_delete' object.id %}" style="color:maroon">Delete</a>{% endif %}</h5>
-            <p>
-              {% if object.content %}
-              {{object.content}}
-              {% endif %}
-            </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
 
      <!-- --------------------------------------------------footer----------------------------- -->
      <footer class="footer">
@@ -429,7 +438,7 @@
     </footer>
     
     <!--JavaScript at end of body for optimized loading-->
-    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
     <script
       type="text/javascript"

@@ -456,7 +456,7 @@ header ul li a {
 /* quote */
 
 .rw-quote{
-  padding: 2em 6em;
+  padding: 0em 6em;
   text-align: center;
 }
 
@@ -478,7 +478,7 @@ header ul li a {
 }
 
 .update0 {
-  height: 400px;
+  height: auto;
   overflow: hidden;
   width: 100%;
   margin-right: 20px;
@@ -486,7 +486,7 @@ header ul li a {
 
 .update1 {
   /* margin-top: 50px; */
-  height: 600px;
+  height: auto;
   width: 100%;
   margin-right: 20px;
 }
