@@ -77,7 +77,7 @@
               <div class="box111"></div>
               <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><li>Free Resume Critique</li></a>
               <a href="{% url 'resumeWriting' %}"><li>Executive Resume Writing</li></a>
-              <a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
+			<a href="{% url 'resumeMakeover2' %}"><li>Resume Makeover</li></a>
               <a href="{% url 'linkedIn' %}"><li>LinkedIn Branding</li></a>
               <a href="{% url 'resumeVideo' %}"><li>Video Resume</li></a>
               <a href="{% url 'resumeConsulting' %}"><li>Job Consulting</li></a>
@@ -239,7 +239,7 @@
     <div class="cata container" id="templates_section">
       <div>
         <p>
-          <a href="{% url 'resumeMakeover' %}#templates_section">ATS Resumes</a>
+			<a href="{% url 'resumeMakeover' %}"><li>Resume Makeover</li></a>
         </p>
       </div>
       <div>
@@ -324,6 +324,7 @@
     <div class="faq1">
       <ul class="collapsible expandable">
       {% for faq in faqs %}
+	  	{% if faq.category == 'About Our Services' %}
         <li>
           <div class="collapsible-header">
             <h6>{{ faq.heading }}</h6>
@@ -336,6 +337,7 @@
             {% endif %}
           </div>
         </li>
+		{% endif %}
         {% endfor %}
       </ul>
     </div>
@@ -345,7 +347,7 @@
         <h5>PRODUCTS</h5>
         <a href="{% url 'resumeAnalysis:resumeAnalysis' %}"><p>Free Resume Critique</p></a>
         <a href="{% url 'resumeWriting' %}"><p>Executive Resume Writing</p></a>
-        <a href="{% url 'resumeMakeover' %}"><p>Resume Makeover</p></a>
+        <a href="{% url 'resumeMakeover2' %}"><p>Resume Makeover</p></a>
         <a href="{% url 'linkedIn' %}"><p>Linkedin Branding</p></a>
         <a href="{% url 'resumeVideo' %}"><p>Video Resume</p></a>
         <a href="{% url 'resumeConsulting' %}"><p>Job Consulting</p></a>
