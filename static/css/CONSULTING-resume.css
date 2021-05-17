@@ -410,12 +410,16 @@ border: none !important;
 
 .t1-lin ul{
   font-size: 18px;
+  text-align: left;
+  margin-left: 2.4em;
   margin-bottom: 1em;
 }
 
 .t2-lin ul{
   font-size: 18px;
   margin-bottom: 1em;
+  text-align: left;
+  margin-left: 2em;
 }
 
 .order-now-btn{
@@ -437,17 +441,27 @@ border: none !important;
   background: #0da1ec;
 }
 
+.modal{
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+.modal .modal-content {
+    padding: 24px;
+}
+
 .small11{
 margin-bottom: 2em;
 }
 
 .order_pb{
   margin-left: 21%;
-  width: 46em;
+  width: 100%;
 }
 
 .order_jc {
-  width: 46em;
+  width: 100%;
   margin-left: -19%;
 }
 

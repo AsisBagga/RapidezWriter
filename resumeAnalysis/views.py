@@ -20,7 +20,7 @@ from django.core.mail import send_mail
 import docx
 
 # Resume parser
-from pyresparser import ResumeParser
+#from pyresparser import ResumeParser
 
 import json
 

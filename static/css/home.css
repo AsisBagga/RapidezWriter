@@ -291,8 +291,9 @@ header ul li a {
 }
 
 .linkedin-follow{
-  width: 120px;
-  height: 35px;
+  width: 90px;
+  height: 25px;
+  margin: 5px;
 }
 
 .hired{
@@ -416,7 +417,7 @@ header ul li a {
   padding: 20px;
 }
 .boss {
-  margin-left: 10%;
+  margin-left: 6%;
   margin-top: 2em;
   margin-bottom: 4em;
 }
@@ -1567,6 +1568,7 @@ header ul li{
 }
 
 .footer .desk_logo{
+  height: 9.5rem;
   width: 100%;
   padding: 1em;
   margin-right: 0;

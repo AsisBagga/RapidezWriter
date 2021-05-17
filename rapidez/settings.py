@@ -26,7 +26,7 @@ SECRET_KEY = '#)xgga688w+sj=%&u=hupbrffk9_ptcp&_5y6n6xp!$r)t_q)m'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['45.80.181.32',]
+ALLOWED_HOSTS = ['45.80.181.32','rapidezwriter.com','www.rapidezwriter.com' ]
 
 
 # Application definition
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'bootstrap4',
-    'django_inlinecss',
 ]
 
 MIDDLEWARE = [
@@ -81,12 +80,24 @@ WSGI_APPLICATION = 'rapidez.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
+    }
+}
+
 
 
 # Password validation
@@ -191,3 +202,4 @@ CKEDITOR_CONFIGS = {
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+

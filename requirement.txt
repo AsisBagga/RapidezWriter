@@ -1,0 +1,13 @@
+Django
+python-docx 
+celery
+redis 
+eventlet 
+pyresparser
+django-extensions
+django-mailjet
+django-ckeditor
+pillow
+django-bootstrap4
+razorpay
+mailjet-rest
